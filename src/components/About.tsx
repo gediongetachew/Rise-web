@@ -42,7 +42,7 @@ export default function Aboutus() {
           <Image
             src={medicalIMg}
             alt="medical image"
-            layout="fill"
+            fill
             className="object-contain object-left"
           />
 
@@ -79,7 +79,7 @@ export default function Aboutus() {
             className="object-contain object-left"
             src={automobile}
             alt="automobile"
-            layout="fill"
+            fill
           />
           <div className="absolute inset-0 flex flex-col items-baseline mt-44 pl-2 ">
             <h1 className="font-bold text-black text-md mb-2 ml-2">
@@ -99,7 +99,7 @@ export default function Aboutus() {
             className="object-contain object-left"
             src={automobile2}
             alt="automobile"
-            layout="fill"
+            fill
           />
           <div className="absolute inset-0 flex flex-col items-baseline mt-44 pl-2">
             <h1 className="font-bold text-black text-md mb-2 ml-2">
