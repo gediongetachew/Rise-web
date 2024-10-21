@@ -63,7 +63,7 @@ export default function Aboutus() {
             </div>
             <div className="flex flex-col items-baseline mt-auto mr-16 mb-5 ">
               <h1 className="font-bold text-md mb-2  text-black">
-                Medical Equipment's
+                Medical Equipments
               </h1>
               <p className="text-gray-500 text-xs ">
                 Lorem ipsum dolor sit amet consectetur.

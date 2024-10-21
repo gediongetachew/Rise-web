@@ -1,5 +1,3 @@
-import Link from "next/link";
-
 export default function Nav() {
   const arry = ["Home", "About", "Products", "News", "Contact"];
   return (
