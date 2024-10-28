@@ -41,14 +41,14 @@ export default function Products() {
   const handleNext = () => {
     if (currentIndex < images.length - 1) {
       setCurrentIndex(currentIndex + 1);
-      scrollRef.current.scrollBy({ left: 300, behavior: "smooth" });
+      scrollRef.current?.scrollBy({ left: 300, behavior: "smooth" });
     }
   };
 
   const handlePrev = () => {
     if (currentIndex > 0) {
       setCurrentIndex(currentIndex - 1);
-      scrollRef.current.scrollBy({ left: -300, behavior: "smooth" });
+      scrollRef.current?.scrollBy({ left: -300, behavior: "smooth" });
     }
   };
 
