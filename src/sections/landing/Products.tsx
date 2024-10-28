@@ -36,7 +36,7 @@ export default function Products() {
     { src: img5, title: "Product 5", description: "This is product 5" },
   ];
   const [currentIndex, setCurrentIndex] = useState(0);
-  const scrollRef = useRef(null);
+  const scrollRef = useRef();
 
   const handleNext = () => {
     if (currentIndex < images.length - 1) {
