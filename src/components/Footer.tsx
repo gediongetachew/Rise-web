@@ -1,9 +1,9 @@
 import Image from "next/image";
 import React from "react";
-import flag from  "../../public/assets/Flag.png";
+import flag from "../../public/assets/Flag.png";
 import Link from "next/link";
 
-export default function () {
+export default function Footer() {
   return (
     <div className="w-full h-[450px]">
       <footer className=" bg-[#284667] pt-20 px-20 text-[#ffff] text-sm grid grid-cols-6 gap-2 w-full h-full">

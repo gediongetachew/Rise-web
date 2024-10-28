@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import Hero2 from "../../../public/assets/Hero2.png";
 
-export default function () {
+export default function Hero() {
   return (
     <div className="flex flex-col w-full h-[400px gap-3]  gap-16 ">
       <div className=" flex  justify-center w-full ">

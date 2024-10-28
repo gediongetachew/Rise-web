@@ -52,7 +52,7 @@ export default function TestimonialCard() {
     <div className="w-full max-w-3xl mx-auto px-5 py-20">
       <div className="bg-white shadow-lg p-8 rounded-lg w-full h-80 flex flex-col justify-center items-center">
         <p className="italic text-gray-600 text-center mb-6 w-3/4">
-          "{testimonials[currentIndex].testimony}"
+          {testimonials[currentIndex].testimony}
         </p>
 
         <div className="flex justify-between items-center w-full">

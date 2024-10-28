@@ -2,7 +2,7 @@ import Image from "next/image";
 import React from "react";
 import visionImg from "../../../public/assets/vision-icon.png";
 
-export default function () {
+export default function Aboutus() {
   return (
     <div className="flex flex-col justify-between h-[600px] w-full gap-10 mt-20 mb-40 mx-28">
       <div className="items-start">
