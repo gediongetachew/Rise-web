@@ -71,7 +71,7 @@ const ProductList = () => {
         ))}
       </div>
 
-      {/* Updated container for products with fixed height */}
+     
       <div className="flex-grow container flex flex-wrap gap-6 h-[400px] overflow-hidden">
         <Grid container spacing={4}>
           {currentProducts.map((item) => (
@@ -88,7 +88,7 @@ const ProductList = () => {
         </Grid>
       </div>
 
-      {/* Pagination Stack */}
+     
       <Stack
         spacing={2}
         sx={{ alignItems: "center", marginTop: "auto" }}
