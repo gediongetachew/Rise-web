@@ -34,20 +34,19 @@ export default function Products() {
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Use the correct type for the ref to avoid the 'never' error
   const scrollRef = useRef<HTMLDivElement | null>(null);
 
   const handleNext = () => {
     if (currentIndex < images.length - 1) {
       setCurrentIndex(currentIndex + 1);
-      scrollRef.current?.scrollBy({ left: 300, behavior: "smooth" });
+      scrollRef.current!.scrollBy({ left: 300, behavior: "smooth" });
     }
   };
 
   const handlePrev = () => {
     if (currentIndex > 0) {
       setCurrentIndex(currentIndex - 1);
-      scrollRef.current?.scrollBy({ left: -300, behavior: "smooth" });
+      scrollRef.current!.scrollBy({ left: -300, behavior: "smooth" });
     }
   };
 
