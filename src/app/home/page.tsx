@@ -1,17 +1,18 @@
-import NavBar from "../../components/nav";
-import Hero from "@/components/Hero";
-import Brandcard from "@/components/Brandcard";
-import Aboutus from "../../components/About";
-import Banner from "@/components/Banner";
-
+import Hero from "../../sections/landing/Hero";
+import Aboutus from "../../sections/landing/About";
+import Banner from "../../components/Banner";
+import Products from "../../sections/landing/Products";
+import TestimonialCard from "../../sections/landing/Testimonials";
+import ImageCarousel from "@/components/Carousel";
 export default function Home() {
   return (
     <div>
-      <NavBar />
       <Hero />
-      <Brandcard />
+      <ImageCarousel />
       <Aboutus />
       <Banner />
+      <Products />
+      <TestimonialCard />
     </div>
   );
 }

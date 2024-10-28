@@ -1,29 +1,125 @@
-import banner from "../../assets/banner.png";
-import Image from "next/image";
+"use client";
+
+import Grid from "@mui/material/Grid";
+import Box from "@mui/material/Box";
+import Typography from "@mui/material/Typography";
+// import banner from "../../assets/banner.png"; // Ensure the path is correct
 
 export default function Banner() {
   return (
-    <div className="relative flex w-full h-[350px] mt-10 mb-20">
-      <Image className="object-cover" layout="fill" src={banner} alt="banner" />
-      <div className="absolute inset-0 flex items-baseline object-left space-x-10 mt-52 ml-10 ">
-        <div className="flex flex-col items-center justify-between ">
-          <h1 className="font-bold text-white text-3xl">+71%</h1>
-          <p className="text-white text-xl">
-            Top 5 Medical Equipment <br /> Imports
-          </p>
-        </div>
-        <div className="flex flex-col items-center justify-between ">
-          <h1 className="font-bold text-white text-3xl">+1.5K</h1>
-          <p className="text-white text-xl">Happy Customer</p>
-        </div>
-      </div>
-      <div className="absolute right-0 mt-8 mb-4 mr-40 z-10">
-        <p className="text-white text-md">Happy Customer</p>
-        <h1 className="font-bold text-white text-2xl">
-          Lorem ipsum dolor sit amet
-          <br /> consectetur. Mauris mollis.
-        </h1>
-      </div>
-    </div>
+    <Grid
+      container
+      alignItems="center"
+      justifyContent="center"
+      sx={{
+        position: "relative",
+        my: 10,
+        height: "50vh",
+        backgroundImage: `url('/assets/banner.png')`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+      }}
+    >
+      <Grid
+        item
+        sx={{
+          position: "absolute",
+          bottom: { xs: "10%", sm: "8%", md: "5%" },
+          left: { xs: "5%", sm: "8%", md: "0%" },
+          width: { xs: "90%", sm: "80%", md: "60%" },
+          zIndex: 10,
+        }}
+        xs={12}
+        sm={8}
+        md={6}
+        lg={4}
+      >
+        <Box
+          display={"flex "}
+          sx={{
+            padding: { xs: 2, sm: 3, md: 4 },
+            borderRadius: 2,
+            textAlign: "center",
+            gap: 10,
+          }}
+        >
+          <Box display={"flex flex-col"}>
+            <Typography
+              variant="h6"
+              component="h1"
+              color="white"
+              gutterBottom
+              sx={{ fontSize: { xs: "1.5rem", sm: "2rem", md: "4rem" } }}
+            >
+              +71%
+            </Typography>
+            <Typography variant="h6" color="white">
+              Top 5 Medical Equipment <br /> Imports
+            </Typography>
+          </Box>
+          <Box display={"flex flex-col"}>
+            <Typography
+              variant="h6"
+              component="h1"
+              color="white"
+              gutterBottom
+              sx={{ fontSize: { xs: "1.5rem", sm: "2rem", md: "4rem" } }}
+            >
+              +1.5K
+            </Typography>
+            <Typography variant="h6" color="white">
+              Happy Customer
+            </Typography>
+          </Box>
+        </Box>
+      </Grid>
+
+      {/* New Top Right Box */}
+      <Grid
+        item
+        sx={{
+          position: "absolute",
+          top: { xs: "10%", sm: "8%", md: "5%" },
+          right: { xs: "5%", sm: "8%", md: "0%" },
+          width: { xs: "90%", sm: "80%", md: "60%" },
+          zIndex: 10,
+        }}
+        xs={12}
+        sm={8}
+        md={6}
+        lg={4}
+      >
+        <Box
+          display={"flex"}
+          flexDirection={"column"}
+          sx={{
+            padding: { xs: 2, sm: 3, md: 4 },
+            borderRadius: 2,
+            textAlign: "left",
+            gap: 3,
+          }}
+        >
+          <Typography
+            variant="h6"
+            color="white"
+            alignItems={"flex-start"}
+            justifyContent={"flex-start"}
+            sx={{ fontSize: "1.7rem" }}
+          >
+            Happy Customer
+          </Typography>
+
+          <Typography
+            variant="h4"
+            component="h2"
+            color="white"
+            gutterBottom
+            sx={{ fontSize: { xs: "1.2rem", sm: "1.5rem", md: "2rem" } }}
+          >
+            Lorem ipsum dolor sit amet consectetur. Mauris mollis.
+          </Typography>
+        </Box>
+      </Grid>
+    </Grid>
   );
 }

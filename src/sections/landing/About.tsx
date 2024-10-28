@@ -1,7 +1,7 @@
 import Image from "next/image";
-import medicalIMg from "../../assets/medical.png";
-import automobile from "../../assets/automobile.png";
-import automobile2 from "../../assets/automobile2.png";
+import medicalIMg from "../../../public/assets/medical.png";
+import automobile from "../../../public/assets/automobile.png";
+import automobile2 from "../../../public/assets/automobile2.png";
 export default function Aboutus() {
   return (
     <div className="px-20 py-5 h-[500px] w-full mb-20">
