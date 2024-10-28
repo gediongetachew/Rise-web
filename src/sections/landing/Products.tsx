@@ -12,31 +12,30 @@ export default function Products() {
     {
       src: img1,
       title: "Medical Equipment and devices",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, ea corrupti fugiat enim corporis quaerat natus error laudantium impedit facere ducimus et officiis aperiam itaque eveniet",
+      description: "Lorem ipsum dolor sit amet...",
     },
     {
       src: img2,
       title: "Automobiles",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, ea corrupti fugiat enim corporis quaerat natus error laudantium impedit facere ducimus et officiis aperiam itaque eveniet",
+      description: "Lorem ipsum dolor sit amet...",
     },
     {
       src: img3,
       title: "Coffee",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, ea corrupti fugiat enim corporis quaerat natus error laudantium impedit facere ducimus et officiis aperiam itaque eveniet",
+      description: "Lorem ipsum dolor sit amet...",
     },
     {
       src: img4,
       title: "Spice and Herbs",
-      description:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, ea corrupti fugiat enim corporis quaerat natus error laudantium impedit facere ducimus et officiis aperiam itaque eveniet",
+      description: "Lorem ipsum dolor sit amet...",
     },
     { src: img5, title: "Product 5", description: "This is product 5" },
   ];
+
   const [currentIndex, setCurrentIndex] = useState(0);
-  const scrollRef = useRef();
+
+  // Use the correct type for the ref to avoid the 'never' error
+  const scrollRef = useRef<HTMLDivElement | null>(null);
 
   const handleNext = () => {
     if (currentIndex < images.length - 1) {
