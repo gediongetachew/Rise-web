@@ -1,3 +1,5 @@
+"use client";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
 import Rise from "../../public/assets/rise-logo.png";
@@ -10,8 +12,27 @@ export default function Nav() {
     { title: "News", address: "/news" },
     { title: "Contact", address: "/contact" },
   ];
+  const [bgColor, setBgcolor] = useState("");
+
+  const handleScroll = () => {
+    const scrollY = window.scrollY;
+
+    if (scrollY > 60) {
+      setBgcolor("#818181");
+    } else {
+      setBgcolor("");
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <div className="relative flex justify-between items-center w-1/2 p-10 mx-10">
+    <div
+      className={`fixed  flex  items-center justify-center w-1/2 pt-5 px-10 ml-10 rounded-3xl transition-transfrom duration-300 `}
+      style={{ zIndex: 2, top: 0, backgroundColor: bgColor }}
+    >
       <div className="w-24">
         <Image src={Rise} alt="rise logo" />
       </div>

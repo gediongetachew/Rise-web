@@ -5,7 +5,7 @@ import searchIcon from "../../../public/assets/searchIcon.png";
 
 export default function Hero() {
   return (
-    <div className="relative flex flex-col items-center my-10 mx-20">
+    <div className="relative flex flex-col items-center my-32 mx-20">
       <Image
         src={productsHero}
         alt="products-hero-img"

@@ -18,6 +18,7 @@ export default function Banner() {
         backgroundImage: `url('/assets/banner.png')`,
         backgroundSize: "cover",
         backgroundPosition: "center",
+        zIndex: 1
       }}
     >
       <Grid

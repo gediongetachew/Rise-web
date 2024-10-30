@@ -10,9 +10,9 @@ import productMenu from "../../data/productMenu";
 
 const ITEMS_PER_PAGE = 6;
 
-const ProductList = () => {
-  const [active, setActive] = useState("all");
-  const [currentPage, setCurrentPage] = useState(1);
+const ProductList: React.FC = () => {
+  const [active, setActive] = useState<string>("all");
+  const [currentPage, setCurrentPage] = useState<number>(1);
 
   console.log("ProductMenu:", productMenu);
   console.log("Record:", productRecord);
@@ -28,12 +28,12 @@ const ProductList = () => {
     currentPage * ITEMS_PER_PAGE
   );
 
-  const handleMenuButton = (type) => {
+  const handleMenuButton = (type: string) => {
     setActive(type);
     setCurrentPage(1);
   };
 
-  const handlePageChange = (event, value) => {
+  const handlePageChange = (event: React.ChangeEvent<unknown>, value: number) => {
     console.log("Page Change:", value);
     setCurrentPage(value);
   };
@@ -71,7 +71,6 @@ const ProductList = () => {
         ))}
       </div>
 
-     
       <div className="flex-grow container flex flex-wrap gap-6 h-[400px] overflow-hidden">
         <Grid container spacing={4}>
           {currentProducts.map((item) => (
@@ -88,11 +87,7 @@ const ProductList = () => {
         </Grid>
       </div>
 
-     
-      <Stack
-        spacing={2}
-        sx={{ alignItems: "center", marginTop: "auto" }}
-      >
+      <Stack spacing={2} sx={{ alignItems: "center", marginTop: "auto" }}>
         <Pagination
           count={totalPages}
           page={currentPage}
