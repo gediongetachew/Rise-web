@@ -1,10 +1,7 @@
 "use client";
 import React, { useState } from "react";
-import Grid from "@mui/material/Grid";
+import { Grid, Button, Pagination, Stack, Typography, Box } from "@mui/material";
 import ProductCard from "../../components/poduct/ProductCard";
-import Image from "next/image";
-import Pagination from "@mui/material/Pagination";
-import Stack from "@mui/material/Stack";
 import productRecord from "@/data/productRecord";
 import productMenu from "../../data/productMenu";
 
@@ -13,9 +10,6 @@ const ITEMS_PER_PAGE = 6;
 const ProductList: React.FC = () => {
   const [active, setActive] = useState<string>("all");
   const [currentPage, setCurrentPage] = useState<number>(1);
-
-  console.log("ProductMenu:", productMenu);
-  console.log("Record:", productRecord);
 
   const filteredProducts = productRecord?.filter(
     (item) => active === "all" || item.type === active
@@ -33,70 +27,90 @@ const ProductList: React.FC = () => {
     setCurrentPage(1);
   };
 
-  const handlePageChange = (event: React.ChangeEvent<unknown>, value: number) => {
-    console.log("Page Change:", value);
+  const handlePageChange = (
+    event: React.ChangeEvent<unknown>,
+    value: number
+  ) => {
     setCurrentPage(value);
   };
 
   if (!filteredProducts || filteredProducts.length === 0) {
-    return <p>No products found.</p>;
+    return <Typography>No products found.</Typography>;
   }
 
   return (
-    <div className="container mx-auto flex flex-col h-[1050px]">
-      <h1 className="text-2xl mb-4 text-[#EE484A]">PRODUCTS</h1>
-      <h2 className="text-xl mb-4">Popular Products</h2>
+    <Box sx={{ display: "flex", flexDirection: "column", minHeight: "100vh", px: 4, pt: 4 }}>
+      {/* Header and Filters */}
+      <Grid item>
+        <Typography variant="h4" color="primary" gutterBottom>
+          PRODUCTS
+        </Typography>
+        <Typography variant="h6" gutterBottom>
+          Popular Products
+        </Typography>
+      </Grid>
 
-      <div className="container flex space-x-3 mb-5">
+      <Grid item container spacing={2}>
         {productMenu.map((item) => (
-          <div key={item.id} className="relative w-auto h-full">
-            <Image
-              className="absolute -top-3 left-1"
-              src={item.icon}
-              alt="menu-icon"
-              width={30}
-              height={30}
-            />
-            <button
+          <Grid item key={item.id}>
+            <Button
               onClick={() => handleMenuButton(item.type)}
-              className={`px-4 py-2 rounded-lg transition duration-200 ${
-                active === item.type
-                  ? "bg-[#3D628C] text-white"
-                  : "bg-[#F7F7F7] text-black"
-              }`}
+              startIcon={item.icon}
+              sx={{
+                px: 3,
+                py: 1,
+                borderRadius: 2,
+                transition: "0.2s",
+                backgroundColor: active === item.type ? "#3D628C" : "#F7F7F7",
+                color: active === item.type ? "white" : "black",
+              }}
             >
               {item.name}
-            </button>
-          </div>
+            </Button>
+          </Grid>
         ))}
-      </div>
+      </Grid>
 
-      <div className="flex-grow container flex flex-wrap gap-6 h-[400px] overflow-hidden">
-        <Grid container spacing={4}>
+      
+      <Box
+        sx={{
+          flexGrow: 1,
+          mt: 4,
+          display: "flex",
+          flexDirection: "column",
+          justifyContent: "space-between",
+          minHeight: "1000px", 
+        }}
+      >
+      
+        <Grid container spacing={3} sx={{ flexGrow: 1, flexBasis: 0 }}>
           {currentProducts.map((item) => (
-            <Grid item xs={12} sm={12} md={4} lg={3} xl={3} key={item.id}>
+            <Grid item xs={12} sm={6} md={4} lg={3} key={item.id}>
               <ProductCard
                 image={item.img}
                 title={item.name}
                 description={item.description}
                 link={`/${item.name}`}
-                sx={{}}
+                sx={{ height: "320px" }} 
               />
             </Grid>
           ))}
         </Grid>
-      </div>
+      </Box>
 
-      <Stack spacing={2} sx={{ alignItems: "center", marginTop: "auto" }}>
-        <Pagination
-          count={totalPages}
-          page={currentPage}
-          onChange={handlePageChange}
-          variant="outlined"
-          shape="rounded"
-        />
-      </Stack>
-    </div>
+     
+      <Box sx={{ py: 2, mt: "auto", display: "flex", justifyContent: "center" }}>
+        <Stack spacing={2}>
+          <Pagination
+            count={totalPages}
+            page={currentPage}
+            onChange={handlePageChange}
+            variant="outlined"
+            shape="rounded"
+          />
+        </Stack>
+      </Box>
+    </Box>
   );
 };
 

@@ -17,8 +17,9 @@ export default function Post() {
         display: "flex",
         alignItems: "flex-start",
         justifyContent: "space-between",
-        paddingTop: 10,
-        paddingX: 4,
+        paddingTop: { xs: 10 },
+        paddingX: { xs: 15 },
+        gap: { xs: 0 },
       }}
     >
       <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
@@ -38,14 +39,14 @@ export default function Post() {
               href="/post"
               sx={{
                 position: "absolute",
-                bottom: -1,
-                right: { xs: 10, sm: 40, md: 10, lg: 100 },
-                borderRadius: "14px",
+                bottom: 0,
+                right: 0,
+                borderRadius: "20px",
                 rounded: "3xl",
                 color: "white",
                 backgroundColor: "#EE484A",
-                paddingX: 5.6,
-                paddingY: 1.6,
+                paddingX: {xs:7},
+                paddingY:{xs: 2},
               }}
             >
               News
@@ -54,7 +55,7 @@ export default function Post() {
         </Grid>
 
         <Grid item xs={12}>
-          <Typography variant="subtitle2" sx={{ mt: 3 }}>
+          <Typography variant="subtitle2" sx={{ mt: 2 }}>
             By <span style={{ color: "#EE484A" }}>John Doe</span> | May 23, 2022
           </Typography>
 
@@ -88,8 +89,8 @@ export default function Post() {
         </Grid>
       </Grid>
 
-      <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
-        <Typography variant="h4" sx={{ color: "#EE484A" }}>
+      <Grid item xs={12} sm={12} md={6} lg={6} xl={6} sx={{}}>
+        <Typography variant="h4" sx={{ color: "black" }}>
           All Post
         </Typography>
         <Grid

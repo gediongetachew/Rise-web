@@ -11,7 +11,7 @@ const ProductCard = ({ image, title, description, link, sx }) => {
       <Grid item xs={12}>
         <Image
           src={image}
-          width={250}
+          width= {420}
           height={20}
           alt={title}
           style={{ ...sx }}
@@ -35,11 +35,12 @@ const ProductCard = ({ image, title, description, link, sx }) => {
               href={link}
               style={{
                 display: "flex",
+                color: 'white',
 
-                backgroundColor: theme.palette.primary.main,
+                backgroundColor: '#3D628C',
 
-                padding: 4,
-                paddingRight: 4,
+                padding: 5,
+                paddingRight: 15,
                 borderRadius: 26,
               }}
             >

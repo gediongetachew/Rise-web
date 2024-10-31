@@ -9,14 +9,32 @@ import "swiper/swiper-bundle.css";
 import cards from "@/data/brandCards";
 import Image from "next/image";
 import Link from "next/link";
+import Grid from "@mui/material/Grid";
+import { Typography } from "@mui/material";
 
 export default function ImageCarousel() {
   return (
-    <div className=" w-full h-[200px] mb-52 flex flex-col justify-center mt-10">
-      <div className="">
-        <h1 className="text-2xl  ml-20  text-[#EE484A]  ">TRUSTED BY</h1>
-
-        <div className="w-full h-[200px]">
+    <>
+      <Grid
+        container
+        sx={{
+          display: "flex",
+          flexDirection: "column",
+          gap: 0,
+          background: "white",
+          width: "full",
+          heigh: "100vh",
+        }}
+      >
+        <Grid item xs={12}>
+          <Typography
+            variant="h5"
+            sx={{ color: "#EE484A", paddingX: 10, paddingTop: 5 }}
+          >
+            Trusted By
+          </Typography>
+        </Grid>
+        <Grid item xs={12} sx={{ }}>
           <Swiper
             spaceBetween={15}
             slidesPerView={5}
@@ -43,8 +61,8 @@ export default function ImageCarousel() {
               </SwiperSlide>
             ))}
           </Swiper>
-        </div>
-      </div>
-    </div>
+        </Grid>
+      </Grid>
+    </>
   );
 }

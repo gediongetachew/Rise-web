@@ -6,7 +6,10 @@ import InstagramIcon from "@mui/icons-material/Instagram";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import TwitterIcon from "@mui/icons-material/Twitter";
 import ArrowOutWardIcon from "@mui/icons-material/ArrowOutward";
+import Image from "next/image";
+import contactImg from "../../../public/assets/contact.svg";
 import { useState } from "react";
+import Contact from "@/app/contact/page";
 export default function GetInTouch() {
   const Email = {
     name: "",
@@ -24,9 +27,26 @@ export default function GetInTouch() {
   return (
     <Grid container spacing={2} padding={15}>
       <Grid item xs={12}>
-        <Typography variant="h4" gutterBottom>
-          Contact Us
-        </Typography>
+        <Box position={"relative"}>
+          <Image
+            src={contactImg}
+            alt="contact-image"
+            style={{ width: "100%", height: "auto" }}
+          ></Image>
+          <Typography
+            variant="h2"
+            gutterBottom
+            sx={{
+              position: "absolute",
+              fontWeight: "bold",
+              color: 'white',
+              bottom: { xs: 60 },
+              left: {xs: 60}
+            }}
+          >
+            Contact Us
+          </Typography>
+        </Box>
       </Grid>
 
       <Grid container padding={5} spacing={5}>
@@ -178,7 +198,7 @@ export default function GetInTouch() {
             display: "flex",
             justifyContent: "center",
             alignItems: "end",
-            marginTop:5
+            marginTop: 5,
           }}
         >
           <form
@@ -193,7 +213,7 @@ export default function GetInTouch() {
               borderRadius: "20px",
             }}
           >
-            <Grid container spacing={2} sx={{marginTop:2}}>
+            <Grid container spacing={2} sx={{ marginTop: 2 }}>
               <Box sx={{ paddingLeft: 1, paddingTop: 3 }}>
                 <Typography variant="h5" sx={{ color: "#EE484A" }}>
                   Get In Touch

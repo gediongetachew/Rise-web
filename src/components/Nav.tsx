@@ -1,54 +1,68 @@
-"use client";
-import { useState, useEffect } from "react";
-import Link from "next/link";
+import React from "react";
+import { AppBar, Toolbar, Grid, Button } from "@mui/material";
 import Image from "next/image";
-import Rise from "../../public/assets/rise-logo.png";
+import Rise from "../../public/assets/rise-logo.png"; // Adjust the path accordingly
+import Link from "next/link";
+
+const navItems = [
+  { title: "Home", address: "/home" },
+  { title: "About", address: "/about" },
+  { title: "Product", address: "/product" },
+  { title: "News", address: "/news" },
+  { title: "Contact", address: "/contact" },
+];
 
 export default function Nav() {
-  const navItems = [
-    { title: "Home", address: "/home" },
-    { title: "About", address: "/about" },
-    { title: "Product", address: "/product" },
-    { title: "News", address: "/news" },
-    { title: "Contact", address: "/contact" },
-  ];
-  const [bgColor, setBgcolor] = useState("");
-
-  const handleScroll = () => {
-    const scrollY = window.scrollY;
-
-    if (scrollY > 60) {
-      setBgcolor("#818181");
-    } else {
-      setBgcolor("");
-    }
-  };
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-  }, []);
-
   return (
-    <div
-      className={`fixed  flex  items-center justify-center w-1/2 pt-5 px-10 ml-10 rounded-3xl transition-transfrom duration-300 `}
-      style={{ zIndex: 2, top: 0, backgroundColor: bgColor }}
-    >
-      <div className="w-24">
-        <Image src={Rise} alt="rise logo" />
-      </div>
-
-      <div className="flex justify-center items-center w-full">
-        <ul className="flex space-x-20 text-black hover:text-black font-medium">
-          {navItems.map((item) => (
-            <li
-              key={item.title}
-              className="hover:font-bold w-10 transition-all duration-300"
-            >
-              <Link href={`${item.address}`}>{item.title}</Link>
-            </li>
-          ))}
-        </ul>
-      </div>
-    </div>
+    <AppBar
+    position="fixed" 
+    elevation={0}
+    sx={{ top: 0, backgroundColor: "white", zIndex: 2, width: "100%" }} 
+  >
+    <Toolbar>
+      <Grid
+        container
+        alignItems="center"
+        spacing={2}
+        sx={{ padding: "16px 40px" }}
+      >
+        {/* First half of the nav with logo and links, higher zIndex */}
+        <Grid
+          item
+          xs={12}
+          sm={6}
+          sx={{ display: "flex", alignItems: "center", zIndex: 4 }} // High zIndex here
+        >
+          <div style={{ width: "96px", marginRight: "16px" }}>
+            <Image src={Rise} alt="rise logo" layout="responsive" />
+          </div>
+          <Grid container>
+            {navItems.map((item) => (
+              <Grid item key={item.title}>
+                <Button
+                  component={Link}
+                  href={item.address}
+                  sx={{
+                    color: "black",
+                    fontWeight: "medium",
+                    marginX: 2,
+                    "&:hover": {
+                      fontWeight: "bold",
+                      color: "black",
+                    },
+                  }}
+                >
+                  {item.title}
+                </Button>
+              </Grid>
+            ))}
+          </Grid>
+        </Grid>
+        {/* Second half of the nav with lower zIndex */}
+        <Grid item xs={6} sx={{ zIndex: 2 }} /> 
+      </Grid>
+    </Toolbar>
+  </AppBar>
+  
   );
 }

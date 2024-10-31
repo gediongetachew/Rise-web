@@ -11,7 +11,7 @@ export default function Products() {
       <Quality />
       <Menu />
       <Banner />
-      <ImageCarousel />
+      <ImageCarousel prop={'Our Brands'} />
     </div>
   );
 }

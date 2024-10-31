@@ -6,12 +6,13 @@ import img2 from "../../../public/assets/product2.jpg";
 import img3 from "../../../public/assets/product3.jpg";
 import img4 from "../../../public/assets/product4.jpg";
 import img5 from "../../../public/assets/product1.jpg";
+import { Button, Box, Typography, Grid } from "@mui/material";
 
 export default function Products() {
   const images = [
     {
       src: img1,
-      title: "Medical Equipment and devices",
+      title: "Medical Equipment and Devices",
       description: "Lorem ipsum dolor sit amet...",
     },
     {
@@ -33,7 +34,6 @@ export default function Products() {
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
-
   const scrollRef = useRef<HTMLDivElement | null>(null);
 
   const handleNext = () => {
@@ -51,68 +51,84 @@ export default function Products() {
   };
 
   return (
-    <div className="w-full mt-10 px-20">
-      <div className="mb-5 item-end justify-end right-2 flex space-x-2">
-        <button
+    <Box className="w-full mt-10 px-20">
+      {/* Grid Container with Typography */}
+      <Grid container spacing={2} mb={2}>
+        <Grid item xs={12}>
+          <Typography variant="h5"  sx={{color:'#EE484A'}}>
+           Our Products
+          </Typography>
+        </Grid>
+        <Grid item xs={12} display="flex" justifyContent="flex-start" sx={{width: 'full'}}>
+          <Typography variant="h3" color="textSecondary" sx={{color: '#3D628C', width: '1/2'}}>
+          Lorem ipsum dolor sit <br /> amet consec tetur Atte<br /> mpor  eu fermentu Commodo
+          </Typography>
+        </Grid>
+      </Grid>
+
+      {/* Navigation Buttons */}
+      <Box mb={2} display="flex" justifyContent="flex-end">
+        <Button
           onClick={handlePrev}
-          className="border border-gray-900 text-gray-900 px-3 py-1 rounded-full hover:text-black disabled:opacity-50"
           disabled={currentIndex === 0}
+          variant="outlined"
+          sx={{ marginRight: 1 }}
         >
           ←
-        </button>
-        <button
+        </Button>
+        <Button
           onClick={handleNext}
-          className="border border-gray-900 text-gray-900 px-3 py-1 rounded-full hover:text-black disabled:opacity-50"
           disabled={currentIndex === images.length - 1}
+          variant="outlined"
         >
           →
-        </button>
-      </div>
-      <div
+        </Button>
+      </Box>
+
+      {/* Scrollable Image Container */}
+      <Box
         ref={scrollRef}
-        className="flex overflow-x-scroll overflow-y-hidden snap-x snap-mandatory scrollbar-hide space-x-5"
-        style={{ height: "350px" }}
+        display="flex"
+        overflow="hidden"
+        sx={{
+          height: "350px",
+          overflowX: "auto",
+          scrollSnapType: "x mandatory",
+          "&::-webkit-scrollbar": {
+            display: "none",
+          },
+        }}
       >
         {images.map((img, index) => (
-          <div
+          <Box
             key={index}
-            className={`min-w-[300px] h-full snap-center transition-transform duration-700 ease-in-out transform ${
-              index === currentIndex ? "scale-100" : "scale-95"
-            } ${index === currentIndex ? "animate-fade-in" : ""}`}
+            sx={{
+              minWidth: "300px",
+              height: "100%",
+              scrollSnapAlign: "center",
+              transition: "transform 0.7s ease-in-out",
+              transform: index === currentIndex ? "scale(1)" : "scale(0.95)",
+              opacity: index === currentIndex ? 1 : 0.7,
+            }}
           >
             <Image
               src={img.src}
               alt={`Gallery image ${index + 1}`}
               className="w-full h-[250px] object-cover rounded-md"
+              width={300}
+              height={250}
             />
-            <div className="mt-2">
-              <h3 className="font-bold text-lg">{img.title}</h3>
-              <p className="text-gray-500 text-sm">{img.description}</p>
-            </div>
-          </div>
+            <Box mt={2}>
+              <Typography variant="h6" fontWeight="bold">
+                {img.title}
+              </Typography>
+              <Typography variant="body2" color="textSecondary">
+                {img.description}
+              </Typography>
+            </Box>
+          </Box>
         ))}
-      </div>
-
-      <style jsx>{`
-        .animate-fade-in {
-          animation: fadeIn 0.5s ease-in-out;
-        }
-
-        @keyframes fadeIn {
-          from {
-            opacity: 0;
-            transform: translateX(50%);
-          }
-          to {
-            opacity: 1;
-            transform: translateX(0);
-          }
-        }
-
-        .scrollbar-hide::-webkit-scrollbar {
-          display: none;
-        }
-      `}</style>
-    </div>
+      </Box>
+    </Box>
   );
 }

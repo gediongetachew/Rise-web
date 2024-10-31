@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <div>
       <Hero />
-      <ImageCarousel />
+      <ImageCarousel  />
       <Aboutus />
       <Banner />
       <Products />
