@@ -1,11 +1,10 @@
 import React from "react";
-import { Grid, Typography, useTheme } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import { IconArrowUpRight } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
 
 const ProductCard = ({ image, title, description, link, sx }) => {
-  const theme = useTheme();
   return (
     <Grid container>
       <Grid item xs={12}>

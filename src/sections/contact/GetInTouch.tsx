@@ -22,7 +22,7 @@ export default function GetInTouch() {
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setEmail({ ...email, [email.name]: value });
+    setEmail({ ...email, [name]: value });
   };
   return (
     <Grid container spacing={2} padding={15}>

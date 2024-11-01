@@ -4,7 +4,6 @@ import React from "react";
 import { Button, Typography } from "@mui/material";
 import featuredImg from "../../../public/assets/featuredImg.png";
 import Image from "next/image";
-import Link from "next/link";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import News from "../../data/news";
 
@@ -45,8 +44,8 @@ export default function Post() {
                 rounded: "3xl",
                 color: "white",
                 backgroundColor: "#EE484A",
-                paddingX: {xs:7},
-                paddingY:{xs: 2},
+                paddingX: { xs: 7 },
+                paddingY: { xs: 2 },
               }}
             >
               News
@@ -105,6 +104,7 @@ export default function Post() {
         >
           {News.map((item) => (
             <Box
+              key={item.id}
               component={"a"}
               href={item.url}
               sx={{
