@@ -1,4 +1,3 @@
-// components/CurvedCard.js
 import { Card, Typography, Box, Grid, Button } from "@mui/material";
 import Image from "next/image";
 
@@ -73,8 +72,6 @@ export default function CurvedCard() {
               sx={{
                 color: "black",
                 background: "white",
-                paddingX: { xs: 6, md: 8 },
-                paddingY: { xs: 1, sm: 2 },
                 borderRadius: "25px",
                 border: "0.5px solid #9E9E9E",
                 fontSize: { xs: 16, md: 20 },

@@ -1,4 +1,3 @@
-
 import ImageCarousel from "@/components/Carousel";
 import Aboutus from "@/sections/About/Aboutus";
 import Hero from "@/sections/About/Hero";
@@ -10,7 +9,7 @@ export default function About() {
       <Hero />
       <Aboutus />
       <Values />
-      <ImageCarousel />
+      <ImageCarousel name="Trusted By" direction="forward" />
     </div>
   );
 }

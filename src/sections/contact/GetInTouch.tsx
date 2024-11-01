@@ -9,7 +9,7 @@ import ArrowOutWardIcon from "@mui/icons-material/ArrowOutward";
 import Image from "next/image";
 import contactImg from "../../../public/assets/contact.svg";
 import { useState } from "react";
-import Contact from "@/app/contact/page";
+
 export default function GetInTouch() {
   const Email = {
     name: "",
@@ -20,7 +20,7 @@ export default function GetInTouch() {
 
   const [email, setEmail] = useState(Email);
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setEmail({ ...email, [email.name]: value });
   };
@@ -39,9 +39,9 @@ export default function GetInTouch() {
             sx={{
               position: "absolute",
               fontWeight: "bold",
-              color: 'white',
+              color: "white",
               bottom: { xs: 60 },
-              left: {xs: 60}
+              left: { xs: 60 },
             }}
           >
             Contact Us

@@ -51,22 +51,32 @@ export default function Products() {
   };
 
   return (
-    <Box className="w-full mt-10 px-20">
+    <article className="w-full mt-10 px-20">
       {/* Grid Container with Typography */}
       <Grid container spacing={2} mb={2}>
         <Grid item xs={12}>
-          <Typography variant="h5"  sx={{color:'#EE484A'}}>
-           Our Products
+          <Typography variant="h5" sx={{ color: "#EE484A" }}>
+            Our Products
           </Typography>
         </Grid>
-        <Grid item xs={12} display="flex" justifyContent="flex-start" sx={{width: 'full'}}>
-          <Typography variant="h3" color="textSecondary" sx={{color: '#3D628C', width: '1/2'}}>
-          Lorem ipsum dolor sit <br /> amet consec tetur Atte<br /> mpor  eu fermentu Commodo
+        <Grid
+          item
+          xs={12}
+          display="flex"
+          justifyContent="flex-start"
+          sx={{ width: "full" }}
+        >
+          <Typography
+            variant="h3"
+            color="textSecondary"
+            sx={{ color: "#3D628C", width: "1/2" }}
+          >
+            Lorem ipsum dolor sit <br /> amet consec tetur Atte
+            <br /> mpor eu fermentu Commodo
           </Typography>
         </Grid>
       </Grid>
 
-      {/* Navigation Buttons */}
       <Box mb={2} display="flex" justifyContent="flex-end">
         <Button
           onClick={handlePrev}
@@ -129,6 +139,6 @@ export default function Products() {
           </Box>
         ))}
       </Box>
-    </Box>
+    </article>
   );
 }

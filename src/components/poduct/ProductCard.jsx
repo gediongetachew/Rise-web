@@ -11,7 +11,7 @@ const ProductCard = ({ image, title, description, link, sx }) => {
       <Grid item xs={12}>
         <Image
           src={image}
-          width= {420}
+          width={420}
           height={20}
           alt={title}
           style={{ ...sx }}
@@ -27,17 +27,16 @@ const ProductCard = ({ image, title, description, link, sx }) => {
               display: "flex",
               alignItems: "center",
               justifyContent: "flex-start",
-              mt: 2
-
+              mt: 2,
             }}
           >
             <Link
               href={link}
               style={{
                 display: "flex",
-                color: 'white',
+                color: "white",
 
-                backgroundColor: '#3D628C',
+                backgroundColor: "#3D628C",
 
                 padding: 5,
                 paddingRight: 15,

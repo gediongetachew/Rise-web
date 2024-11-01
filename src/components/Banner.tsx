@@ -1,9 +1,7 @@
 "use client";
-
 import Grid from "@mui/material/Grid";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
-// import banner from "../../assets/banner.png"; // Ensure the path is correct
 
 export default function Banner() {
   return (
@@ -18,7 +16,7 @@ export default function Banner() {
         backgroundImage: `url('/assets/banner.png')`,
         backgroundSize: "cover",
         backgroundPosition: "center",
-        zIndex: 1
+        zIndex: 1,
       }}
     >
       <Grid
