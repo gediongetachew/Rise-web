@@ -25,7 +25,7 @@ export default function GetInTouch() {
     setEmail({ ...email, [name]: value });
   };
   return (
-    <Grid container spacing={2} padding={15}>
+    <Grid container spacing={2} padding={5}>
       <Grid item xs={12}>
         <Box position={"relative"}>
           <Image
@@ -64,29 +64,36 @@ export default function GetInTouch() {
           >
             Get In Touch /
           </Typography>
-          <Typography
-            variant="h2"
-            sx={{
-              color: "#000000",
-              marginBottom: 3,
-              fontSize: "65px",
-              fontWeight: "bold",
-            }}
-          >
-            Lorem ipsum dolor sit amet consectetur.
-          </Typography>
-          <Typography
-            variant="subtitle1"
-            sx={{ color: "#616161", marginBottom: 7 }}
-          >
-            Rhoncus gravida consequat feugiat consectetur. Adipiscing arcu sit
-            auctor hac ornare tempus.
-          </Typography>
 
+          <Box sx={{ display: "flex" }}>
+            <Typography
+              variant="h2"
+              sx={{
+                color: "#3D628C",
+                marginBottom: 3,
+                fontSize: "65px",
+                fontWeight: "bold",
+              }}
+            >
+              Lorem ipsum dolor sit amet consectetur.
+            </Typography>
+            <Typography
+              variant="subtitle1"
+              sx={{ color: "#616161", marginBottom: 7 }}
+            >
+              Rhoncus gravida consequat feugiat consectetur. Adipiscing arcu sit
+              auctor hac ornare tempus.
+            </Typography>
+          </Box>
           <Grid
             container
             spacing={4}
-            sx={{ display: "flex", flexDiection: "column", padding: 4 }}
+            sx={{
+              display: "flex",
+              flexDiection: "column",
+              padding: 4,
+              marginTop: 4,
+            }}
           >
             <Grid item sx={{ display: "flex", flexDirection: "row", gap: 20 }}>
               <Box
