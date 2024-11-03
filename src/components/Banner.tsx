@@ -12,7 +12,8 @@ export default function Banner() {
       sx={{
         position: "relative",
         my: 10,
-        height: "50vh",
+        width: '100%',
+        height: {xs:"35vh",sm:"35vh", md: "50vh"},
         backgroundImage: `url('/assets/banner.png')`,
         backgroundSize: "cover",
         backgroundPosition: "center",
@@ -23,8 +24,8 @@ export default function Banner() {
         item
         sx={{
           position: "absolute",
-          bottom: { xs: "10%", sm: "8%", md: "5%" },
-          left: { xs: "5%", sm: "8%", md: "0%" },
+          bottom: { xs: "10%", sm: "0%", md: "5%" },
+          left: { xs: "5%", sm: "0%", md: "0%" },
           width: { xs: "90%", sm: "80%", md: "60%" },
           zIndex: 10,
         }}
@@ -48,7 +49,7 @@ export default function Banner() {
               component="h1"
               color="white"
               gutterBottom
-              sx={{ fontSize: { xs: "1.5rem", sm: "2rem", md: "4rem" } }}
+              sx={{ fontSize: { xs: "1rem", sm: "1.5rem", md: "4rem" } }}
             >
               +71%
             </Typography>
@@ -62,7 +63,7 @@ export default function Banner() {
               component="h1"
               color="white"
               gutterBottom
-              sx={{ fontSize: { xs: "1.5rem", sm: "2rem", md: "4rem" } }}
+              sx={{ fontSize: { xs: "1rem", sm: "1.5rem", md: "4rem" } }}
             >
               +1.5K
             </Typography>
@@ -78,9 +79,10 @@ export default function Banner() {
         item
         sx={{
           position: "absolute",
-          top: { xs: "10%", sm: "8%", md: "5%" },
-          right: { xs: "5%", sm: "8%", md: "0%" },
-          width: { xs: "90%", sm: "80%", md: "60%" },
+          paddingLeft: {xs:4, sm:10 , md:0},
+          top: { xs: "0%", sm: "0%", md: "5%" },
+          right: { xs: "0%", sm: "0%", md: "0%" },
+          width: { xs: "90%", sm: "90%", md: "60%" },
           zIndex: 10,
         }}
         xs={12}
@@ -103,7 +105,7 @@ export default function Banner() {
             color="white"
             alignItems={"flex-start"}
             justifyContent={"flex-start"}
-            sx={{ fontSize: "1.7rem" }}
+            sx={{ fontSize:{xs: "1.7rem", sm: "1.5rem", md: "1.7rem"} }}
           >
             Happy Customer
           </Typography>
@@ -113,7 +115,7 @@ export default function Banner() {
             component="h2"
             color="white"
             gutterBottom
-            sx={{ fontSize: { xs: "1.2rem", sm: "1.5rem", md: "2rem" } }}
+            sx={{ fontSize: { xs: "1.2rem", sm: "1.3rem", md: "2rem" } }}
           >
             Lorem ipsum dolor sit amet consectetur. Mauris mollis.
           </Typography>

@@ -12,16 +12,17 @@ export default function Post() {
     <Grid
       container
       spacing={2}
+      direction={{ xs: "column", md: "row" }} // Stack in column on small screens, row on larger
       sx={{
-        display: "flex",
-        alignItems: "flex-start",
-        justifyContent: "space-between",
-        paddingTop: { xs: 10 },
-        paddingX: { xs: 15 },
-        gap: { xs: 0 },
+        alignItems: { xs: "center", md: "flex-start" },
+        justifyContent: { xs: "center", md: "space-between" },
+        paddingTop: { xs: 5, md: 10 },
+        paddingX: { xs: 2, sm: 5, md: 15 },
+        gap: { xs: 4, md: 0 },
       }}
     >
-      <Grid item xs={12} sm={12} md={6} lg={6} xl={6}>
+      {/* Left Column */}
+      <Grid item xs={12} md={12} lg={6}>
         <Grid container>
           <Grid item xs={12}>
             <Typography variant="h4" sx={{ color: "red" }} mb={3}>
@@ -30,7 +31,7 @@ export default function Post() {
           </Grid>
 
           <Grid item xs={12} sx={{ position: "relative" }}>
-            <Image src={featuredImg} alt="featured post" />
+            <Image src={featuredImg} alt="featured post" layout="responsive" width={600} height={400} />
 
             <Button
               variant="contained"
@@ -38,14 +39,13 @@ export default function Post() {
               href="/post"
               sx={{
                 position: "absolute",
-                bottom: 0,
-                right: 0,
+                bottom: 16,
+                right: 16,
                 borderRadius: "20px",
-                rounded: "3xl",
                 color: "white",
                 backgroundColor: "#EE484A",
-                paddingX: { xs: 7 },
-                paddingY: { xs: 2 },
+                paddingX: 3,
+                paddingY: 1,
               }}
             >
               News
@@ -63,7 +63,7 @@ export default function Post() {
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor.
             </Typography>
-            <Typography variant="subtitle2" sx={{ color: "#6D6E76" }}>
+            <Typography variant="subtitle2" sx={{ color: "#6D6E76", mt: 1 }}>
               Duis aute irure dolor in reprehenderit in voluptate velit esse
               cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
               cupidatat non proident.
@@ -75,10 +75,9 @@ export default function Post() {
             variant="contained"
             endIcon={<ArrowOutwardIcon />}
             sx={{
-              padingX: 3,
-              paddingY: 2,
+              paddingX: 3,
+              paddingY: 1,
               backgroundColor: "#3D628C",
-              rounded: "3xl",
               borderRadius: "20px",
               marginTop: 3,
             }}
@@ -88,41 +87,37 @@ export default function Post() {
         </Grid>
       </Grid>
 
-      <Grid item xs={12} sm={12} md={6} lg={6} xl={6} sx={{}}>
+      {/* Right Column */}
+      <Grid item xs={12} md={12} lg={6}>
         <Typography variant="h4" sx={{ color: "black" }}>
-          All Post
+          All Posts
         </Typography>
         <Grid
-          item
+          container
+          direction="column"
           sx={{
-            display: "flex",
-            flexDirection: "column",
-            alignItems: "flex-start",
-            justifyContent: "justify-between",
             marginTop: 5,
+            gap: 3, // space between posts
           }}
         >
           {News.map((item) => (
             <Box
               key={item.id}
-              component={"a"}
+              component="a"
               href={item.url}
               sx={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "left",
-                "&:hover": { border: "#F7F7F7", bgcolor: "#F7F7F7" },
-                justifyContent: "flex-center",
-                paddingY: 5,
-                paddingX: 2,
+                display: "block",
+                "&:hover": { backgroundColor: "#F7F7F7" },
+                padding: 2,
+                borderRadius: 1,
+                transition: "background-color 0.3s",
               }}
             >
-              <Typography variant="subtitle2">
-                By <span style={{ color: "#EE484A" }}>{item.name}</span> |{" "}
-                {item.date}
+              <Typography variant="subtitle2" sx={{ color: "#6D6E76" }}>
+                By <span style={{ color: "#EE484A" }}>{item.name}</span> | {item.date}
               </Typography>
 
-              <Typography variant="h6" sx={{ font: "bold" }}>
+              <Typography variant="h6" sx={{ fontWeight: "bold", mt: 1 }}>
                 {item.title}
               </Typography>
             </Box>

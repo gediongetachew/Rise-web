@@ -2,66 +2,206 @@ import Image from "next/image";
 import React from "react";
 import flag from "../../public/assets/Flag.png";
 import Link from "next/link";
+import { Grid, Typography, Box, Divider } from "@mui/material";
 
 export default function Footer() {
   return (
-    <div className="w-full h-[450px]">
-      <footer className=" bg-[#284667] pt-20 px-20 text-[#ffff] text-sm grid grid-cols-6 gap-2 w-full h-full">
-        <div className="col-span-1 space-y-4">
-          <p>industry</p>
-          <p>AgriTech businesses</p>
-          <p>cafe</p>
-          <p>import and Exports</p>
-        </div>
-        <div className="col-span-1 space-y-4">
-          <p>industry</p>
-          <p>AgriTech businesses</p>
-          <p>cafe</p>
-          <p>import and Exports</p>
-        </div>
-        <div className="col-span-1 space-y-4 ">
-          <p>Company</p>
-          <div className="flex flex-col gap-4">
-            <Link href={"/Home"}>Home</Link>
-            <Link href={"/About"}>About Us</Link>
-            <Link href={"/Products"}>Products</Link>
-            <Link href={"/News"}>News</Link>
-            <Link href={"/Contact"}>Contact</Link>
-          </div>
-        </div>
-        <div className="col-span-1 space-y-4">
-          <p>+251-900-111100</p>
-          <p>Contact@rise.com</p>
-          <p>cafe</p>
-          <p>help@rise.com</p>
-        </div>
-        <div className="flex flex-col col-span-2 space-y-10 ml-36">
-          <div className="items-start justify-end space-y-3">
-            <h1 className="text-3xl font-bold text-[#EE484A]">
-              RISE GLOBAL GMBA
-            </h1>
-            <p className="text-xs text-[#FFFFFFBF]">
-              Lorem ipsum dolor sit amet consectetur
-              <br /> Rhoncus gravida consequat feugiat consectetur.
-              <br /> Adipiscing arcu sit auctor hac ornare tempus. Quis
-              praesent.
-            </p>
-          </div>
-          <div className=" pt-10 justify-center  flex gap-4 items-center">
-            <Image src={flag} alt="flag"></Image>
-            <p>ENGLISH USA</p>
-          </div>
-        </div>
-        <div className="flex justify-between col-span-6 items-center px-24  border-t">
-          <span className="text-xm mr-2">
-            Rise Ltd 2024 |<Link href={"/privacyPolicy"}>Company</Link>
-          </span>
-          <span className="flex gap-4 text-xs">
-            All Rights Reserved |
-            <Link href={"/privacyPolicy"}>privacy policy</Link>
-          </span>
-        </div>
-      </footer>
-    </div>
+    <Box
+      component="footer"
+      sx={{
+        backgroundColor: "#284667",
+        color: "#fff",
+        pt: 5,
+        px: { xs: 3, md: 8 },
+        pb: 2,
+      }}
+    >
+      <Grid container spacing={2}>
+        <Grid
+          item
+          xs={12}
+          md={4}
+          order={{ xs: 1, md: 5 }}
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            alignItems: { xs: "center", md: "flex-start" },
+            textAlign: { xs: "center", md: "left" },
+            mb: { xs: 4, md: 0 },
+          }}
+        >
+          <Typography variant="h4" fontWeight="bold" sx={{ color: "#EE484A" }}>
+            RISE GLOBAL GMBA
+          </Typography>
+          <Typography variant="body2" sx={{ color: "#FFFFFFBF", mt: 1 }}>
+            Lorem ipsum dolor sit amet consectetur. Rhoncus gravida consequat
+            feugiat consectetur. Adipiscing arcu sit auctor hac ornare tempus.
+            Quis praesent.
+          </Typography>
+        </Grid>
+
+        <Grid
+          item
+          xs={6}
+          sm={3}
+          md={2}
+          order={{ xs: 2, md: 1 }}
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            gap: 1,
+            textAlign: "left",
+          }}
+        >
+          <Typography variant="body1" fontWeight="bold">
+            Industry
+          </Typography>
+          <Typography variant="body2">AgriTech businesses</Typography>
+          <Typography variant="body2">Cafe</Typography>
+          <Typography variant="body2">Import and Exports</Typography>
+        </Grid>
+
+        <Grid
+          item
+          xs={6}
+          sm={3}
+          md={2}
+          order={{ xs: 3, md: 2 }}
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            gap: 1,
+            textAlign: "left",
+          }}
+        >
+          <Typography variant="body1" fontWeight="bold">
+            Industry
+          </Typography>
+          <Typography variant="body2">AgriTech businesses</Typography>
+          <Typography variant="body2">Cafe</Typography>
+          <Typography variant="body2">Import and Exports</Typography>
+        </Grid>
+
+        <Grid
+          item
+          xs={6}
+          sm={3}
+          md={2}
+          order={{ xs: 4, md: 3 }}
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            gap: 1,
+            textAlign: "left",
+          }}
+        >
+          <Typography variant="body1" fontWeight="bold">
+            Company
+          </Typography>
+          <Link href="/Home" passHref>
+            <Typography variant="body2" component="a">
+              Home
+            </Typography>
+          </Link>
+          <Link href="/About" passHref>
+            <Typography variant="body2" component="a">
+              About Us
+            </Typography>
+          </Link>
+          <Link href="/Products" passHref>
+            <Typography variant="body2" component="a">
+              Products
+            </Typography>
+          </Link>
+          <Link href="/News" passHref>
+            <Typography variant="body2" component="a">
+              News
+            </Typography>
+          </Link>
+          <Link href="/Contact" passHref>
+            <Typography variant="body2" component="a">
+              Contact
+            </Typography>
+          </Link>
+        </Grid>
+
+        <Grid
+          item
+          xs={6}
+          sm={3}
+          md={2}
+          order={{ xs: 5, md: 4 }}
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            gap: 1,
+            textAlign: "left",
+          }}
+        >
+          <Typography variant="body1" fontWeight="bold">
+            Contact
+          </Typography>
+          <Typography variant="body2">+251-900-111100</Typography>
+          <Typography variant="body2">Contact@rise.com</Typography>
+          <Typography variant="body2">Help@rise.com</Typography>
+        </Grid>
+
+        <Grid
+          item
+          xs={12}
+          order={6}
+          sx={{
+            display: "flex",
+            justifyContent: { xs: "center", md: "flex-end" },
+            mt: { xs: 4, md: 0 },
+          }}
+        >
+          <Box
+            display="flex"
+            alignItems="flex-end"
+            justifyItems={"flex-end"}
+            gap={1}
+            paddingLeft={35}
+          >
+            <Image src={flag} alt="flag" width={24} height={16} />
+            <Typography variant="body2">ENGLISH USA</Typography>
+          </Box>
+        </Grid>
+
+        <Grid item xs={12} order={7}>
+          <Divider sx={{ borderColor: "#FFFFFFBF", my: 2 }} />
+          <Box
+            display="flex"
+            flexDirection={{ xs: "row", sm: "row" }}
+            justifyContent="space-between"
+          >
+            <Typography variant="body2" sx={{ mb: { xs: 1, sm: 0 } }}>
+              Rise Ltd 2024 |{" "}
+              <Link href="/privacyPolicy" passHref>
+                <Typography
+                  component="span"
+                  variant="body2"
+                  sx={{ textDecoration: "underline", cursor: "pointer" }}
+                >
+                  Company
+                </Typography>
+              </Link>
+            </Typography>
+            <Box display="flex" gap={2}>
+              <Typography variant="body2">All Rights Reserved</Typography>
+              <Link href="/privacyPolicy" passHref>
+                <Typography
+                  component="span"
+                  variant="body2"
+                  sx={{ textDecoration: "underline", cursor: "pointer" }}
+                >
+                  Privacy Policy
+                </Typography>
+              </Link>
+            </Box>
+          </Box>
+        </Grid>
+      </Grid>
+    </Box>
   );
 }

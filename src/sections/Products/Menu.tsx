@@ -71,7 +71,6 @@ const ProductList: React.FC = () => {
         ))}
       </Grid>
 
-      
       <Box
         sx={{
           flexGrow: 1,
@@ -85,7 +84,7 @@ const ProductList: React.FC = () => {
       
         <Grid container spacing={3} sx={{ flexGrow: 1, flexBasis: 0 }}>
           {currentProducts.map((item) => (
-            <Grid item xs={12} sm={6} md={4} lg={3} key={item.id}>
+            <Grid item xs={6} sm={6} md={4} lg={3} key={item.id}>
               <ProductCard
                 image={item.img}
                 title={item.name}
@@ -98,7 +97,6 @@ const ProductList: React.FC = () => {
         </Grid>
       </Box>
 
-     
       <Box sx={{ py: 2, mt: "auto", display: "flex", justifyContent: "center" }}>
         <Stack spacing={2}>
           <Pagination

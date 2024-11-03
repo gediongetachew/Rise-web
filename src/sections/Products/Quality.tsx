@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import { Box, Grid, Typography } from "@mui/material";
 import tropyIcon from "../../../public/assets/tropy.png";
 import verifyIcon from "../../../public/assets/verify.png";
 import warrantyIcon from "../../../public/assets/warranty.png";
@@ -7,35 +8,96 @@ import supportIcon from "../../../public/assets/support.png";
 
 export default function Quality() {
   return (
-    <div className="flex gap-2 justify-between items-center bg-[#F7F7F7] w-full h-[200px] mt-32 mb-20">
-      <div className="flex gap-3 items-center justify-center w-1/4 ">
+    <Grid
+      container
+      spacing={4}
+      justifyContent="space-between"
+      alignItems="center"
+      sx={{
+        backgroundColor: "#F7F7F7",
+        width: "100%",
+        mt: { xs: 8, md: 16 }, // Margin top for responsiveness
+        mb: { xs: 5, md: 10 }, // Margin bottom for responsiveness
+        py: { xs: 3, md: 5 },
+        px: { xs: 2, md: 10 }, // Padding for side spacing on smaller screens
+      }}
+    >
+      {/* Each grid item */}
+      <Grid
+        item
+        xs={6}
+        sm={6}
+        md={3}
+        container
+        spacing={1}
+        alignItems="center"
+        justifyContent="center"
+      >
         <Image src={tropyIcon} alt="tropy-img" />
-        <div>
-          <h1 className="font-bold text-xl">High Quality</h1>
-          <p>Top Products & Materials</p>
-        </div>
-      </div>
-      <div className="flex gap-3 items-center justify-center w-1/4 ">
-        <Image src={verifyIcon} alt="tropy-img" />
-        <div>
-          <h1 className="font-bold text-xl">High Quality</h1>
-          <p>Top Products & Materials</p>
-        </div>
-      </div>
-      <div className="flex gap-3 items-center justify-center w-1/4 ">
-        <Image src={warrantyIcon} alt="tropy-img" />
-        <div>
-          <h1 className="font-bold text-xl">High Quality</h1>
-          <p>Top Products & Materials</p>
-        </div>
-      </div>
-      <div className="flex gap-3 items-center justify-center w-1/4 ">
-        <Image src={supportIcon} alt="tropy-img" />
-        <div>
-          <h1 className="font-bold text-xl">High Quality</h1>
-          <p>Top Products & Materials</p>
-        </div>
-      </div>
-    </div>
+        <Box marginLeft={2}>
+          <Typography variant="h6" fontWeight="bold">
+            High Quality
+          </Typography>
+          <Typography variant="body2">Top Products & Materials</Typography>
+        </Box>
+      </Grid>
+
+      <Grid
+        item
+        xs={6}
+        sm={6}
+        md={3}
+        container
+        spacing={1}
+        alignItems="center"
+        justifyContent="center"
+      >
+        <Image src={verifyIcon} alt="verify-img" />
+        <Box marginLeft={2}>
+          <Typography variant="h6" fontWeight="bold">
+            Verified
+          </Typography>
+          <Typography variant="body2">Top Products & Materials</Typography>
+        </Box>
+      </Grid>
+
+      <Grid
+        item
+        xs={6}
+        sm={6}
+        md={3}
+        container
+        spacing={1}
+        alignItems="center"
+        justifyContent="center"
+      >
+        <Image src={warrantyIcon} alt="warranty-img" />
+        <Box marginLeft={2}>
+          <Typography variant="h6" fontWeight="bold">
+            Warranty
+          </Typography>
+          <Typography variant="body2">Top Products & Materials</Typography>
+        </Box>
+      </Grid>
+
+      <Grid
+        item
+        xs={6}
+        sm={6}
+        md={3}
+        container
+        spacing={1}
+        alignItems="center"
+        justifyContent="center"
+      >
+        <Image src={supportIcon} alt="support-img" />
+        <Box marginLeft={2}>
+          <Typography variant="h6" fontWeight="bold">
+            Support
+          </Typography>
+          <Typography variant="body2">Top Products & Materials</Typography>
+        </Box>
+      </Grid>
+    </Grid>
   );
 }
