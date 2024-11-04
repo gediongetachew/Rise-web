@@ -126,7 +126,7 @@ export default function Nav() {
 
         {/* Drawer for Mobile Navigation */}
         <Drawer
-          anchor="top" // Drawer opens from the top
+          anchor="right" // Drawer opens from the top
           open={mobileOpen}
           onClose={handleDrawerToggle}
           sx={{
@@ -134,6 +134,7 @@ export default function Nav() {
               paddingX: { xs: "8px", sm: "12px", md: "16px" }, // Responsive padding
               backgroundColor: "white",
               display: "flex",
+              flexDirection: 'column',
               alignItems: "center",
               justifyContent: "center",
             },

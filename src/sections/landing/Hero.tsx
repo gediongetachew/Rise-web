@@ -27,7 +27,7 @@ export default function CurvedCard() {
           }}
         >
           <Grid item xs={12}>
-            <Typography variant="h4" fontWeight="bold">
+            <Typography variant="h3" fontWeight="bold" sx={{color: "#3D628C"}}>
               Bringing Innovation to Healthcare Your Trusted Partner in Medical
               Equipment
             </Typography>

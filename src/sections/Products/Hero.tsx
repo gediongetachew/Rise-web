@@ -2,8 +2,7 @@ import React from "react";
 import Grid from "@mui/material/Grid";
 import Image from "next/image";
 import HeroImg from "../../../public/assets/productsHero.png";
-import { Button, Typography } from "@mui/material";
-import { ArrowOutward } from "@mui/icons-material";
+import { Typography } from "@mui/material";
 
 export default function Hero() {
   return (

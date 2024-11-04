@@ -12,7 +12,7 @@ export default function Hero() {
       alignItems="center"
       justifyContent="center"
       sx={{
-        marginTop: {xs:4, sm:4, md:0},
+        marginTop: {xs:4, sm:4, md:6},
         paddingY: { xs: 5, sm: 6, md: 15, lg:4 },
         paddingX: { xs: 0, sm: 1, md: 5 },
         position: "relative",

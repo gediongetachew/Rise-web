@@ -1,120 +1,91 @@
-import Image from "next/image";
-import medicalIMg from "../../../public/assets/medical.png";
-import automobile from "../../../public/assets/automobile.png";
-import automobile2 from "../../../public/assets/automobile2.png";
-export default function Aboutus() {
+import { ArrowOutward } from "@mui/icons-material";
+import { Box, Button, Typography } from "@mui/material";
+import Grid from "@mui/material/Grid";
+import React from "react";
+import aboutUsCardContent from "@/data/aboutUsCardContent";
+import CuttedBorder from "../../components/CuttedBorder";
+
+export default function About() {
   return (
-    <div className="px-20 py-5 h-[500px] w-full mb-20">
-      <h1 className="text-red-600 text-xl ">ABOUT US</h1>
-      <div className="flex justify-between pt-5">
-        <h1 className="font-bold text-3xl text-left text-[#3D628C]">
-          Lorem Ipsum Dolor Sit Amet <br /> Consec Tetur Attempor Eu <br />{" "}
-          Fermentu Commodo
-        </h1>
-        <div className="flex flex-col items-end justify-end mr-32 w-1/3">
-          <p className="text-gray-500  ">
-            Lorem ipsum dolor sit amet consectetur. Rhoncus <br /> gravida
-            consequat feugiat consectetur. Adipiscing <br /> arcu sit auctor hac
-            ornare tempus. Quis praesent.
-          </p>
-          <button className="flex py-3 px-14 mt-3  bg-white pt-4  rounded-3xl border font-medium  hover:bg-gray-200">
+    <Grid
+      container
+      sx={{ paddingY: { xs: 5, md: 5 }, paddingX: { xs: 2, sm: 4, md: 10 }, marginTop: 10}}
+    >
+      <Grid item xs={12}>
+        <Typography variant="h5" sx={{ color: "#EE484A" }}>
+          About Us
+        </Typography>
+      </Grid>
+      <Grid
+        item
+        xs={12}
+        sx={{ display: "flex", flexDirection: { xs: "column", md: "row" } }}
+      >
+        <Typography variant="h3" sx={{ color: "#3D628C" }}>
+          Lorem ipsum dolor sit amet consec tetur Attempor eu fermentu Commodo
+          it amet consec tetur
+        </Typography>
+
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "column",
+            gap: 2,
+            alignItems: "flex-start",
+          }}
+        >
+          <Typography
+            variant="h6"
+            sx={{ color: "#616161", alignContent: "left" }}
+          >
+            Lorem ipsum dolor sit amet consectetur. Rhoncus gravida consequat
+            feugiat consectetur. Adipiscing arcu sit auctor hac ornare tempus.
+            Quis praesent.
+          </Typography>
+          <Button
+            variant="contained"
+            endIcon={<ArrowOutward />}
+            sx={{
+              color: "black",
+              background: "white",
+              width: 170,
+              height: 50,
+              borderRadius: "20px",
+              border: "solid 1px #9E9E9E",
+              alignItems: "right",
+            }}
+          >
             About Us
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5 ml-2"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M7 17l9-9M7 7h9v9"
-              />
-            </svg>
-          </button>
-        </div>
-      </div>
-      <div className=" w-full h-2/3 mt-3 space-x-2 flex  ">
-        <div className="relative w-1/2 h-full">
-          {/* Background Image */}
-          <Image
-            src={medicalIMg}
-            alt="medical image"
-            fill
-            className="object-contain object-left"
-          />
-
-          {/* Content Overlay */}
-          <div className="absolute inset-0 flex flex-col items-center justify-center pl-30 pt-10 pb-4 ">
-            <div className="flex items-end justify-end space-x-8  pt-20 mb-5">
-              {/* Left Column */}
-              <div className="flex flex-col">
-                <h1 className="font-bold text-md px-8  text-black">+71%</h1>
-                <p className="text-gray-500 text-sm">top 5 medical import</p>
-              </div>
-
-              {/* Right Column */}
-              <div className="flex flex-col">
-                <h1 className="font-bold text-md px-6 text-black">+1.5K</h1>
-                <p className="text-gray-500 text-sm">Happy Customer</p>
-              </div>
-            </div>
-            <div className="flex flex-col items-baseline mt-auto mr-16 mb-5 ">
-              <h1 className="font-bold text-md mb-2  text-black">
-                Medical Equipments
-              </h1>
-              <p className="text-gray-500 text-xs ">
-                Lorem ipsum dolor sit amet consectetur.
-                <br /> Ornare leo eget aliquam a ut. Enim cras <br /> commodo
-                tortor faucibus venenatis vitae <br /> egestas et nisi. Id nisl
-                sed
-              </p>
-            </div>
-          </div>
-        </div>
-        <div className="relative w-1/4 h-full">
-          <Image
-            className="object-contain object-left"
-            src={automobile}
-            alt="automobile"
-            fill
-          />
-          <div className="absolute inset-0 flex flex-col items-baseline mt-44 pl-2 ">
-            <h1 className="font-bold text-black text-md mb-2 ml-2">
-              Automobile
-            </h1>
-            <p className="text-gray-500 text-xs">
-              Lorem ipsum dolor sit amet <br />
-              consectetur. Ornare leo eget <br />
-              aliquam a ut. Enim cras commodo <br />
-              tortor viverra praesent sagittis <br />
-              turpis euismod.{" "}
-            </p>
-          </div>
-        </div>
-        <div className="relative w-1/4 h-full">
-          <Image
-            className="object-contain object-left"
-            src={automobile2}
-            alt="automobile"
-            fill
-          />
-          <div className="absolute inset-0 flex flex-col items-baseline mt-44 pl-2">
-            <h1 className="font-bold text-black text-md mb-2 ml-2">
-              Automobile
-            </h1>
-            <p className="text-gray-500 text-xs">
-              Lorem ipsum dolor sit amet <br />
-              consectetur. Ornare leo eget <br />
-              aliquam a ut. Enim cras commodo <br />
-              tortor viverra praesent sagittis <br />
-              turpis euismod.{" "}
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
+          </Button>
+        </Box>
+      </Grid>
+      <Grid
+        container
+        xs={12}
+        sx={{
+          display: "flex",
+          flexDirection: {
+            xs: "column",
+            sm: "column",
+            md: "row",
+            alignItems: "left",
+            justifyContent: "left",
+            marginTop: 20
+            
+          },
+        }}
+      >
+        {aboutUsCardContent.map((item) => (
+          <Grid item xs={4} key={item.id}>
+            <CuttedBorder
+              title={item.title}
+              text={item.text}
+              img={item.img}
+              icon={item.icon}
+            />
+          </Grid>
+        ))}
+      </Grid>
+    </Grid>
   );
 }
