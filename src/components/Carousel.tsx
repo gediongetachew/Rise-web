@@ -15,9 +15,10 @@ import { Typography } from "@mui/material";
 interface Props {
   name: string;
   direction: string;
+  bgcolor: boolean
 }
 
-export default function ImageCarousel({ name, direction }: Props) {
+export default function ImageCarousel({ name, direction, bgcolor }: Props) {
   return (
     <>
       <Grid
@@ -29,6 +30,7 @@ export default function ImageCarousel({ name, direction }: Props) {
           background: "white",
           width: "full",
           height: "auto",
+          backgroundColor: bgcolor ? '#F7F7F7' : 'white'
         }}
       >
         <Grid item xs={12} sx={{ display: name === null ? "none" : "block" }}>

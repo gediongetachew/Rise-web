@@ -9,7 +9,7 @@ export default function About() {
       <Hero />
       <Aboutus />
       <Values />
-      <ImageCarousel name="Trusted By" direction="forward" />
+      <ImageCarousel name="Trusted By" direction="forward"  bgcolor={false}/>
     </div>
   );
 }
