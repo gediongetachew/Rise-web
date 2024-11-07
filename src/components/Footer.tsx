@@ -161,7 +161,7 @@ export default function Footer() {
             alignItems="flex-end"
             justifyItems={"flex-end"}
             gap={1}
-            paddingLeft={35}
+            sx={{padingLeft: {sx:35, sm:35}}}
           >
             <Image src={flag} alt="flag" width={24} height={16} />
             <Typography variant="body2">ENGLISH USA</Typography>

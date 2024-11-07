@@ -2,7 +2,7 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import React from "react";
 import { Button, Typography } from "@mui/material";
-import featuredImg from "../../../public/assets/featuredImg.png";
+import featuredImg from "../../../public/assets/Featured.svg";
 import Image from "next/image";
 import ArrowOutwardIcon from "@mui/icons-material/ArrowOutward";
 import News from "../../data/news";
@@ -31,16 +31,24 @@ export default function Post() {
           </Grid>
 
           <Grid item xs={12} sx={{ position: "relative" }}>
-            <Image src={featuredImg} alt="featured post" layout="responsive" width={600} height={400} />
+            <Image
+              src={featuredImg}
+              alt="featured post"
+              layout="responsive"
+              width={600}
+              height={400}
+            />
 
             <Button
               variant="contained"
               component="a"
               href="/post"
               sx={{
+                width: "19%", // Adjust for responsiveness
+                height: "13%",
                 position: "absolute",
-                bottom: 16,
-                right: 16,
+                bottom: 0,
+                right: 0,
                 borderRadius: "20px",
                 color: "white",
                 backgroundColor: "#EE484A",
@@ -114,7 +122,8 @@ export default function Post() {
               }}
             >
               <Typography variant="subtitle2" sx={{ color: "#6D6E76" }}>
-                By <span style={{ color: "#EE484A" }}>{item.name}</span> | {item.date}
+                By <span style={{ color: "#EE484A" }}>{item.name}</span> |{" "}
+                {item.date}
               </Typography>
 
               <Typography variant="h6" sx={{ fontWeight: "bold", mt: 1 }}>

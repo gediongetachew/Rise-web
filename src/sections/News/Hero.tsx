@@ -54,7 +54,7 @@ export default function Hero() {
           <Typography
             variant="h3"
             sx={{
-              fontSize: { xs: "1rem", sm: "1.5rem", md: "2rem", lg: "3rem"},
+              fontSize: { xs: ".8rem", sm: "1.5rem", md: "2rem", lg: "3rem"},
               fontWeight: "bold",
             }}
           >
@@ -65,7 +65,7 @@ export default function Hero() {
           <Typography
             variant="subtitle1"
             sx={{
-              fontSize: { xs: "0.9rem", sm: "1rem", md: "1.2rem", lg:"1.5rem" },
+              fontSize: { xs: "0.6rem", sm: "1rem", md: "1.2rem", lg:"1.5rem" },
               marginTop: { xs: 1, sm: 1, lg: 3 },
               lineHeight: 1.6,
             }}
@@ -86,10 +86,10 @@ export default function Hero() {
             sx={{
               backgroundColor: "white",
               color: "black",
-              marginTop: { xs: 4, sm: 5 },
-              width: { xs: "150px", sm: "180px" },
+              marginTop: { xs: 2, sm: 5 },
+              width: { xs: "140px", sm: "180px" },
               borderRadius: "20px",
-              fontSize: { xs: "0.8rem", sm: "1rem" },
+              fontSize: { xs: "0.6rem", sm: "1rem" },
             }}
           >
             Order Now

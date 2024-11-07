@@ -12,8 +12,8 @@ export default function Banner() {
       sx={{
         position: "relative",
         my: 10,
-        width: '100%',
-        height: {xs:"35vh",sm:"35vh", md: "50vh"},
+        width: "100%",
+        height: { xs: "35vh", sm: "35vh", md: "50vh" },
         backgroundImage: `url('/assets/banner.png')`,
         backgroundSize: "cover",
         backgroundPosition: "center",
@@ -53,7 +53,13 @@ export default function Banner() {
             >
               +71%
             </Typography>
-            <Typography variant="h6" color="white">
+            <Typography
+              variant="h6"
+              color="white"
+              sx={{
+                fontSize: { xs: ".8rem", sm: "1rem", md: "1.5rem", lg: "2rem" },
+              }}
+            >
               Top 5 Medical Equipment <br /> Imports
             </Typography>
           </Box>
@@ -67,7 +73,13 @@ export default function Banner() {
             >
               +1.5K
             </Typography>
-            <Typography variant="h6" color="white">
+            <Typography
+              variant="h6"
+              color="white"
+              sx={{
+                fontSize: { xs: ".8rem", sm: "1rem", md: "1.5rem", lg: "2rem" },
+              }}
+            >
               Happy Customer
             </Typography>
           </Box>
@@ -79,7 +91,7 @@ export default function Banner() {
         item
         sx={{
           position: "absolute",
-          paddingLeft: {xs:4, sm:10 , md:0},
+          paddingLeft: { xs: 4, sm: 10, md: 0 },
           top: { xs: "0%", sm: "0%", md: "5%" },
           right: { xs: "0%", sm: "0%", md: "0%" },
           width: { xs: "90%", sm: "90%", md: "60%" },
@@ -103,9 +115,9 @@ export default function Banner() {
           <Typography
             variant="h6"
             color="white"
-            alignItems={"flex-start"}
-            justifyContent={"flex-start"}
-            sx={{ fontSize:{xs: "1.7rem", sm: "1.5rem", md: "1.7rem"} }}
+            alignItems="flex-center"
+            justifyItems="flex-center"
+            sx={{ fontSize: { xs: "1rem", sm: "1.5rem", md: "1.7rem" } }}
           >
             Happy Customer
           </Typography>
@@ -115,7 +127,7 @@ export default function Banner() {
             component="h2"
             color="white"
             gutterBottom
-            sx={{ fontSize: { xs: "1.2rem", sm: "1.3rem", md: "2rem" } }}
+            sx={{ fontSize: { xs: "1.1rem", sm: "1.3rem", md: "2rem" } }}
           >
             Lorem ipsum dolor sit amet consectetur. Mauris mollis.
           </Typography>

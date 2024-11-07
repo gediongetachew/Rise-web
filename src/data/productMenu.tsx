@@ -21,12 +21,7 @@ const Menu = [
     name: "Automobile",
     icon:  <TimeToLeaveIcon /> ,
   },
-  {
-    id: 4,
-    type: "coffee",
-    name: "Coffee",
-    icon:  <CoffeeMakerIcon /> ,
-  },
+  
 ];
 
 export default Menu;

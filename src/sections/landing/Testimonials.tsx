@@ -27,38 +27,56 @@ export default function TestimonialCard() {
       sx={{
         marginTop: 10,
         marginBottom: 5,
-        paddingX: 10,
+        paddingX: { xs: 3, sm: 2, md: 10 },
         background: "#F7F7F7",
-        height: "500px",
+        height: "600px",
       }}
     >
       <Typography variant="h4" sx={{ color: "red", marginTop: 5 }}>
         Testimonials
       </Typography>
 
-      <Grid item sx={{ marginTop: 10 }}>
-        <Grid container spacing={2}>
+      <Grid item xs={12} sx={{ marginTop: 10 }}>
+        <Grid
+          container
+          spacing={2}
+          sx={{
+            gap: "55px",
+            display: "flex",
+            flexWrap: "nowrap",
+            overflowX: "auto",
+            whiteSpace: "nowrap",
+            alignItems: "flex-end",
+            scrollbarWidth: "none",
+            "-ms-overflow-style": "none",
+            "&::-webkit-scrollbar": {
+              display: "none",
+            },
+          }}
+        >
           {testimonials
             .slice(currentIndex, currentIndex + 2)
             .map((testimonial, index) => (
               <Grid
-                container
+                item
+                xs={12}
+                sm={12}
+                md={5.8}
+                lg={5.8}
+                xl={5.8}
                 key={index}
                 sx={{
-                  width: "640px", // Expand width horizontally
-                  height: "360px", // Keep the height fixed
+                  height: { xs: "260px", sm: "360px", md: "360px" },
+                  width: { xs: "100%", sm: "360px", md: "360px" },
+                  flexShrink: 0,
                   backgroundColor: "white",
                   borderRadius: "20px",
-                  borderLeft: "3px solid rgba(0,0,0,0.1)",
-                  borderBottom: "3px solid rgba(0,0,0,0.1)",
+                  borderLeft: "1px solid rgba(0,0,0,0.1)",
+                  borderBottom: "1px solid rgba(0,0,0,0.1)",
                   position: "relative",
                   overflow: "hidden",
-                  m: 4,
-                  padding: 2,
                   transition: "width 0.3s ease",
-                  elevation: 4, // Smooth transition for width change
                 }}
-                // Handle click to toggle expansion
               >
                 {/* Cutout on the top right */}
                 <Grid
@@ -69,12 +87,12 @@ export default function TestimonialCard() {
                     position: "absolute",
                     top: 0,
                     right: 0,
-                    width: "150px", // Width of the cutout section
-                    height: "32px", // Height of the cutout section
+                    width: "150px",
+                    height: "32px",
                     backgroundColor: "#F7F7F7",
-                    borderBottomLeftRadius: "10px", // Rounded corner for the cutout section
-                    borderLeft: "1px solid rgba(0,0,0,0.1)", // Border around the cutout
-                    zIndex: 1, // Ensure cutout is on top
+                    borderBottomLeftRadius: "10px",
+                    borderLeft: "1px solid rgba(0,0,0,0.1)",
+                    zIndex: 1,
                   }}
                 />
 
@@ -83,33 +101,14 @@ export default function TestimonialCard() {
                   sx={{
                     position: "absolute",
                     top: 0,
-                    right: "150px", // Position it to the left of the cutout
-                    width: "500px", // Match the width you want
-                    height: "10px", // Height of the box
-                    borderTop: "3px solid rgba(0,0,0,0.1)", // Top border only
+                    right: "150px",
+                    height: "32px",
+                    width: "calc(100% - 150px)",
                     backgroundColor: "white",
-                    borderTopLeftRadius: "10px", // Rounded top left corner
-                    borderTopRightRadius: "10px", // Rounded top right corner
-                    zIndex: 3, // Keep zIndex lower than the image
-                    display: "flex",
-                    alignItems: "flex-start",
-                    justifyContent: "flex-center",
-                  }}
-                ></Grid>
-
-                {/* Additional box under the cutout */}
-                <Grid
-                  sx={{
-                    position: "absolute",
-                    top: "30px", // Position it right below the cutout
-                    right: 0,
-                    width: "146px", // Match the width of the cutout
-                    height: "340px", // Adjust the height as desired
-                    borderTop: "1px solid rgba(0,0,0,0.1)", // Top border
-                    borderRight: "3px solid rgba(0,0,0,0.1)", // Right border
-                    backgroundColor: "white",
-                    borderTopRightRadius: "10px", // Only top right corner rounded
-                    zIndex: 1, // Keep zIndex lower than the image
+                    borderTop: "1px solid rgba(0,0,0,0.1)",
+                    borderTopLeftRadius: "10px",
+                    borderTopRightRadius: "10px",
+                    zIndex: 2,
                   }}
                 />
 
@@ -122,36 +121,81 @@ export default function TestimonialCard() {
                   sx={{
                     position: "relative",
                     zIndex: 2,
-
                     marginTop: 0,
                   }}
                 >
-                  <Grid item xs={12} sx={{}}>
-                    <Image src={quoteImg} alt="quotation" />
+                  <Grid item xs={12}>
+                    <Image
+                      src={quoteImg}
+                      alt="quotation"
+                      width={50}
+                      height={50}
+                      layout="intrinsic" // Makes the quote image responsive
+                      objectFit="contain" // Keeps the aspect ratio
+                    />
                     <Typography
                       variant="body1"
                       color="textSecondary"
                       marginTop={3}
-                      sx={{ width: "100%", marginTop: 3 }}
+                      sx={{
+                        width: "100%",
+                        marginTop: 3,
+                        whiteSpace: "wrap",
+                        overflow: "hidden",
+                        textOverflow: "ellipsis",
+                        fontSize: { xs: 7,sm:20, md: 20 },
+                      }}
                     >
                       {testimonial.text}
                     </Typography>
 
-                    <Box sx={{ display: "flex", gap: 2, marginTop: 4 }}>
-                      <Image src={testimonial.icon} alt="tropy-img" />
-                      <Box>
-                        <Typography variant="h6" fontWeight="bold">
+                    <Box
+                      sx={{
+                        display: "flex",
+                        gap: 80,
+                        width: '100%',
+                        marginTop: { xs: 2, sm: 5, md: 0 },
+                      }}
+                    >
+                      <Box
+                        sx={{
+                          width: { xs: "40px", sm: "60px", md: "60px" },
+                          height: { xs: "40px", sm: "60px", md: "60px" },
+                          position: "relative",
+                        }}
+                      >
+                        <Image
+                          src={testimonial.icon}
+                          alt="tropy-img"
+                          layout="fill"
+                          objectFit="contain"
+                        />
+                          <Box sx={{ marginLeft: { xs: 10, md: 25 } }}>
+                        <Typography
+                          variant="h6"
+                          fontWeight="bold"
+                          sx={{ fontSize: { xs: 10, sm:20, md: 20 } }}
+                        >
                           {testimonial.title}
                         </Typography>
                         <Typography
                           variant="subtitle2"
-                          sx={{ color: "#475467" }}
+                          sx={{ color: "#475467", fontSize: { xs: 6,sm:15, md: 20 } }}
                         >
                           {testimonial.discription}
                         </Typography>
                       </Box>
-                      <Box sx={{ alignContent: "center", marginLeft: 20 }}>
-                        <Image src={testimonial.img} alt="two balls" />
+                      </Box>
+
+                    
+
+                      <Box sx={{ width: { xs: "40px", sm: "50px" },  height: "auto" }}>
+                        <Image
+                          src={testimonial.img}
+                          alt="two balls"
+                          layout="intrinsic"
+                          objectFit="contain"
+                        />
                       </Box>
                     </Box>
                   </Grid>

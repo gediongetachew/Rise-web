@@ -1,6 +1,7 @@
-import product1 from "@/assets/product1.jpg";
-import product2 from "@/assets/product2.jpg";
-import product3 from "@/assets/product3.jpg";
+import product1 from "../../public/assets/stetoscop.svg";
+import product2 from "../../public/assets/temprature.svg";
+import product3 from "../../public/assets/temprature.svg";
+import product4 from "../../public/assets/unknown.svg";
 
 const Record = [
   {
@@ -17,7 +18,7 @@ const Record = [
     type: "medical",
     description:
       "Lorem ipsum dolor sit amet consectetur. Arcu aliquet tellus tortor dictum netus sit.",
-    img: product1,
+    img: product2,
   },
   {
     id: 1,
@@ -25,6 +26,22 @@ const Record = [
     type: "medical",
     description:
       "Lorem ipsum dolor sit amet consectetur. Arcu aliquet tellus tortor dictum netus sit.",
+    img: product3,
+  },
+  {
+    id: 1,
+    name: "product2",
+    type: "automobile",
+    description:
+      "Lorem ipsum dolor sit amet consectetur. Arcu aliquet tellus tortor dictum netus sit.",
+    img: product4,
+  },
+  {
+    id: 1,
+    name: "product2",
+    type: "automobile",
+    description:
+      "Lorem ipsum dolor sit amet consectetur. Arcu aliquet tellus tortor dictum netus sit.",
     img: product1,
   },
   {
@@ -37,22 +54,6 @@ const Record = [
   },
   {
     id: 1,
-    name: "product2",
-    type: "automobile",
-    description:
-      "Lorem ipsum dolor sit amet consectetur. Arcu aliquet tellus tortor dictum netus sit.",
-    img: product2,
-  },
-  {
-    id: 1,
-    name: "product2",
-    type: "automobile",
-    description:
-      "Lorem ipsum dolor sit amet consectetur. Arcu aliquet tellus tortor dictum netus sit.",
-    img: product2,
-  },
-  {
-    id: 1,
     name: "product3",
     type: "coffee",
     description:
@@ -65,7 +66,7 @@ const Record = [
     type: "coffee",
     description:
       "Lorem ipsum dolor sit amet consectetur. Arcu aliquet tellus tortor dictum netus sit.",
-    img: product3,
+    img: product4,
   },
 ];
 

@@ -91,6 +91,93 @@ export default function CurvedCard() {
             </Button>
           </Grid>
           <Grid item xs={12} marginTop={8}>
+            <Grid
+              item
+              xs={12}
+              md={6}
+              sx={{
+                display: { sm: "flex", md: "none" },
+                justifyContent: { xs: "center", md: "flex-end" },
+                marginTop: { xs: 1, md: 0 },
+                zIndex: 8,
+              }}
+            >
+              <Box
+                sx={{
+                  position: "relative",
+                  width: { xs: "100%", md: "100%" },
+                  maxWidth: { xs: 400, md: 730 },
+                  height: "auto",
+                }}
+              >
+                <Image
+                  src="/assets/hero.svg"
+                  alt="hero-image"
+                  width={730}
+                  height={400}
+                  style={{ width: "100%", height: "auto" }}
+                />
+                <Card
+                  sx={{
+                    position: "absolute",
+                    bottom: { xs: "0%", md: "0%" }, // Adjust position if necessary
+                    right: { xs: "0%", md: "0%" },
+                    backgroundColor: "#ff4d4d",
+                    color: "white",
+                    width: { xs: "42%", sm: "42%", md: "42%", lg: "42%" }, // Adjust for responsiveness
+                    height: { xs: "30%", sm: "30%", md: "30%", lg: "30%" }, // Height proportional to the image
+                    padding: 2,
+                    borderRadius: "25px",
+                    boxShadow: "0 5px 15px rgba(0, 0, 0, 0.2)",
+                  }}
+                >
+                  <Typography
+                    variant="h1"
+                    sx={{
+                      fontSize: {
+                        xs: ".9rem",
+                        sm: "1rem",
+                        md: "2rem",
+                        lg: "1rem",
+                      },
+                      marginBottom: { xs: 1 },
+                    }}
+                  >
+                    235
+                  </Typography>
+                  <Typography
+                    variant="h2"
+                    sx={{
+                      fontSize: {
+                        xs: ".8rem",
+                        sm: ".8rem",
+                        md: "1.5rem",
+                        lg: "2rem",
+                      },
+                      marginBottom: { xs: 1 },
+                    }}
+                  >
+                    Loyal Customer
+                  </Typography>
+                  <Typography
+                    variant="body2"
+                    sx={{
+                      fontSize: {
+                        xs: "0.5rem",
+                        sm: "0.6rem",
+                        md: "0.9rem",
+                        lg: "1rem",
+                      },
+                    }}
+                  >
+                    Lorem Ipsum Dolor Sit Amet Conse Ctetur. Posuere
+                    Pellentesque Habitasse Nulla Dui Non. Nisi Nibh Massa Sed
+                    Consequat.
+                  </Typography>
+                </Card>
+              </Box>
+            </Grid>
+
             <Typography
               variant="subtitle2"
               sx={{
@@ -111,7 +198,7 @@ export default function CurvedCard() {
         xs={12}
         md={6}
         sx={{
-          display: "flex",
+          display: { xs: "none", md: "flex" },
           justifyContent: { xs: "center", md: "flex-end" },
           marginTop: { xs: 5, md: 0 },
           zIndex: 8,
@@ -135,12 +222,12 @@ export default function CurvedCard() {
           <Card
             sx={{
               position: "absolute",
-              bottom: { xs: 0, sm: 0, md: 0 },
-              right: { xs: 0, sm: 0, md: 0 },
+              bottom: { xs: "0%", md: "0%" }, // Adjust position if necessary
+              right: { xs: "0%", md: "0%" },
               backgroundColor: "#ff4d4d",
               color: "white",
-              width: { xs: 135, sm: 150, md: 200, lg: 310 },
-              height: { xs: 115, sm: 130, md: 176, lg: 270 },
+              width: { xs: "42%", sm: "42%", md: "42%", lg: "42%" }, // Adjust for responsiveness
+              height: { xs: "30%", sm: "30%", md: "30%", lg: "30%" }, // Height proportional to the image
               padding: 2,
               borderRadius: "25px",
               boxShadow: "0 5px 15px rgba(0, 0, 0, 0.2)",
@@ -149,8 +236,8 @@ export default function CurvedCard() {
             <Typography
               variant="h1"
               sx={{
-                fontSize: { xs: "2rem", sm: "2.5rem", md: "3rem" },
-                margin: 0,
+                fontSize: { xs: ".9rem", sm: "1rem", md: "1.7rem", lg: "2rem", xl: '2.5rem' },
+                marginBottom: { xs: 1 },
               }}
             >
               235
@@ -158,15 +245,29 @@ export default function CurvedCard() {
             <Typography
               variant="h2"
               sx={{
-                fontSize: { xs: "1rem", sm: "1.25rem", md: "1.5rem" },
-                marginY: 1,
+                fontSize: {
+                  xs: ".6rem",
+                  sm: ".8rem",
+                  md: "1rem",
+                  lg: "1.4rem",
+                  xl: "1.8rem"
+                },
+                marginBottom: { xs: 1 },
               }}
             >
               Loyal Customer
             </Typography>
             <Typography
               variant="body2"
-              sx={{ fontSize: { xs: "0.7rem", sm: "0.8rem", md: "0.9rem" } }}
+              sx={{
+                fontSize: {
+                  xs: "0.5rem",
+                  sm: "0.6rem",
+                  md: "0.6rem",
+                  lg: ".9rem",
+                  xl: '1.1rem'
+                },
+              }}
             >
               Lorem Ipsum Dolor Sit Amet Conse Ctetur. Posuere Pellentesque
               Habitasse Nulla Dui Non. Nisi Nibh Massa Sed Consequat.

@@ -1,6 +1,13 @@
 "use client";
 import React, { useState } from "react";
-import { Grid, Button, Pagination, Stack, Typography, Box } from "@mui/material";
+import {
+  Grid,
+  Button,
+  Pagination,
+  Stack,
+  Typography,
+  Box,
+} from "@mui/material";
 import ProductCard from "../../components/poduct/ProductCard";
 import productRecord from "@/data/productRecord";
 import productMenu from "../../data/productMenu";
@@ -39,9 +46,17 @@ const ProductList: React.FC = () => {
   }
 
   return (
-    <Box sx={{ display: "flex", flexDirection: "column", minHeight: "100vh", px: 4, pt: 4 }}>
+    <Box
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        minHeight: "100vh",
+        px: 0,
+        pt: 4,
+      }}
+    >
       {/* Header and Filters */}
-      <Grid item>
+      <Grid item px={4}>
         <Typography variant="h4" color="primary" gutterBottom>
           PRODUCTS
         </Typography>
@@ -50,15 +65,21 @@ const ProductList: React.FC = () => {
         </Typography>
       </Grid>
 
-      <Grid item container spacing={2}>
+      <Grid item sx={{ display: "flex", marginTop: 4 }}>
         {productMenu.map((item) => (
-          <Grid item key={item.id}>
+          <Grid item key={item.id} sx={{ background: "#F7F7F7" }}>
             <Button
               onClick={() => handleMenuButton(item.type)}
               startIcon={item.icon}
               sx={{
                 px: 3,
                 py: 1,
+                fontSize: {
+                  xs: ".5rem",
+                  sm: ".9rem",
+                  md: "1rem",
+                  lg: "1.5rem",
+                },
                 borderRadius: 2,
                 transition: "0.2s",
                 backgroundColor: active === item.type ? "#3D628C" : "#F7F7F7",
@@ -78,11 +99,14 @@ const ProductList: React.FC = () => {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          minHeight: "1000px", 
+          minHeight: "1000px",
         }}
       >
-      
-        <Grid container spacing={3} sx={{ flexGrow: 1, flexBasis: 0 }}>
+        <Grid
+          container
+          spacing={3}
+          sx={{ flexGrow: 1, flexBasis: 0, paddingX: { xs: 4 } }}
+        >
           {currentProducts.map((item) => (
             <Grid item xs={6} sm={6} md={4} lg={3} key={item.id}>
               <ProductCard
@@ -90,14 +114,16 @@ const ProductList: React.FC = () => {
                 title={item.name}
                 description={item.description}
                 link={`/${item.name}`}
-                sx={{ height: "320px" }} 
+                sx={{ height: { xs: "200px", sm: "320px" } }}
               />
             </Grid>
           ))}
         </Grid>
       </Box>
 
-      <Box sx={{ py: 2, mt: "auto", display: "flex", justifyContent: "center" }}>
+      <Box
+        sx={{ py: 2, mt: "auto", display: "flex", justifyContent: "center" }}
+      >
         <Stack spacing={2}>
           <Pagination
             count={totalPages}

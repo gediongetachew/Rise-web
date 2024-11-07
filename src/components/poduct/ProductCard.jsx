@@ -11,12 +11,16 @@ const ProductCard = ({ image, title, description, link, sx }) => {
         <Image
           src={image}
           width={420}
-          height={20}
+          height={30}
           alt={title}
           style={{ ...sx }}
         />
-        <Typography variant="h5">{title}</Typography>
-        <Typography variant="body2">{description}</Typography>
+        <Typography variant="h5" sx={{ fontSize: { xs: 25, sm: 30, md: 40 } }}>
+          {title}
+        </Typography>
+        <Typography variant="body2" sx={{ fontSize: { xs: 12, sm:15, md:15, lg:20 } }}>
+          {description}
+        </Typography>
 
         <Grid container>
           <Grid
@@ -43,7 +47,10 @@ const ProductCard = ({ image, title, description, link, sx }) => {
               }}
             >
               {" "}
-              <Typography variant="body1" sx={{ px: 2, py: 0.8 }}>
+              <Typography
+                variant="body1"
+                sx={{ px: { xs: 0.8, sm: 2 }, py: {xs:.4, sm: .8}, fontSize:{xs:10,sm:20} }}
+              >
                 {" "}
                 Order Now
               </Typography>{" "}
