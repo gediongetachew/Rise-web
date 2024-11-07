@@ -9,7 +9,7 @@ export default function About() {
   return (
     <Grid
       container
-      sx={{ paddingY: { xs: 5, md: 5 }, paddingX: { xs: 2, sm: 4, md: 10 }, marginTop: 10}}
+      sx={{ paddingY: { xs: 5, md: 5 }, paddingX: { xs: 0, sm: 4, md: 10 }, marginTop: 10}}
     >
       <Grid item xs={12}>
         <Typography variant="h5" sx={{ color: "#EE484A" }}>
@@ -21,7 +21,7 @@ export default function About() {
         xs={12}
         sx={{ display: "flex", flexDirection: { xs: "column", md: "row" } }}
       >
-        <Typography variant="h3" sx={{ color: "#3D628C" }}>
+        <Typography variant="h3" sx={{ color: "#3D628C", fontWeight: {xs: 100} }}>
           Lorem ipsum dolor sit amet consec tetur Attempor eu fermentu Commodo
           it amet consec tetur
         </Typography>

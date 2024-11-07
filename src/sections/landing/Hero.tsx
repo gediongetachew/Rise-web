@@ -27,7 +27,15 @@ export default function CurvedCard() {
           }}
         >
           <Grid item xs={12}>
-            <Typography variant="h3" fontWeight="bold" sx={{color: "#3D628C"}}>
+            <Typography
+              variant="h3"
+              fontWeight="bold"
+              sx={{
+                color: "#3D628C",
+                alignContent: "left",
+                fontWeight: { sx: 20 },
+              }}
+            >
               Bringing Innovation to Healthcare Your Trusted Partner in Medical
               Equipment
             </Typography>
@@ -58,7 +66,7 @@ export default function CurvedCard() {
                 color: "white",
                 background: "#3D628C",
                 paddingX: { xs: 6, md: 6 },
-                paddingY: { xs: 1, sm: 2 },
+                paddingY: { xs: 0, sm: 2 },
                 borderRadius: "25px",
                 fontSize: { xs: 16, md: 20 },
               }}
@@ -112,7 +120,7 @@ export default function CurvedCard() {
         <Box
           sx={{
             position: "relative",
-            width: { xs: "90%", md: "100%" },
+            width: { xs: "100%", md: "100%" },
             maxWidth: { xs: 400, md: 730 },
             height: "auto",
           }}

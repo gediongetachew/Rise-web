@@ -1,4 +1,4 @@
-import { Grid, Typography, Card, CardContent } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import Image from "next/image";
 import aboutMisson from "../../data/aboutMission";
 

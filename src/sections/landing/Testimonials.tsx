@@ -9,15 +9,12 @@ import quoteImg from "../../../public/assets/quotation.png";
 
 export default function TestimonialCard() {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [direction, setDirection] = useState("right");
 
   const nextTestimonial = () => {
-    setDirection("left");
     setCurrentIndex((prevIndex) => (prevIndex + 2) % testimonials.length);
   };
 
   const prevTestimonial = () => {
-    setDirection("right");
     setCurrentIndex(
       (prevIndex) => (prevIndex - 2 + testimonials.length) % testimonials.length
     );
@@ -32,7 +29,7 @@ export default function TestimonialCard() {
         marginBottom: 5,
         paddingX: 10,
         background: "#F7F7F7",
-        height:  "500px",
+        height: "500px",
       }}
     >
       <Typography variant="h4" sx={{ color: "red", marginTop: 5 }}>
@@ -145,7 +142,10 @@ export default function TestimonialCard() {
                         <Typography variant="h6" fontWeight="bold">
                           {testimonial.title}
                         </Typography>
-                        <Typography variant="subtitle2" sx={{color: '#475467'}}>
+                        <Typography
+                          variant="subtitle2"
+                          sx={{ color: "#475467" }}
+                        >
                           {testimonial.discription}
                         </Typography>
                       </Box>

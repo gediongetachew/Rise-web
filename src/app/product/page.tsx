@@ -18,8 +18,8 @@ export default function Products() {
           borderBottom: "solid 2px #9E9E9E",
         }}
       >
-        <ImageCarousel name="" direction="forward" />
-        <ImageCarousel name="" direction="backward" />
+        <ImageCarousel name="" direction="forward" bgcolor={false} />
+        <ImageCarousel name="" direction="backward" bgcolor={false} />
       </Grid>
     </div>
   );
