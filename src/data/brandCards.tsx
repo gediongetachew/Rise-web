@@ -1,5 +1,5 @@
 import { StaticImageData } from "next/image";
-import brand from "../../public/assets/brand.png";
+import brand from "../../public/assets/mastercard.png";
 
 interface brandCards {
   id: number;

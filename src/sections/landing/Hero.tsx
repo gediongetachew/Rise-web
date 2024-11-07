@@ -65,10 +65,10 @@ export default function CurvedCard() {
               sx={{
                 color: "white",
                 background: "#3D628C",
-                paddingX: { xs: 6, md: 6 },
+                paddingX: { xs: 5, md: 6 },
                 paddingY: { xs: 0, sm: 2 },
                 borderRadius: "25px",
-                fontSize: { xs: 16, md: 20 },
+                fontSize: { xs: 15, md: 20 },
               }}
             >
               Discover
@@ -82,7 +82,7 @@ export default function CurvedCard() {
                 background: "white",
                 borderRadius: "25px",
                 border: "0.5px solid #9E9E9E",
-                fontSize: { xs: 16, md: 20 },
+                fontSize: { xs: 10, md: 20 },
                 paddingX: { xs: 6, md: 3 },
                 paddingY: { xs: 1, sm: 2, md: 1 },
               }}

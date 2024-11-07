@@ -51,17 +51,18 @@ export default function Products() {
   };
 
   return (
-    <article className="w-full mt-10 px-20">
+    <article className="w-full mt-10 px-4">
       {/* Grid Container with Typography */}
       <Grid container spacing={2} mb={2}>
         <Grid item xs={12}>
-          <Typography variant="h5" sx={{ color: "#EE484A" }}>
+          <Typography variant="h5" sx={{ color: "#EE484A", fontSize: {xs:15,sm: 20, md:25,lg:25} }}>
             Our Products
           </Typography>
         </Grid>
         <Grid
           item
           xs={12}
+          md={6}
           display="flex"
           justifyContent="flex-start"
           sx={{ width: "full" }}
@@ -69,7 +70,7 @@ export default function Products() {
           <Typography
             variant="h3"
             color="textSecondary"
-            sx={{ color: "#3D628C", width: "1/2" }}
+            sx={{ color: "#3D628C", fontSize: {xs:30, sm:40, md:50} }}
           >
             Lorem ipsum dolor sit <br /> amet consec tetur Atte
             <br /> mpor eu fermentu Commodo

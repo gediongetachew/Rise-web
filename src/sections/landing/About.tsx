@@ -9,19 +9,20 @@ export default function About() {
   return (
     <Grid
       container
-      sx={{ paddingY: { xs: 5, md: 5 }, paddingX: { xs: 0, sm: 4, md: 10 }, marginTop: 10}}
+      sx={{ paddingY: { xs: 5, md: 5 }, paddingX: { xs: 3, sm: 3 }, marginTop: 10}}
     >
       <Grid item xs={12}>
-        <Typography variant="h5" sx={{ color: "#EE484A" }}>
+        <Typography variant="h5" sx={{ color: "#EE484A", fontSize: {xs:15,sm: 20, md:25,lg:25} }}>
           About Us
         </Typography>
       </Grid>
       <Grid
         item
         xs={12}
+        
         sx={{ display: "flex", flexDirection: { xs: "column", md: "row" } }}
       >
-        <Typography variant="h3" sx={{ color: "#3D628C", fontWeight: {xs: 100} }}>
+        <Typography variant="h3" sx={{ color: "#3D628C", fontSize: {xs:30, sm:40, md:50}, marginTop:3 }}>
           Lorem ipsum dolor sit amet consec tetur Attempor eu fermentu Commodo
           it amet consec tetur
         </Typography>
@@ -36,7 +37,7 @@ export default function About() {
         >
           <Typography
             variant="h6"
-            sx={{ color: "#616161", alignContent: "left" }}
+            sx={{ color: "#616161", alignContent: "left" ,fontSize: {xs:15,sm: 20, md:25,lg:25},marginTop: 2}}
           >
             Lorem ipsum dolor sit amet consectetur. Rhoncus gravida consequat
             feugiat consectetur. Adipiscing arcu sit auctor hac ornare tempus.
@@ -68,8 +69,7 @@ export default function About() {
             xs: "column",
             sm: "column",
             md: "row",
-            alignItems: "left",
-            justifyContent: "left",
+            
             marginTop: 20
             
           },

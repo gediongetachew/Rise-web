@@ -29,14 +29,17 @@ export default function TestimonialCard() {
         marginBottom: 5,
         paddingX: { xs: 3, sm: 2, md: 10 },
         background: "#F7F7F7",
-        height: "600px",
+        height: { xs: "400px", sm: "600px", md: "600px" },
       }}
     >
-      <Typography variant="h4" sx={{ color: "red", marginTop: 5 }}>
+      <Typography
+        variant="h5"
+        sx={{ color: "red", marginTop: 5, fontSize: { sx: 1, sm: 25, md: 28,lg:28 } }}
+      >
         Testimonials
       </Typography>
 
-      <Grid item xs={12} sx={{ marginTop: 10 }}>
+      <Grid item xs={12} sx={{ marginTop: { xs: 0, sx: 0, md: 10 } }}>
         <Grid
           container
           spacing={2}
@@ -61,8 +64,8 @@ export default function TestimonialCard() {
                 item
                 xs={12}
                 sm={12}
-                md={5.8}
-                lg={5.8}
+                md={12}
+                lg={12}
                 xl={5.8}
                 key={index}
                 sx={{
@@ -112,6 +115,21 @@ export default function TestimonialCard() {
                   }}
                 />
 
+                <Grid
+                  sx={{
+                    position: "absolute",
+                    top: "30px", // Position it right below the cutout
+                    right: 0,
+                    width: "146px", // Match the width of the cutout
+                    height: "1px", // Adjust the height as desired
+                    borderTop: "1px solid rgba(0,0,0,0.1)", // Top border
+                    borderRight: "1px solid rgba(0,0,0,0.1)", // Right border
+                    backgroundColor: "white",
+                    borderTopRightRadius: "10px", // Only top right corner rounded
+                    zIndex: 1, // Keep zIndex lower than the image
+                  }}
+                />
+
                 {/* Card Content */}
                 <Grid
                   container
@@ -143,7 +161,7 @@ export default function TestimonialCard() {
                         whiteSpace: "wrap",
                         overflow: "hidden",
                         textOverflow: "ellipsis",
-                        fontSize: { xs: 7,sm:20, md: 20 },
+                        fontSize: { xs: 10, sm: 15, md: 20 },
                       }}
                     >
                       {testimonial.text}
@@ -152,15 +170,15 @@ export default function TestimonialCard() {
                     <Box
                       sx={{
                         display: "flex",
-                        gap: 80,
-                        width: '100%',
-                        marginTop: { xs: 2, sm: 5, md: 0 },
+                        gap: "80%",
+                        width: "100%",
+                        marginTop: { xs: 2, sm: 9, md: 4 },
                       }}
                     >
                       <Box
                         sx={{
-                          width: { xs: "40px", sm: "60px", md: "60px" },
-                          height: { xs: "40px", sm: "60px", md: "60px" },
+                          width: { xs: "40px", sm: "50px", md: "60px" },
+                          height: { xs: "30px", sm: "50px", md: "60px" },
                           position: "relative",
                         }}
                       >
@@ -170,26 +188,32 @@ export default function TestimonialCard() {
                           layout="fill"
                           objectFit="contain"
                         />
-                          <Box sx={{ marginLeft: { xs: 10, md: 25 } }}>
-                        <Typography
-                          variant="h6"
-                          fontWeight="bold"
-                          sx={{ fontSize: { xs: 10, sm:20, md: 20 } }}
-                        >
-                          {testimonial.title}
-                        </Typography>
-                        <Typography
-                          variant="subtitle2"
-                          sx={{ color: "#475467", fontSize: { xs: 6,sm:15, md: 20 } }}
-                        >
-                          {testimonial.discription}
-                        </Typography>
-                      </Box>
+                        <Box sx={{ marginLeft: { xs: 7, md: 10 } }}>
+                          <Typography
+                            variant="h6"
+                            fontWeight="bold"
+                            sx={{ fontSize: { xs: 10, sm: 20, md: 20 } }}
+                          >
+                            {testimonial.title}
+                          </Typography>
+                          <Typography
+                            variant="subtitle2"
+                            sx={{
+                              color: "#475467",
+                              fontSize: { xs: 6, sm: 15, md: 20 },
+                            }}
+                          >
+                            {testimonial.discription}
+                          </Typography>
+                        </Box>
                       </Box>
 
-                    
-
-                      <Box sx={{ width: { xs: "40px", sm: "50px" },  height: "auto" }}>
+                      <Box
+                        sx={{
+                          width: { xs: "40px", sm: "50px" },
+                          height: "auto",
+                        }}
+                      >
                         <Image
                           src={testimonial.img}
                           alt="two balls"
@@ -206,40 +230,58 @@ export default function TestimonialCard() {
       </Grid>
 
       {/* Fixed Arrows on Each Side */}
-      <IconButton
-        onClick={prevTestimonial}
+
+      <Box
         sx={{
+          display: "flex",
+          alignItems: "center",
           position: "absolute",
-          top: "10%",
-          left: "90%",
-          transform: "translateY(-50%)",
-          border: "solid 2px",
-          bgcolor: "white",
-          color: "#9E9E9E",
-          "&:hover": {
-            bgcolor: "gray",
-          },
+          top: { xs: "15%", sm: "10%", md: "10%" },
+          left: {xs:'80%', sm:"85%"},
+          transform: "translate(-50%, -50%)", // Centers the container horizontally
         }}
       >
-        <ChevronLeft />
-      </IconButton>
-      <IconButton
-        onClick={nextTestimonial}
-        sx={{
-          position: "absolute",
-          top: "10%",
-          right: "5%",
-          border: "solid 2px",
-          transform: "translateY(-50%)",
-          bgcolor: "white",
-          color: "#9E9E9E",
-          "&:hover": {
-            bgcolor: "gray",
-          },
-        }}
-      >
-        <ChevronRight />
-      </IconButton>
+        <IconButton
+          onClick={prevTestimonial}
+          sx={{
+            width: "40px",
+            height: "40px",
+            borderRadius: "0",
+            border: "solid 2px",
+            bgcolor: "white",
+            color: "#9E9E9E",
+            "&:hover": { bgcolor: "gray" },
+          }}
+        >
+          <ChevronLeft />
+        </IconButton>
+
+        <Typography
+          variant="body1"
+          sx={{
+            mx: 1, // Adds horizontal margin between the text and icon buttons
+            color: "#9E9E9E",
+            fontWeight: "bold",
+          }}
+        >
+          1/5
+        </Typography>
+
+        <IconButton
+          onClick={nextTestimonial}
+          sx={{
+            width: "40px",
+            height: "40px",
+            borderRadius: "0",
+            border: "solid 2px",
+            bgcolor: "white",
+            color: "#9E9E9E",
+            "&:hover": { bgcolor: "gray" },
+          }}
+        >
+          <ChevronRight />
+        </IconButton>
+      </Box>
     </Grid>
   );
 }
