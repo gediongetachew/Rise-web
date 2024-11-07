@@ -43,6 +43,7 @@ export default function TestimonialCard() {
             .map((testimonial, index) => (
               <Grid
                 container
+                key={index}
                 sx={{
                   width: "640px", // Expand width horizontally
                   height: "360px", // Keep the height fixed
