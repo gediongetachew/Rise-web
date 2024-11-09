@@ -13,8 +13,14 @@ export default function AboutUs() {
         mb: { xs: 10, md: 15 },
       }}
     >
-      <Grid item xs={12} sx={{ mb: 5, mt: { xs: 10, md: 40 } }}>
-        <Typography variant="h5" sx={{ color: "#EE484A" }}>
+      <Grid item xs={12} sx={{ mb: 5, mt: { xs: 19, sm: 25, md: 40 } }}>
+        <Typography
+          variant="h5"
+          sx={{
+            color: "#EE484A",
+            fontSize: { xs: 15, sm: 20, md: 25, lg: 25 },
+          }}
+        >
           ABOUT US
         </Typography>
       </Grid>
@@ -26,7 +32,7 @@ export default function AboutUs() {
           display: "flex",
           flexDirection: { xs: "column", lg: "row" },
           justifyContent: "space-between",
-          gap: { xs: 4, md: 0 },
+          gap: { xs: 4, md: 4 },
         }}
       >
         <Typography
@@ -34,7 +40,7 @@ export default function AboutUs() {
           sx={{
             color: "#3D628C",
             fontWeight: { xs: "20%", sm: "70%" },
-            width: { xs: "80%", md: "40%" },
+            width: { xs: "99%" },
             fontSize: { xs: "1.7rem", sm: "2rem", md: "2.5rem", lg: "3rem" },
           }}
         >
@@ -45,8 +51,9 @@ export default function AboutUs() {
           variant="body1"
           sx={{
             color: "#616161",
-            fontSize: "1.25rem",
-            width: { xs: "95%", md: "40%" },
+
+            width: { xs: "99%" },
+            fontSize: { xs: "1rem", sm: "1.3rem", md: "1.5rem", lg: "1.5rem" },
           }}
         >
           Lorem ipsum dolor sit amet consectetur. Sit arcu elit enim lorem at
@@ -59,37 +66,39 @@ export default function AboutUs() {
       </Grid>
 
       {/* Vision Cards Section */}
-      <Grid item xs={12} marginTop={4}>
+      <Grid item xs={12} marginTop={{ xs: 10, sm: 10, md: 4 }}>
         <Grid
           container
           sx={{
             display: "felx",
             alignContent: "center",
             justifyContent: "center",
-            gap: 25,
+            gap: { xs: 10, sm: 15, md: 0 },
           }}
         >
           {aboutMisson.map((item) => (
             <Grid item key={item.id}>
               <Grid
                 container
+                item
+                xs={12}
+                sm={12}
+                md={12}
+                lg={12}
+                xl={5}
                 sx={{
-                  width: "640px", // Expand width horizontally
-                  height: "340px", // Keep the height fixed
+                  height: { xs: "260px", sm: "360px", md: "360px" },
+                  width: { xs: "100%", sm: "90%", md: "75%" },
+                  flexShrink: 0,
                   backgroundColor: "white",
                   borderRadius: "20px",
-                  borderLeft: "3px solid rgba(0,0,0,0.1)",
-                  borderBottom: "3px solid rgba(0,0,0,0.1)",
+                  borderLeft: "1px solid rgba(0,0,0,0.1)",
+                  borderBottom: "1px solid rgba(0,0,0,0.1)",
                   position: "relative",
                   overflow: "hidden",
-                  m: 4,
-                  padding: 2,
                   transition: "width 0.3s ease",
-                  elevation: 4, // Smooth transition for width change
                 }}
-                // Handle click to toggle expansion
               >
-                {/* Cutout on the top right */}
                 <Grid
                   sx={{
                     position: "absolute",
@@ -110,9 +119,9 @@ export default function AboutUs() {
                     position: "absolute",
                     top: 0,
                     right: "150px", // Position it to the left of the cutout
-                    width: "500px", // Match the width you want
+                    width: "80%", // Match the width you want
                     height: "10px", // Height of the box
-                    borderTop: "3px solid rgba(0,0,0,0.1)", // Top border only
+                    borderTop: "1px solid rgba(0,0,0,0.1)", // Top border only
                     backgroundColor: "white",
                     borderTopLeftRadius: "10px", // Rounded top left corner
                     borderTopRightRadius: "10px", // Rounded top right corner
@@ -127,9 +136,9 @@ export default function AboutUs() {
                     top: "30px", // Position it right below the cutout
                     right: 0,
                     width: "146px", // Match the width of the cutout
-                    height: "306px", // Adjust the height as desired
+                    height: "90%", // Adjust the height as desired
                     borderTop: "1px solid rgba(0,0,0,0.1)", // Top border
-                    borderRight: "3px solid rgba(0,0,0,0.1)", // Right border
+                    borderRight: "1px solid rgba(0,0,0,0.1)", // Right border
                     backgroundColor: "white",
                     borderTopRightRadius: "10px", // Only top right corner rounded
                     zIndex: 1, // Keep zIndex lower than the image
@@ -145,11 +154,11 @@ export default function AboutUs() {
                   sx={{
                     position: "relative",
                     zIndex: 2,
-                    
+
                     marginTop: 0,
                   }}
                 >
-                  <Grid item xs={12} >
+                  <Grid item xs={12}>
                     {/* Icon on top of the text */}
 
                     <Image

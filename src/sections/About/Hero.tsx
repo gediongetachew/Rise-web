@@ -1,18 +1,24 @@
 import React from "react";
-import { Box, Grid, Typography } from "@mui/material";
+import Grid from "@mui/material/Grid";
 import Image from "next/image";
-import heroAbout from "../../../public/assets/Hero2.png";
+import HeroImg from "../../../public/assets/Hero2.png";
+import { Button, Typography } from "@mui/material";
+import { ArrowOutward } from "@mui/icons-material";
 
-export default function MyComponent() {
+export default function Hero() {
   return (
     <Grid
       container
       alignItems="center"
-      spacing={4}
+      justifyContent="center"
       sx={{
-        mx: { xs: 0, sm: 4, md: 10 },
-        mt: { xs: 5, sm: 6, md: 10 },
-        height: { xs: "auto", md: "650px" },
+        marginTop: { xs: 4, sm: 4, md: 6 },
+        paddingY: { xs: 5, sm: 6, md: 15, lg: 4 },
+        paddingX: { xs: 0, sm: 1, md: 5 },
+        position: "relative",
+        width: "100%",
+        height: { xs: "33vh",sm:'50vh', md: "70vh", lg: "70vh" }, // Set height for hero image section
+        // Prevent any overflow issues with responsive image
       }}
     >
       <Grid item xs={12} sx={{ mt: { xs: 2, md: 5 } }}>
@@ -22,7 +28,7 @@ export default function MyComponent() {
           lineHeight="normal"
           textAlign="left"
           sx={{
-            fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem", lg: "3rem" },
+            fontSize: { xs: "1.2rem", sm: "2rem", md: "2.5rem", lg: "3rem" },
           }}
         >
           Lorem ipsum dolor sit amet consectetur.
@@ -32,15 +38,14 @@ export default function MyComponent() {
           Ac blandit semper ornare congue. At.
         </Typography>
       </Grid>
-      <Grid item xs={12} sx={{ paddingX: { xs: 5, sm: 4, md:15 } }}>
-        <Box
-          sx={{
-            width: { xs: "100%" },
-            mx: "auto",
-          }}
-        >
-          <Image src={heroAbout} alt="Hero image" layout="responsive" />
-        </Box>
+
+      <Grid
+        item
+        xs={12}
+        sx={{ position: "relative", width: "100%", height: "100%", zIndex: 2, marginTop: {xs:2,sm:3, md:4} }}
+      >
+        {/* Hero Image with responsive width */}
+        <Image src={HeroImg} alt="hero-image" layout="fill" priority />
       </Grid>
     </Grid>
   );
