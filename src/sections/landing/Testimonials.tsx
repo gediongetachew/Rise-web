@@ -9,15 +9,24 @@ import quoteImg from "../../../public/assets/quotation.png";
 
 export default function TestimonialCard() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [page, setPage] = useState(1);
+
+
 
   const nextTestimonial = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 2) % testimonials.length);
+    if (page === 5) {
+      setPage(1);
+    } else setPage(page + 1);
   };
 
   const prevTestimonial = () => {
     setCurrentIndex(
       (prevIndex) => (prevIndex - 2 + testimonials.length) % testimonials.length
     );
+    if (page === 1) {
+      setPage(1);
+    } else setPage(page - 1);
   };
 
   return (
@@ -34,7 +43,11 @@ export default function TestimonialCard() {
     >
       <Typography
         variant="h5"
-        sx={{ color: "red", marginTop: 5, fontSize: { sx: 1, sm: 25, md: 28,lg:28 } }}
+        sx={{
+          color: "red",
+          marginTop: 5,
+          fontSize: { sx: 1, sm: 25, md: 28, lg: 28 },
+        }}
       >
         Testimonials
       </Typography>
@@ -96,6 +109,21 @@ export default function TestimonialCard() {
                     borderBottomLeftRadius: "10px",
                     borderLeft: "1px solid rgba(0,0,0,0.1)",
                     zIndex: 1,
+                  }}
+                />
+
+                <Grid
+                  sx={{
+                    position: "absolute",
+                    top: "30px", // Position it right below the cutout
+                    right: 0,
+                    width: "146px", // Match the width of the cutout
+                    height: "90%", // Adjust the height as desired
+                    borderTop: "1px solid rgba(0,0,0,0.1)", // Top border
+                    borderRight: "1px solid rgba(0,0,0,0.1)", // Right border
+                    backgroundColor: "white",
+                    borderTopRightRadius: "10px", // Only top right corner rounded
+                    zIndex: 1, // Keep zIndex lower than the image
                   }}
                 />
 
@@ -237,7 +265,7 @@ export default function TestimonialCard() {
           alignItems: "center",
           position: "absolute",
           top: { xs: "15%", sm: "10%", md: "10%" },
-          left: {xs:'80%', sm:"85%"},
+          left: { xs: "80%", sm: "85%" },
           transform: "translate(-50%, -50%)", // Centers the container horizontally
         }}
       >
@@ -264,7 +292,7 @@ export default function TestimonialCard() {
             fontWeight: "bold",
           }}
         >
-          1/5
+          {page}/5
         </Typography>
 
         <IconButton

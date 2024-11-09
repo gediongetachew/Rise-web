@@ -17,7 +17,7 @@ export default function Hero() {
         paddingX: { xs: 2, sm: 1, md: 5 },
         position: "relative",
         width: "100%",
-        height: { xs: "45vh", md: "70vh", lg: "80vh" }, // Set height for hero image section
+        height: { xs: "55vh", md: "70vh", lg: "80vh" }, // Set height for hero image section
         overflow: "hidden", // Prevent any overflow issues with responsive image
       }}
     >
