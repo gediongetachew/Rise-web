@@ -15,7 +15,7 @@ import { Typography } from "@mui/material";
 interface Props {
   name: string;
   direction: string;
-  bgcolor: boolean
+  bgcolor: boolean;
 }
 
 export default function ImageCarousel({ name, direction, bgcolor }: Props) {
@@ -30,7 +30,7 @@ export default function ImageCarousel({ name, direction, bgcolor }: Props) {
           background: "white",
           width: "full",
           height: "auto",
-          backgroundColor: bgcolor ? '#F7F7F7' : 'white'
+          backgroundColor: bgcolor ? "#F7F7F7" : "white",
         }}
       >
         <Grid item xs={12} sx={{ display: name === null ? "none" : "block" }}>
@@ -38,14 +38,15 @@ export default function ImageCarousel({ name, direction, bgcolor }: Props) {
             variant="h5"
             sx={{
               color: "#EE484A",
-              paddingX: 10,
+              paddingX: 4,
               paddingTop: name === null ? 0 : 5,
+              fontSize: { xs: "1.25rem", sm: "1.5rem", md: "2rem" }
             }}
           >
             {name}
           </Typography>
         </Grid>
-        <Grid item xs={12}>
+        <Grid item xs={12} marginTop={2}>
           <Swiper
             spaceBetween={15}
             slidesPerView={5}
@@ -60,9 +61,7 @@ export default function ImageCarousel({ name, direction, bgcolor }: Props) {
             pagination={{ clickable: true }}
             modules={[Autoplay]}
             className="mySwiper"
-            style={{
-              height: "200px",
-            }}
+           
           >
             {cards.map((image) => (
               <SwiperSlide key={image.id} style={{ height: "100%" }}>

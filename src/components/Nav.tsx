@@ -134,7 +134,7 @@ export default function Nav() {
               paddingX: { xs: "8px", sm: "12px", md: "16px" }, // Responsive padding
               backgroundColor: "white",
               display: "flex",
-              flexDirection: 'column',
+              flexDirection: "column",
               alignItems: "center",
               justifyContent: "center",
             },
@@ -143,7 +143,7 @@ export default function Nav() {
           <Box
             sx={{
               display: "flex",
-              flexDirection: "row",
+              flexDirection: "column",
               overflowX: "auto", // Allow horizontal scrolling
               whiteSpace: "nowrap", // Prevent wrapping to the next line
               paddingX: { xs: "2px 5px", sm: "8px 12px", md: "12px 16px" }, // Responsive padding
@@ -156,12 +156,12 @@ export default function Nav() {
                 href={item.address}
                 onClick={handleDrawerToggle}
                 sx={{
-                  color: "black",
+                  color:"#3D628C",
                   fontWeight: "medium",
-                  fontSize: { xs: "0.75rem", sm: "0.85rem", md: "0.95rem" }, // Responsive font size for drawer items
-                  padding: { xs: "4px 8px", sm: "6px 12px", md: "8px 16px" }, // Responsive button padding
+                  fontSize: { xs: "2rem", sm: "0.85rem", md: "0.95rem" }, // Responsive font size for drawer items
+                  paddingY: { xs: "20px", sm: "25px", md: "8px 16px" }, // Responsive button padding
                   "&:hover": {
-                    fontWeight: "bold",
+                    fontWeight: "xl",
                     color: "black",
                   },
                 }}

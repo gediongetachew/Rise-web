@@ -2,8 +2,7 @@ import React from "react";
 import Grid from "@mui/material/Grid";
 import Image from "next/image";
 import HeroImg from "../../../public/assets/Hero2.png";
-import { Button, Typography } from "@mui/material";
-import { ArrowOutward } from "@mui/icons-material";
+import { Typography } from "@mui/material";
 
 export default function Hero() {
   return (
@@ -14,10 +13,10 @@ export default function Hero() {
       sx={{
         marginTop: { xs: 4, sm: 4, md: 6 },
         paddingY: { xs: 5, sm: 6, md: 15, lg: 4 },
-        paddingX: { xs: 0, sm: 1, md: 5 },
+        paddingX: { xs: 2, sm: 1, md: 5 },
         position: "relative",
         width: "100%",
-        height: { xs: "33vh",sm:'50vh', md: "70vh", lg: "70vh" }, // Set height for hero image section
+        height: { xs: "33vh", sm: "50vh", md: "70vh", lg: "70vh" }, // Set height for hero image section
         // Prevent any overflow issues with responsive image
       }}
     >
@@ -42,7 +41,13 @@ export default function Hero() {
       <Grid
         item
         xs={12}
-        sx={{ position: "relative", width: "100%", height: "100%", zIndex: 2, marginTop: {xs:2,sm:3, md:4} }}
+        sx={{
+          position: "relative",
+          width: "100%",
+          height: "100%",
+          zIndex: 2,
+          marginTop: { xs: 2, sm: 3, md: 4 },
+        }}
       >
         {/* Hero Image with responsive width */}
         <Image src={HeroImg} alt="hero-image" layout="fill" priority />
