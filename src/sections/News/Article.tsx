@@ -37,7 +37,7 @@ export default function Article() {
           <Box
             sx={{
               position: "relative",
-              height: {xs:250, sm:300},
+              height: { xs: 250, sm: 300 },
               width: "100%",
               "&:hover img": {
                 transform: "scale(1.1)",

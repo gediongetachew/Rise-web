@@ -25,7 +25,7 @@ export default function Post() {
       <Grid item xs={12} md={12} lg={6}>
         <Grid container>
           <Grid item xs={12}>
-            <Typography variant="h4" sx={{ color: "red" }} mb={3}>
+            <Typography variant="h4" sx={{ color: "red", fontSize: { sx: 1, sm: 25, md: 28,lg:28 } }} mb={3}>
               Featured Post
             </Typography>
           </Grid>

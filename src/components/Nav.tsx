@@ -70,7 +70,7 @@ export default function Nav() {
           {/* Navigation Links for Medium and Larger Screens */}
           <Grid
             item
-            xs={0}
+            xs={6}
             md={8}
             container
             alignItems="center"
@@ -158,7 +158,7 @@ export default function Nav() {
                 sx={{
                   color:"#3D628C",
                   fontWeight: "medium",
-                  fontSize: { xs: "2rem", sm: "0.85rem", md: "0.95rem" }, // Responsive font size for drawer items
+                  fontSize: { xs: "2rem", sm: "3rem", md: "0.95rem" }, // Responsive font size for drawer items
                   paddingY: { xs: "20px", sm: "25px", md: "8px 16px" }, // Responsive button padding
                   "&:hover": {
                     fontWeight: "xl",

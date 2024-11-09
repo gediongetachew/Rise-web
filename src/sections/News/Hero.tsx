@@ -14,10 +14,10 @@ export default function Hero() {
       sx={{
         marginTop: {xs:4, sm:4, md:6},
         paddingY: { xs: 5, sm: 6, md: 15, lg:4 },
-        paddingX: { xs: 0, sm: 1, md: 5 },
+        paddingX: { xs: 2, sm: 1, md: 5 },
         position: "relative",
         width: "100%",
-        height: { xs: "40vh", md: "70vh", lg: "80vh" }, // Set height for hero image section
+        height: { xs: "45vh", md: "70vh", lg: "80vh" }, // Set height for hero image section
         overflow: "hidden", // Prevent any overflow issues with responsive image
       }}
     >
@@ -54,7 +54,7 @@ export default function Hero() {
           <Typography
             variant="h3"
             sx={{
-              fontSize: { xs: ".8rem", sm: "1.5rem", md: "2rem", lg: "3rem"},
+              fontSize: { xs: ".6rem", sm: "1.5rem", md: "2rem", lg: "3rem"},
               fontWeight: "bold",
             }}
           >
@@ -65,7 +65,7 @@ export default function Hero() {
           <Typography
             variant="subtitle1"
             sx={{
-              fontSize: { xs: "0.6rem", sm: "1rem", md: "1.2rem", lg:"1.5rem" },
+              fontSize: { xs: "0.4rem", sm: "1rem", md: "1.2rem", lg:"1.5rem" },
               marginTop: { xs: 1, sm: 1, lg: 3 },
               lineHeight: 1.6,
             }}
