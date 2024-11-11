@@ -1,5 +1,6 @@
 import { Card, Typography, Box, Grid, Button } from "@mui/material";
 import Image from "next/image";
+import LanguageIcon from "@mui/icons-material/Language";
 
 export default function CurvedCard() {
   return (
@@ -26,20 +27,49 @@ export default function CurvedCard() {
             textAlign: { xs: "center", md: "left" },
           }}
         >
-          <Grid item xs={12}>
+          <Grid item xs={12} sx={{display: 'flex', position: "relative", alignContent: 'flex-center' }}>
             <Typography
               variant="h3"
               fontWeight="bold"
               sx={{
                 color: "#3D628C",
-                alignContent: "left",
-                fontWeight: { sx: 20 },
+                alignItems:'left',
+                textWrap: 'rap',
+                display: "inline-block", // Ensure the text occupies only the necessary space
+                marginRight: 2, // Add some space between the text and the box
+                fontSize: {xs:30, sm:40, md:50}
               }}
             >
               Bringing Innovation to Healthcare Your Trusted Partner in Medical
               Equipment
             </Typography>
+
+            <Box
+              sx={{
+                position: "absolute",
+                display: "flex",
+                top: { xs: "105%", sm: "115%", md: "105%", lg: "87%",  }, // Centers the box vertically in relation to the text
+                right: { xs: "28%", sm: "28%", md: "39%", lg: "28%" }, // Aligns the box to the right of the parent container
+                background: "black",
+                width: { xs: "60%", sm: "40%", md: "60%", lg: "30%", xl:'40%' }, // Adjust the width of the box as needed
+                height: "2px", // Thickness of the line (box)
+                transform: "translateY(-50%)", // Vertically centers the box with respect to the text
+              }}
+            ></Box>
+            <LanguageIcon
+              sx={{
+                position: "absolute",
+                display: "flex",
+                color: "#EE484A",
+                top: { xs: "105%", sm: "115%", md: "105%", lg: "87%",  }, // Centers the box vertically in relation to the text
+                left: { xs: "65%", sm: "62%", md: "50%", lg: "62%",xl:'60%' }, // Aligns the box to the right of the parent container
+                width: "30%", // Adjust the width of the box as needed
+                height: "30px", // Thickness of the line (box)
+                transform: "translateY(-50%)", // Vertically centers the box with respect to the text
+              }}
+            />
           </Grid>
+
           <Grid item xs={12} marginTop={5}>
             <Typography variant="subtitle1" sx={{ color: "#616161" }}>
               Lorem ipsum dolor sit amet consectetur. Mauris semper tristique
@@ -67,7 +97,7 @@ export default function CurvedCard() {
                 background: "#3D628C",
                 paddingX: { xs: 5, md: 6 },
                 paddingY: { xs: 0, sm: 2 },
-                borderRadius: "25px",
+                borderRadius: "40px",
                 fontSize: { xs: 15, md: 20 },
               }}
             >
@@ -80,11 +110,11 @@ export default function CurvedCard() {
               sx={{
                 color: "black",
                 background: "white",
-                borderRadius: "25px",
+                borderRadius: "40px",
                 border: "0.5px solid #9E9E9E",
-                fontSize: { xs: 10, md: 20 },
                 paddingX: { xs: 6, md: 3 },
-                paddingY: { xs: 1, sm: 2, md: 1 },
+                paddingY: { xs: 0, sm: 2, md: 1 },
+                fontSize: { xs: 15, md: 20 },
               }}
             >
               Get In Touch
@@ -236,7 +266,13 @@ export default function CurvedCard() {
             <Typography
               variant="h1"
               sx={{
-                fontSize: { xs: ".9rem", sm: "1rem", md: "1.7rem", lg: "2rem", xl: '2.5rem' },
+                fontSize: {
+                  xs: ".9rem",
+                  sm: "1rem",
+                  md: "1.7rem",
+                  lg: "2rem",
+                  xl: "2.5rem",
+                },
                 marginBottom: { xs: 1 },
               }}
             >
@@ -250,7 +286,7 @@ export default function CurvedCard() {
                   sm: ".8rem",
                   md: "1rem",
                   lg: "1.4rem",
-                  xl: "1.8rem"
+                  xl: "1.8rem",
                 },
                 marginBottom: { xs: 1 },
               }}
@@ -265,7 +301,7 @@ export default function CurvedCard() {
                   sm: "0.6rem",
                   md: "0.6rem",
                   lg: ".9rem",
-                  xl: '1.1rem'
+                  xl: "1.1rem",
                 },
               }}
             >

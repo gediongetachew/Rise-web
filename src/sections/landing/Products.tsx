@@ -13,49 +13,65 @@ export default function Products() {
     {
       src: img1,
       title: "Medical Equipment and Devices",
-      description: "Lorem ipsum dolor sit amet...",
+      description:
+        "Lorem ipsum dolor sit amet consectetur. Sagittis massa at quis lacus blandit eleifend sem odio at. Ut a lacinia lorem et pellentesque mauris orci dignissim. Massa imperdiet at a.",
     },
     {
       src: img2,
       title: "Automobiles",
-      description: "Lorem ipsum dolor sit amet...",
+      description:
+        "Lorem ipsum dolor sit amet consectetur. Sagittis massa at quis lacus blandit eleifend sem odio at. Ut a lacinia lorem et pellentesque mauris orci dignissim. Massa imperdiet at a.",
     },
     {
       src: img3,
       title: "Coffee",
-      description: "Lorem ipsum dolor sit amet...",
+      description:
+        "Lorem ipsum dolor sit amet consectetur. Sagittis massa at quis lacus blandit eleifend sem odio at. Ut a lacinia lorem et pellentesque mauris orci dignissim. Massa imperdiet at a.",
     },
     {
       src: img4,
       title: "Spice and Herbs",
-      description: "Lorem ipsum dolor sit amet...",
+      description:
+        "Lorem ipsum dolor sit amet consectetur. Sagittis massa at quis lacus blandit eleifend sem odio at. Ut a lacinia lorem et pellentesque mauris orci dignissim. Massa imperdiet at a.",
     },
-    { src: img5, title: "Product 5", description: "This is product 5" },
+    {
+      src: img1,
+      title: "Spice and Herbs",
+      description:
+        "Lorem ipsum dolor sit amet consectetur. Sagittis massa at quis lacus blandit eleifend sem odio at. Ut a lacinia lorem et pellentesque mauris orci dignissim. Massa imperdiet at a.",
+    },
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const scrollRef = useRef<HTMLDivElement | null>(null);
 
+  const imageWidth = 350; // Width of each image card
+
   const handleNext = () => {
     if (currentIndex < images.length - 1) {
       setCurrentIndex(currentIndex + 1);
-      scrollRef.current!.scrollBy({ left: 300, behavior: "smooth" });
+      scrollRef.current!.scrollBy({ left: imageWidth, behavior: "smooth" });
     }
   };
 
   const handlePrev = () => {
     if (currentIndex > 0) {
       setCurrentIndex(currentIndex - 1);
-      scrollRef.current!.scrollBy({ left: -300, behavior: "smooth" });
+      scrollRef.current!.scrollBy({ left: -imageWidth, behavior: "smooth" });
     }
   };
 
   return (
-    <article className="w-full mt-10 px-4">
-      {/* Grid Container with Typography */}
-      <Grid container spacing={2} mb={2}>
+    <Grid container sx={{ padding: 4 }}>
+      <Grid container spacing={2} mb={5}>
         <Grid item xs={12}>
-          <Typography variant="h5" sx={{ color: "#EE484A", fontSize: {xs:15,sm: 20, md:25,lg:25} }}>
+          <Typography
+            variant="h5"
+            sx={{
+              color: "#EE484A",
+              fontSize: { xs: 15, sm: 20, md: 25, lg: 25 },
+            }}
+          >
             Our Products
           </Typography>
         </Grid>
@@ -70,7 +86,7 @@ export default function Products() {
           <Typography
             variant="h3"
             color="textSecondary"
-            sx={{ color: "#3D628C", fontSize: {xs:30, sm:40, md:50} }}
+            sx={{ color: "#3D628C", fontSize: { xs: 30, sm: 40, md: 50 } }}
           >
             Lorem ipsum dolor sit <br /> amet consec tetur Atte
             <br /> mpor eu fermentu Commodo
@@ -78,12 +94,19 @@ export default function Products() {
         </Grid>
       </Grid>
 
-      <Box mb={2} display="flex" justifyContent="flex-end">
+      <Box
+        mb={2}
+        display="flex"
+        justifyContent="flex-end"
+        sx={{
+          width: "100%",
+        }}
+      >
         <Button
           onClick={handlePrev}
           disabled={currentIndex === 0}
           variant="outlined"
-          sx={{ marginRight: 1 }}
+          sx={{ marginRight: 4,borderRadius: '20px', color: 'black',  border: '1px solid #9E9E9E' }}
         >
           ←
         </Button>
@@ -91,6 +114,7 @@ export default function Products() {
           onClick={handleNext}
           disabled={currentIndex === images.length - 1}
           variant="outlined"
+          sx={{ marginRight: 10, borderRadius: '20px', color: 'black', border: '1px solid #9E9E9E'}}
         >
           →
         </Button>
@@ -102,7 +126,8 @@ export default function Products() {
         display="flex"
         overflow="hidden"
         sx={{
-          height: "350px",
+          width: "100%",
+          height: "600px", // Increase height to accommodate text
           overflowX: "auto",
           scrollSnapType: "x mandatory",
           "&::-webkit-scrollbar": {
@@ -114,32 +139,53 @@ export default function Products() {
           <Box
             key={index}
             sx={{
-              minWidth: "300px",
+              flex: "0 0 calc(100% / 3.5)",
               height: "100%",
               scrollSnapAlign: "center",
-              transition: "transform 0.7s ease-in-out",
+              transition: "transform .5s ease-in-out",
               transform: index === currentIndex ? "scale(1)" : "scale(0.95)",
-              opacity: index === currentIndex ? 1 : 0.7,
+              opacity: index === currentIndex ? 1 : 0.8,
+              padding: 1,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
             }}
           >
-            <Image
-              src={img.src}
-              alt={`Gallery image ${index + 1}`}
-              className="w-full h-[250px] object-cover rounded-md"
-              width={300}
-              height={250}
-            />
-            <Box mt={2}>
-              <Typography variant="h6" fontWeight="bold">
-                {img.title}
-              </Typography>
-              <Typography variant="body2" color="textSecondary">
-                {img.description}
-              </Typography>
+            {/* Image Container */}
+            <Box
+              sx={{
+                position: "relative",
+                width: "100%",
+                height: "100%", // Keep a fixed height for the image
+
+                borderRadis: "10px",
+              }}
+            >
+              <Image
+                src={img.src}
+                alt={`Gallery image ${index + 1}`}
+                objectFit="cover"
+              />
+              <Box
+                sx={{
+                  height: "30%", // Ensure text container doesn't shrink the image
+                  textAlign: "left",
+                  paddingTop: 2,
+                }}
+              >
+                <Typography variant="h6" fontWeight="bold" fontFamily={'Roboto'}>
+                  {img.title}
+                </Typography>
+                <Typography variant="body2" color="textSecondary" pr={5} fontFamily={'Roboto'}>
+                  {img.description}
+                </Typography>
+              </Box>
             </Box>
+
+            {/* Text Container */}
           </Box>
         ))}
       </Box>
-    </article>
+    </Grid>
   );
 }

@@ -22,34 +22,49 @@ export default function Banner() {
     >
       <Grid
         item
+        xs={8}
+        sm={6}
+        md={6}
+        lg={6}
+        xl={6}
         sx={{
           position: "absolute",
-          bottom: { xs: "10%", sm: "0%", md: "5%" },
-          left: { xs: "5%", sm: "0%", md: "0%" },
-          width: { xs: "90%", sm: "80%", md: "60%" },
+          bottom: { xs: "5%", sm: "0%", md: "5%" },
+          left: { xs: "2%", sm: "0%", md: "0%" },
           zIndex: 10,
         }}
-        xs={12}
-        sm={8}
-        md={6}
-        lg={4}
       >
         <Box
           display={"flex "}
           sx={{
-            padding: { xs: 2, sm: 3, md: 4 },
+            padding: { xs: 0, sm: 3, md: 4 },
             borderRadius: 2,
-            textAlign: "center",
-            gap: 10,
+            gap: { xs: 2, sm: 10, xl: 8 },
           }}
         >
-          <Box display={"flex flex-col"}>
+          <Box
+            sx={{
+              display: "flex",
+              flexDirection: "column",
+              justifyContent: "flex-start",
+            }}
+          >
             <Typography
               variant="h6"
               component="h1"
               color="white"
               gutterBottom
-              sx={{ fontSize: { xs: "1rem", sm: "1.5rem", md: "4rem" } }}
+              sx={{
+                fontSize: {
+                  xs: "1.5rem",
+                  sm: "1.5rem",
+                  md: "2.5rem",
+                  lg: "2.8rem",
+                  xl: "3.5rem",
+                },
+              
+                fontWeight: 'bold'
+              }}
             >
               +71%
             </Typography>
@@ -57,10 +72,16 @@ export default function Banner() {
               variant="h6"
               color="white"
               sx={{
-                fontSize: { xs: ".8rem", sm: "1rem", md: "1.5rem", lg: "2rem" },
+                fontSize: {
+                  xs: ".6rem",
+                  sm: ".8rem",
+                  md: "1.2rem",
+                  lg: "1.3rem",
+                  xl: "1.8rem",
+                },
               }}
             >
-              Top 5 Medical Equipment <br /> Imports
+              Top 5 Medical Equipment Imports
             </Typography>
           </Box>
           <Box display={"flex flex-col"}>
@@ -69,7 +90,16 @@ export default function Banner() {
               component="h1"
               color="white"
               gutterBottom
-              sx={{ fontSize: { xs: "1rem", sm: "1.5rem", md: "4rem" } }}
+              sx={{
+                fontSize: {
+                  xs: "1rem",
+                  sm: "1.5rem",
+                  md: "2.5rem",
+                  lg: "2.8rem",
+                  xl: "3.5rem",
+                },
+                fontWeight: 'bold'
+              }}
             >
               +1.5K
             </Typography>
@@ -77,7 +107,13 @@ export default function Banner() {
               variant="h6"
               color="white"
               sx={{
-                fontSize: { xs: ".8rem", sm: "1rem", md: "1.5rem", lg: "2rem" },
+                fontSize: {
+                  xs: ".8rem",
+                  sm: ".8rem",
+                  md: "1.2rem",
+                  lg: "1.3rem",
+                  xl: "1.8rem",
+                },
               }}
             >
               Happy Customer
@@ -97,7 +133,7 @@ export default function Banner() {
           width: { xs: "90%", sm: "90%", md: "60%" },
           zIndex: 10,
         }}
-        xs={12}
+        xs={7}
         sm={8}
         md={6}
         lg={4}
@@ -117,7 +153,9 @@ export default function Banner() {
             color="white"
             alignItems="flex-center"
             justifyItems="flex-center"
-            sx={{ fontSize: { xs: "1rem", sm: "1.5rem", md: "1.7rem" } }}
+            sx={{
+              fontSize: { xs: ".8rem", sm: "1rem", md: "1.4rem", lg: "1.7rem" },
+            }}
           >
             Happy Customer
           </Typography>
@@ -127,7 +165,7 @@ export default function Banner() {
             component="h2"
             color="white"
             gutterBottom
-            sx={{ fontSize: { xs: "1.1rem", sm: "1.3rem", md: "2rem" } }}
+            sx={{ fontSize: { xs: ".8rem", sm: "1.1rem", md: "1.5rem", xl: '2.5rem', fontWeight: 'bold' } }}
           >
             Lorem ipsum dolor sit amet consectetur. Mauris mollis.
           </Typography>

@@ -1,28 +1,30 @@
 "use client";
-import { Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography } from "@mui/material";
 import React, { useState } from "react";
 import Image, { StaticImageData } from "next/image";
 
 interface Props {
+  id: number;
   title: string;
   text: string;
   icon: StaticImageData; // New prop for the icon
   img: StaticImageData;
+  selected: number | null;
+  handleSelect: (id: number) => void;
 }
 
 const FolderCard = (props: Props) => {
-  const [expanded, setExpanded] = useState(false); // State to control expansion
+  const expand = props.id === props.selected;
 
-  const handleToggleExpand = () => {
-    setExpanded(!expanded); // Toggle expansion state
-  };
+  console.log(`${props.id} ${expand}`);
 
   return (
     <Grid
       container
+      onClick={() => props.handleSelect(props.id)}
       sx={{
-        width: expanded ? "555px" : "300px", // Expand width horizontally
-        height: "280px", // Keep the height fixed
+        width: expand ? "755px" : "300px", // Expand width horizontally
+        height: "340px", // Keep the height fixed
         backgroundColor: "white",
         borderRadius: "20px",
         borderLeft: "3px solid rgba(0,0,0,0.1)",
@@ -34,7 +36,7 @@ const FolderCard = (props: Props) => {
         transition: "width 0.3s ease",
         elevation: 4, // Smooth transition for width change
       }}
-      onClick={handleToggleExpand} // Handle click to toggle expansion
+      // Handle click to toggle expansion
     >
       {/* Cutout on the top right */}
       <Grid
@@ -57,7 +59,7 @@ const FolderCard = (props: Props) => {
           position: "absolute",
           top: 0,
           right: "70px", // Position it to the left of the cutout
-          width: expanded ? "524px" : "410px", // Match the width you want
+          width: expand ? "524px" : "410px", // Match the width you want
           height: "10px", // Height of the box
           borderTop: "3px solid rgba(0,0,0,0.1)", // Top border only
           backgroundColor: "white",
@@ -74,7 +76,7 @@ const FolderCard = (props: Props) => {
           top: "49px", // Position it right below the cutout
           right: 0,
           width: "62px", // Match the width of the cutout
-          height: "220px", // Adjust the height as desired
+          height: "280px", // Adjust the height as desired
           borderTop: "1px solid rgba(0,0,0,0.1)", // Top border
           borderRight: "3px solid rgba(0,0,0,0.1)", // Right border
           backgroundColor: "white",
@@ -84,7 +86,7 @@ const FolderCard = (props: Props) => {
       />
 
       {/* Image Section */}
-      {expanded && (
+      {expand && (
         <Image
           src={props.img} // Use the imported image
           alt="Expanded Content"
@@ -94,7 +96,7 @@ const FolderCard = (props: Props) => {
             position: "absolute",
             top: 0,
             left: 0,
-            width: "50%", // Set image width to 50% of the card
+            width: "45%", // Set image width to 50% of the card
             height: "100%", // Set image height to fill the card
             zIndex: 2, // Set zIndex higher than the boxes
             borderTopLeftRadius: "20px", // Optional: Add rounded corners to match the card
@@ -108,11 +110,11 @@ const FolderCard = (props: Props) => {
         container
         item
         xs={12}
-        p={3}
         sx={{
           position: "relative",
           zIndex: 2,
-          marginLeft: expanded ? "50%" : "0",
+          marginLeft: expand ? "45%" : "0",
+          paddingX: expand ? 1 : 0,
           marginTop: 0,
         }}
       >
@@ -127,10 +129,73 @@ const FolderCard = (props: Props) => {
             style={{ marginRight: "8px", marginBottom: 4 }} // Add space between icon and text
           />
 
-          <Typography variant="h6" color="textPrimary" sx={{}}>
+          {expand && (
+            <Box
+              sx={{
+                display: "flex",
+                width: "100%",
+                height: "20%",
+                marginTop: 8,
+
+                gap: 10,
+              }}
+            >
+              <Box sx={{ display: "flex", flexDirection: "column" }}>
+                <Typography
+                  sx={{
+                    fontSize: { xs: 30 },
+                    fontFamily: "Helvetica Light",
+                    fontWeight: "bold",
+                  }}
+                >
+                  +70.1%
+                </Typography>
+                <Typography
+                  sx={{
+                    fontSize: { xs: 12 },
+                    fontFamily: "Helvetica Light",
+                    color: "#616161",
+                  }}
+                >
+                  Top 5 Medical Equipment Imports
+                </Typography>
+              </Box>
+
+              <Box sx={{ display: "flex", flexDirection: "column" }}>
+                <Typography
+                  sx={{
+                    fontSize: { xs: 30 },
+                    fontFamily: "Helvetica Light",
+                    fontWeight: "bold",
+                  }}
+                >
+                  +1.5k
+                </Typography>
+                <Typography
+                  sx={{
+                    fontSize: { xs: 12 },
+                    fontFamily: "Helvetica Light",
+                    color: "#616161",
+                  }}
+                >
+                  Happy Customer{" "}
+                </Typography>
+              </Box>
+            </Box>
+          )}
+          <Typography
+            variant="h6"
+            color="textPrimary"
+            fontFamily={"Helvetica Light"}
+            sx={{ marginTop: expand ?4: 17, fontWeight: "bold" }}
+          >
             {props.title}
           </Typography>
-          <Typography variant="subtitle2" color="textSecondary">
+          <Typography
+            variant="subtitle2"
+            color="textSecondary"
+            fontFamily={"Helvetica Light"}
+          >
             {props.text}
           </Typography>
         </Grid>

@@ -13,6 +13,7 @@ import Image from "next/image";
 import MenuIcon from "@mui/icons-material/Menu";
 import Rise from "../../public/assets/rise-logo.png";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const navItems = [
   { title: "Home", address: "/home" },
@@ -24,6 +25,7 @@ const navItems = [
 
 export default function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false);
+  const pathname= usePathname();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -78,7 +80,6 @@ export default function Nav() {
               display: { xs: "none", md: "flex" }, // Only show on medium and larger screens
               justifyContent: "flex-start", // Align navigation next to the logo
               gap: 2,
-              
             }}
           >
             {navItems.map((item) => (
@@ -88,7 +89,7 @@ export default function Nav() {
                 href={item.address}
                 sx={{
                   color: "black",
-                  fontWeight: "medium",
+                  fontWeight: pathname === item.address ? "bold" : "medium",
                   fontSize: { md: "0.7rem", lg: "1rem" }, // Responsive font size
                   "&:hover": {
                     fontWeight: "bold",
@@ -106,14 +107,14 @@ export default function Nav() {
             item
             xs={6}
             md={2}
-            sx={{ display: { md: "none" }, textAlign: "right" }}
+            sx={{ dislay: { md: "none" }, textAlign: "right" }}
           >
             <IconButton
               edge="end"
               color="inherit"
               aria-label="menu"
               onClick={handleDrawerToggle}
-              sx={{ marginLeft:{xs: 18, sm:45} }} // Align to the right
+              sx={{ marginLeft: { xs: 18, sm: 45 } }} // Align to the right
             >
               <MenuIcon
                 sx={{
@@ -157,8 +158,8 @@ export default function Nav() {
                 href={item.address}
                 onClick={handleDrawerToggle}
                 sx={{
-                  color:"#3D628C",
-                  fontWeight: "medium",
+                  color: "#3D628C",
+                  fontWeight: pathname === item.address ? "bold" : "medium",
                   fontSize: { xs: "2rem", sm: "3rem", md: "0.95rem" }, // Responsive font size for drawer items
                   paddingY: { xs: "20px", sm: "25px", md: "8px 16px" }, // Responsive button padding
                   "&:hover": {
