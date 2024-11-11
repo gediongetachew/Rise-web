@@ -78,6 +78,7 @@ export default function Nav() {
               display: { xs: "none", md: "flex" }, // Only show on medium and larger screens
               justifyContent: "flex-start", // Align navigation next to the logo
               gap: 2,
+              
             }}
           >
             {navItems.map((item) => (
@@ -112,7 +113,7 @@ export default function Nav() {
               color="inherit"
               aria-label="menu"
               onClick={handleDrawerToggle}
-              sx={{ marginLeft: { xs: 15, sm: 40 } }} // Align to the right
+              sx={{ marginLeft:{xs: 18, sm:45} }} // Align to the right
             >
               <MenuIcon
                 sx={{
