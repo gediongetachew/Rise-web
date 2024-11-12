@@ -70,12 +70,28 @@ export default function Post() {
             By <span style={{ color: "#EE484A" }}>John Doe</span> | May 23, 2022
           </Typography>
 
-          <Box sx={{ mt: 2 }}>
-            <Typography variant="h6">
+          <Box sx={{ mt: 4 }}>
+            <Typography
+            variant="h4"
+            sx={{
+              fontSize: { xs: 25, sm:30, md: 35 },
+                fontWeight: "bold",
+                fontFamily: "Segoe UI",
+              }}
+            >
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
               eiusmod tempor.
             </Typography>
-            <Typography variant="subtitle2" sx={{ color: "#6D6E76", mt: 1 }}>
+            <Typography
+              variant="h6"
+              sx={{
+                fontSize: { xs: 15, sm:18,md:22 },
+                color: "#6D6E76",
+                mt: 3,
+                fontFamily: "Inter",
+                
+              }}
+            >
               Duis aute irure dolor in reprehenderit in voluptate velit esse
               cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat
               cupidatat non proident.
@@ -87,12 +103,13 @@ export default function Post() {
             variant="contained"
             endIcon={<ArrowOutwardIcon />}
             sx={{
-              paddingX: 3,
-              paddingY: 2,
+              paddingX: { xs: 3, sm: 6 },
+              paddingY: { xs: 2, sm: 3 },
               backgroundColor: "#3D628C",
-              borderRadius: "30px",
-              marginTop: 3,
+              borderRadius: "35px",
+              marginTop: 7,
               fontFamily: "Roboto",
+              fontSize: { xs: 15 },
             }}
           >
             Read More
@@ -109,7 +126,6 @@ export default function Post() {
           container
           direction="column"
           sx={{
-            
             gap: 3, // space between posts
           }}
         >
@@ -122,8 +138,8 @@ export default function Post() {
                 display: "block",
                 "&:hover": { backgroundColor: "#F7F7F7" },
                 marginBottom: 3,
-                padding:5,
-                
+                padding: 5,
+
                 borderRadius: 10,
                 transition: "background-color 0.3s",
               }}
@@ -134,8 +150,12 @@ export default function Post() {
               </Typography>
 
               <Typography
-                variant="h4"
-                sx={{ fontWeight: "bold", mt: 1, fontFamily: "Segoe UI" }}
+                sx={{
+                  fontWeight: "bold",
+                  mt: 1,
+                  fontFamily: "Segoe UI",
+                  fontSize: { xs: 20, sm:25, md:30 },
+                }}
               >
                 {item.title}
               </Typography>

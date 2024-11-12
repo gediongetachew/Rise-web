@@ -12,12 +12,12 @@ export default function Hero() {
       alignItems="center"
       justifyContent="center"
       sx={{
-        marginTop: {xs:4, sm:4, md:6},
+        marginTop: {xs:4, sm:4, md:0, lg:6},
         paddingY: { xs: 5, sm: 6, md: 15, lg:4 },
         paddingX: { xs: 2, sm: 1, md: 5 },
         position: "relative",
         width: "100%",
-        height: { xs: "55vh", md: "70vh", lg: "80vh" }, // Set height for hero image section
+        height: { xs: "40vh",sm: '55vh' ,md: "80vh", lg: "80vh" }, // Set height for hero image section
         overflow: "hidden", // Prevent any overflow issues with responsive image
       }}
     >
@@ -46,7 +46,7 @@ export default function Hero() {
             top: { xs: "53%", sm: "55%", md: "50%" },
             left: { xs: "1%", sm: "2%", md: "5%" },
             transform: "translateY(-50%)",
-            width: { xs: "100%", sm: "100%", md: "80%" },
+            width: { xs: "100%", sm: "100%", md: "90%" },
             color: "white",
             zIndex: 2,
           }}

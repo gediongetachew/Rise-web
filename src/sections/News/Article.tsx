@@ -11,71 +11,80 @@ export default function Article() {
       container
       padding={4}
       spacing={4}
-      marginBottom={5}
+      marginBottom={20}
       sx={{
-        borderBottom: "2px soldi #6D6E76 ",
+        display: "flex",
+        flexDirection: "column",
+        borderBottom: "1px solid #6D6E76",
         overflowX: { xs: "auto", sm: "auto", md: "hidden" }, // Enable horizontal scrolling on xs and sm
         flexWrap: { xs: "nowrap", sm: "nowrap", md: "nowrap" },
       }}
     >
-      {Blog.map((item) => (
-        <Grid
-          key={item.id}
-          item
-          xs={12}
-          sm={6}
-          md={4}
-          sx={{
-            minWidth: { xs: "90%", sm: "90%", md: "auto" }, // Set a width to enable horizontal scrolling on smaller screens
-            display: "flex",
-            flexDirection: "column",
-            gap: 2,
-            overflow: "hidden",
-            "&:hover": { border: "#F7F7F7", bgcolor: "#F7F7F7" },
-          }}
-        >
+      <Grid item xs={12}>
+        <Typography variant="h4" sx={{ color: "#EE484A", padding:4 }}>
+          Articles & Blog
+        </Typography>
+      </Grid>
+
+      <Grid item xs={12} sx={{ display: "flex", gap: 4 , marginTop: {xs:5}}}>
+        {Blog.map((item) => (
           <Box
+            key={item.id}
             sx={{
-              position: "relative",
-              height: { xs: 250, sm: 300 },
-              width: "100%",
-              "&:hover img": {
-                transform: "scale(1.1)",
-                transition: "transform 1s cubic-bezier(0.25, 0.1, 0.25, 1)",
-              },
+              flex: "0 0 auto", // Prevent shrinking
+              width: { xs: "75vw", sm: "60vw", md: "570px" }, // Control the width here
+              display: "flex",
+              flexDirection: "column",
+              gap: 4,
+              overflow: "hidden",
+              "&:hover": { border: "#F7F7F7", bgcolor: "#F7F7F7" },
             }}
           >
-            <Image
-              src={item.img}
-              alt="article-image"
-              layout="fill"
-              objectFit="cover"
-            />
-          </Box>
-
-          <Box gap={4} sx={{ padding: 2 }}>
-            <Typography variant="subtitle2" sx={{ marginBottom: 2 }}>
-              By <span style={{ color: "#EE484A" }}>{item.name}</span> |{" "}
-              {item.date}
-            </Typography>
-
-            <Typography
-              variant="h5"
-              gutterBottom
-              sx={{ fontSize: { xs: "1rem", sm: "2rem" } }}
+            <Box
+              sx={{
+                position: "relative",
+                width: "100%",
+                height: { xs: 250, sm: 420 }, // Set a fixed height for the image container
+                "&:hover img": {
+                  transform: "scale(1.1)",
+                  transition: "transform 1s cubic-bezier(0.25, 0.1, 0.25, 1)",
+                },
+              }}
             >
-              {item.title}
-            </Typography>
+              <Image
+                src={item.img}
+                alt="article-image"
+                layout="responsive"
+                width={400}
+                height={300}
+                objectFit="cover"
+              />
+            </Box>
 
-            <Typography
-              variant="subtitle2"
-              sx={{ color: "#6D6E76", fontSize: { xs: ".7rem", sm: "2rem" } }}
-            >
-              {item.description}
-            </Typography>
+            <Box gap={4} sx={{ padding: 2, textAlign: "left" }}>
+              <Typography variant="subtitle2" sx={{ marginBottom: 2 , fontFamily: 'Inter'}}>
+                By <span style={{ color: "#EE484A" }}>{item.name}</span> |{" "}
+                {item.date}
+              </Typography>
+
+              <Typography
+                variant="h5"
+                gutterBottom
+                sx={{ fontSize: { xs: "1rem", sm: "2.5rem" }, fontWeight: 'bold', fontFamily: 'Segoe UI' }}
+              >
+                {item.title}
+              </Typography>
+
+              <Typography
+                variant="subtitle2"
+                sx={{ color: "#6D6E76", fontSize: { xs: ".7rem", sm: "1.3rem" }, fontFamily: 'Inter' }}
+              >
+                {item.description}
+              </Typography>
+            </Box>
           </Box>
-        </Grid>
-      ))}
+        ))}
+      </Grid>
     </Grid>
   );
 }
