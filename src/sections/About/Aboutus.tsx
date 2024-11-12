@@ -89,7 +89,7 @@ export default function TestimonialCard() {
               xs={12}
               sm={12}
               md={12}
-              lg={12}
+              lg={5.8}
               xl={5.8}
               key={index}
               sx={{

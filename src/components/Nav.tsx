@@ -25,7 +25,7 @@ const navItems = [
 
 export default function Nav() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const pathname= usePathname();
+  const pathname = usePathname();
 
   const handleDrawerToggle = () => {
     setMobileOpen(!mobileOpen);
@@ -38,7 +38,7 @@ export default function Nav() {
       sx={{
         top: 0,
         backgroundColor: "white",
-        zIndex: 2,
+        zIndex: 8,
         width: "100%",
         height: { xs: 50, sm: 60, md: 80 }, // Responsive height
       }}

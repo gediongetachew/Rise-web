@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Box, Typography, IconButton, Grid } from "@mui/material";
+import { Box, Typography, IconButton, Grid, Button } from "@mui/material";
 import { ChevronLeft, ChevronRight } from "@mui/icons-material";
 import testimonials from "@/data/testimonial";
 import Image from "next/image";
@@ -10,8 +10,6 @@ import quoteImg from "../../../public/assets/quotation.png";
 export default function TestimonialCard() {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [page, setPage] = useState(1);
-
-
 
   const nextTestimonial = () => {
     setCurrentIndex((prevIndex) => (prevIndex + 2) % testimonials.length);
@@ -38,7 +36,7 @@ export default function TestimonialCard() {
         marginBottom: 5,
         paddingX: { xs: 3, sm: 2, md: 10 },
         background: "#F7F7F7",
-        height: { xs: "400px", sm: "600px", md: "600px" },
+        height: { xs: "500px", sm: "600px", md: "600px" },
       }}
     >
       <Typography
@@ -46,13 +44,13 @@ export default function TestimonialCard() {
         sx={{
           color: "red",
           marginTop: 5,
-          fontSize: { sx: 1, sm: 25, md: 28, lg: 28 },
+          fontSize: { xs: 15, sm: 20, md: 25, lg: 25 },
         }}
       >
-        Testimonials
+        TESTIMONIALS
       </Typography>
 
-      <Grid item xs={12} sx={{ marginTop: { xs: 0, sx: 0, md: 10 } }}>
+      <Grid item xs={12} sx={{ marginTop: { xs: 5, sx: 0, md: 10 } }}>
         <Grid
           container
           spacing={2}
@@ -75,14 +73,19 @@ export default function TestimonialCard() {
             .map((testimonial, index) => (
               <Grid
                 item
-                xs={12}
-                sm={12}
-                md={12}
-                lg={12}
+                xs={10}
+                sm={10}
+                md={10}
+                lg={10}
                 xl={5.8}
                 key={index}
                 sx={{
-                  height: { xs: "260px", sm: "360px", md: "360px" },
+                  height: {
+                    xs: "330px",
+                    sm: "395px",
+                    md: "360px",
+                    lg: "460px",
+                  },
                   width: { xs: "100%", sm: "360px", md: "360px" },
                   flexShrink: 0,
                   backgroundColor: "white",
@@ -94,7 +97,7 @@ export default function TestimonialCard() {
                   transition: "width 0.3s ease",
                 }}
               >
-                {/* Cutout on the top right */}
+                Cutout on the top right
                 <Grid
                   xs={12}
                   sm={6}
@@ -103,21 +106,36 @@ export default function TestimonialCard() {
                     position: "absolute",
                     top: 0,
                     right: 0,
-                    width: "150px",
-                    height: "32px",
-                    backgroundColor: "#F7F7F7",
+                    width: "250px",
+                    height: "42px",
                     borderBottomLeftRadius: "10px",
-                    borderLeft: "1px solid rgba(0,0,0,0.1)",
+                    borderBottom: "1px solid rgba(0,0,0,0.1)",
                     zIndex: 1,
+                    background: "#F7F7F7",
                   }}
                 />
-
+                {/* Top box next to the cutout */}
                 <Grid
                   sx={{
                     position: "absolute",
-                    top: "30px", // Position it right below the cutout
+                    top: 0,
+                    right: "250px",
+                    height: "36px",
+                    width: "calc(100% - 250px)",
+                    backgroundColor: "white",
+                    borderTop: "1px solid rgba(0,0,0,0.1)",
+                    borderRight: "1px solid rgba(0,0,0,0.1)",
+                    borderTopLeftRadius: "10px",
+                    borderTopRightRadius: "10px",
+                    zIndex: 2,
+                  }}
+                />
+                <Grid
+                  sx={{
+                    position: "absolute",
+                    top: "41px", // Position it right below the cutout
                     right: 0,
-                    width: "146px", // Match the width of the cutout
+                    width: "130px", // Match the width of the cutout
                     height: "90%", // Adjust the height as desired
                     borderTop: "1px solid rgba(0,0,0,0.1)", // Top border
                     borderRight: "1px solid rgba(0,0,0,0.1)", // Right border
@@ -126,38 +144,6 @@ export default function TestimonialCard() {
                     zIndex: 1, // Keep zIndex lower than the image
                   }}
                 />
-
-                {/* Top box next to the cutout */}
-                <Grid
-                  sx={{
-                    position: "absolute",
-                    top: 0,
-                    right: "150px",
-                    height: "32px",
-                    width: "calc(100% - 150px)",
-                    backgroundColor: "white",
-                    borderTop: "1px solid rgba(0,0,0,0.1)",
-                    borderTopLeftRadius: "10px",
-                    borderTopRightRadius: "10px",
-                    zIndex: 2,
-                  }}
-                />
-
-                <Grid
-                  sx={{
-                    position: "absolute",
-                    top: "30px", // Position it right below the cutout
-                    right: 0,
-                    width: "146px", // Match the width of the cutout
-                    height: "1px", // Adjust the height as desired
-                    borderTop: "1px solid rgba(0,0,0,0.1)", // Top border
-                    borderRight: "1px solid rgba(0,0,0,0.1)", // Right border
-                    backgroundColor: "white",
-                    borderTopRightRadius: "10px", // Only top right corner rounded
-                    zIndex: 1, // Keep zIndex lower than the image
-                  }}
-                />
-
                 {/* Card Content */}
                 <Grid
                   container
@@ -174,14 +160,14 @@ export default function TestimonialCard() {
                     <Image
                       src={quoteImg}
                       alt="quotation"
-                      width={50}
-                      height={50}
+                      width={60}
+                      height={60}
                       layout="intrinsic" // Makes the quote image responsive
                       objectFit="contain" // Keeps the aspect ratio
                     />
                     <Typography
                       variant="body1"
-                      color="textSecondary"
+                      color="#000000"
                       marginTop={3}
                       sx={{
                         width: "100%",
@@ -189,7 +175,8 @@ export default function TestimonialCard() {
                         whiteSpace: "wrap",
                         overflow: "hidden",
                         textOverflow: "ellipsis",
-                        fontSize: { xs: 10, sm: 15, md: 20 },
+                        fontFamily: "Plus Jakarta Sans",
+                        fontSize: { xs: 12, sm: 18, md: 18, lg: 28, xl: 25 },
                       }}
                     >
                       {testimonial.text}
@@ -200,7 +187,7 @@ export default function TestimonialCard() {
                         display: "flex",
                         gap: "80%",
                         width: "100%",
-                        marginTop: { xs: 2, sm: 9, md: 4 },
+                        marginTop: { xs: 2, sm: 5, md: 2, lg: 4 },
                       }}
                     >
                       <Box
@@ -269,20 +256,29 @@ export default function TestimonialCard() {
           transform: "translate(-50%, -50%)", // Centers the container horizontally
         }}
       >
-        <IconButton
+        <Button
           onClick={prevTestimonial}
+          disabled={page === 1} // Disable if on the first page
           sx={{
-            width: "40px",
-            height: "40px",
-            borderRadius: "0",
+            width: "60px",
+            height: "50px",
+            borderRadius: "20px",
             border: "solid 2px",
             bgcolor: "white",
-            color: "#9E9E9E",
-            "&:hover": { bgcolor: "gray" },
+            color: page === 1 ? "#D3D3D3" : "#9E9E9E", // Change color if disabled
+            cursor: page === 1 ? "not-allowed" : "pointer",
+            "&:hover": {
+              color: page === 1 ? "#D3D3D3" : "#9E9E9E",
+            },
           }}
         >
-          <ChevronLeft />
-        </IconButton>
+          <ChevronLeft
+            sx={{
+              color: page === 1 ? "#D3D3D3" : "black",
+              "&:hover": { color: page === 1 ? "#D3D3D3" : "#9E9E9E" },
+            }}
+          />
+        </Button>
 
         <Typography
           variant="body1"
@@ -295,20 +291,29 @@ export default function TestimonialCard() {
           {page}/5
         </Typography>
 
-        <IconButton
+        <Button
           onClick={nextTestimonial}
+          disabled={page === 5} // Disable if on the last page
           sx={{
-            width: "40px",
-            height: "40px",
-            borderRadius: "0",
+            width: "60px",
+            height: "50px",
+            borderRadius: "20px",
             border: "solid 2px",
             bgcolor: "white",
-            color: "#9E9E9E",
-            "&:hover": { bgcolor: "gray" },
+            color: page === 5 ? "#D3D3D3" : "#9E9E9E", // Change color if disabled
+            cursor: page === 5 ? "not-allowed" : "pointer",
+            "&:hover": {
+              bgcolor: page === 5 ? "white" : "gray",
+            },
           }}
         >
-          <ChevronRight />
-        </IconButton>
+          <ChevronRight
+            sx={{
+              color: page === 5 ? "#D3D3D3" : "black",
+              "&:hover": { color: page === 5 ? "#D3D3D3" : "#9E9E9E" },
+            }}
+          />
+        </Button>
       </Box>
     </Grid>
   );
