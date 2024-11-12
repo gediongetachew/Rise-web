@@ -1,6 +1,6 @@
 "use client";
 import { Box, Grid, Typography } from "@mui/material";
-import React, { useState } from "react";
+import React from "react";
 import Image, { StaticImageData } from "next/image";
 
 interface Props {
@@ -187,7 +187,7 @@ const FolderCard = (props: Props) => {
             variant="h6"
             color="textPrimary"
             fontFamily={"Helvetica Light"}
-            sx={{ marginTop: expand ?4: 17, fontWeight: "bold" }}
+            sx={{ marginTop: expand ? 4 : 17, fontWeight: "bold" }}
           >
             {props.title}
           </Typography>

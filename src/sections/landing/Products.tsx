@@ -5,7 +5,6 @@ import img1 from "../../../public/assets/product1.jpg";
 import img2 from "../../../public/assets/product2.jpg";
 import img3 from "../../../public/assets/product3.jpg";
 import img4 from "../../../public/assets/product4.jpg";
-import img5 from "../../../public/assets/product1.jpg";
 import { Button, Box, Typography, Grid } from "@mui/material";
 
 export default function Products() {
@@ -106,7 +105,12 @@ export default function Products() {
           onClick={handlePrev}
           disabled={currentIndex === 0}
           variant="outlined"
-          sx={{ marginRight: 4,borderRadius: '20px', color: 'black',  border: '1px solid #9E9E9E' }}
+          sx={{
+            marginRight: 4,
+            borderRadius: "20px",
+            color: "black",
+            border: "1px solid #9E9E9E",
+          }}
         >
           ←
         </Button>
@@ -114,7 +118,12 @@ export default function Products() {
           onClick={handleNext}
           disabled={currentIndex === images.length - 1}
           variant="outlined"
-          sx={{ marginRight: 10, borderRadius: '20px', color: 'black', border: '1px solid #9E9E9E'}}
+          sx={{
+            marginRight: 10,
+            borderRadius: "20px",
+            color: "black",
+            border: "1px solid #9E9E9E",
+          }}
         >
           →
         </Button>
@@ -173,10 +182,19 @@ export default function Products() {
                   paddingTop: 2,
                 }}
               >
-                <Typography variant="h6" fontWeight="bold" fontFamily={'Roboto'}>
+                <Typography
+                  variant="h6"
+                  fontWeight="bold"
+                  fontFamily={"Roboto"}
+                >
                   {img.title}
                 </Typography>
-                <Typography variant="body2" color="textSecondary" pr={5} fontFamily={'Roboto'}>
+                <Typography
+                  variant="body2"
+                  color="textSecondary"
+                  pr={5}
+                  fontFamily={"Roboto"}
+                >
                   {img.description}
                 </Typography>
               </Box>

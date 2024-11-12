@@ -1,7 +1,6 @@
 "use client";
-
 import { useState } from "react";
-import { Box, Typography, IconButton, Grid, Button } from "@mui/material";
+import { Box, Typography, Grid, Button } from "@mui/material";
 import { ChevronLeft, ChevronRight } from "@mui/icons-material";
 import testimonials from "@/data/testimonial";
 import Image from "next/image";
