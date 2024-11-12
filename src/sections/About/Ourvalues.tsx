@@ -11,16 +11,14 @@ export default function Values() {
     <Grid
       container
       sx={{
-        width: "100%",
-        minHeight: "608px",
         backgroundColor: "#F7F7F7",
-        py: { xs: 0, sm: 4 },
+        py: { xs: 0, sm: 0 },
         px: { xs: 3, sm: 5 },
-        marginTop: { xs: 20 },
+       
       }}
     >
       {/* Text Section */}
-      <Grid item xs={12} md={6}>
+      <Grid item xs={12} md={6} marginTop={5}>
         <Grid container direction="column" spacing={3}>
           <Grid item>
             <Typography
@@ -39,8 +37,8 @@ export default function Values() {
                 fontSize: {
                   xs: "1.5rem",
                   sm: "2.25rem",
-                  md: "3rem",
-                  lg: "3.75rem",
+                  md: "2.1rem",
+                  lg: "3rem",
                 },
               }}
             >
@@ -50,13 +48,13 @@ export default function Values() {
           </Grid>
 
           {/* Values Cards Section */}
-          <Grid item>
+          <Grid item mt={5}>
             <Grid
-              display='flex'
+              display="flex"
               container
-              spacing={2}
-              flexDirection={{ xs: "column", lg: "row" }} // Change to row for lg and up
-              alignItems="center"
+              spacing={3}
+              flexDirection={{ xs: "column", lg: "column" }} // Change to row for lg and up
+              alignItems="flex-start"
             >
               {[
                 { src: world, text: "Ethical Business" },
@@ -67,25 +65,26 @@ export default function Values() {
                   key={index}
                   item
                   xs={12}
-                  lg={4} // Adjust width for large screens
+                  lg={7}
+                  xl={5} // Adjust width for large screens
                   container
                   alignItems="center"
                   sx={{
-                    py: 2,
-                    borderBottom: { xs: "1px solid #D8D8D8", lg: "none" },
-                    borderRight: { lg: index < 2 ? "1px solid #D8D8D8" : "none" }, // Add right border except last item
+                    py: 4,
+                    borderBottom: { xs: "1px solid #D8D8D8" },
+                     // Add right border except last item
                   }}
                 >
                   <Image
                     src={item.src}
                     alt={item.text}
-                    width={28}
-                    height={28}
+                    width={50}
+                    height={50}
                   />
                   <Typography
                     sx={{
                       ml: 2,
-                      fontSize: { xs: "0.9rem", sm: "1rem", md: "1.25rem" },
+                      fontSize: { xs: "0.9rem", sm: "1rem", md: "1.5rem", xl: '1.8rem' },
                     }}
                   >
                     {item.text}
@@ -101,15 +100,19 @@ export default function Values() {
       <Grid
         item
         xs={12}
-        md={6}
+        md={4}
+        lg={4}
         container
-        alignItems="center"
+        alignItems="start"
         justifyContent="center"
+        sx={{
+          paddingTop: {xs:10, sm:20}
+        }}
       >
         <Image
           src={sphareWorld}
           alt="world-sphare"
-          style={{ transform: "scale(0.9)", maxWidth: "100%", height: "auto" }}
+          style={{ transform: "scale(1.3)", maxWidth: "100%", height: "auto" }}
         />
       </Grid>
     </Grid>

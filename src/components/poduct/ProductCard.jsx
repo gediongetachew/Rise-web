@@ -6,8 +6,8 @@ import Link from "next/link";
 
 const ProductCard = ({ image, title, description, link, sx }) => {
   return (
-    <Grid container>
-      <Grid item xs={12}>
+    <Grid container >
+      <Grid item xs={12} >
         <Image
           src={image}
           width={420}
@@ -18,7 +18,7 @@ const ProductCard = ({ image, title, description, link, sx }) => {
         <Typography variant="h5" sx={{ fontSize: { xs: 25, sm: 30, md: 40 } }}>
           {title}
         </Typography>
-        <Typography variant="body2" sx={{ fontSize: { xs: 12, sm:15, md:15, lg:20 } }}>
+        <Typography variant="body2" sx={{ color: '#616161', fontSize: { xs: 12, sm:15, md:15, lg:15 },fontFamily: 'Segoe UI' }}>
           {description}
         </Typography>
 
@@ -28,8 +28,8 @@ const ProductCard = ({ image, title, description, link, sx }) => {
             xs={12}
             sx={{
               display: "flex",
-              alignItems: "center",
-              justifyContent: "flex-start",
+              alignItems: "flex-end",
+              justifyContent: "flex-end",
               mt: 2,
             }}
           >
@@ -38,11 +38,11 @@ const ProductCard = ({ image, title, description, link, sx }) => {
               style={{
                 display: "flex",
                 color: "white",
-
+               
                 backgroundColor: "#3D628C",
-
-                padding: 5,
-                paddingRight: 15,
+               
+                paddingLeft: 5,
+                paddingRight: 10,
                 borderRadius: 26,
               }}
             >

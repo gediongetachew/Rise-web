@@ -2,7 +2,8 @@ import React from "react";
 import Grid from "@mui/material/Grid";
 import Image from "next/image";
 import HeroImg from "../../../public/assets/productsHero.png";
-import { Typography } from "@mui/material";
+import { Box, Button, IconButton, InputAdornment, InputBase, Typography } from "@mui/material";
+import SearchIcon from '@mui/icons-material/Search';
 
 export default function Hero() {
   return (
@@ -78,6 +79,93 @@ export default function Hero() {
             eget.
           </Typography>
         </Grid>
+
+        <Box
+          sx={{
+            position: "absolute",
+            bottom: 5,
+            right: "50%",
+            top: "100%",
+            transform: "translateX(50%)",
+            display: "flex",
+            gap: 0,
+            width: "66%", // equivalent to 2/3 width
+            alignItems: "center",
+            paddingTop: {xs:2, md:0}
+          }}
+        >
+          <Box
+            sx={{
+              display: "flex",
+              position: "relative",
+              width: "100%",
+              alignItems: "center",
+            }}
+          >
+            {/* Search Icon */}
+            <IconButton
+              sx={{
+                position: "absolute",
+                top: "50%",
+                left: 100,
+                transform: "translateY(-50%) scale(0.55)",
+              }}
+            >
+             
+            </IconButton>
+
+            {/* Input Field */}
+            <InputBase
+              placeholder="Search Product By Name, Category"
+              startAdornment={
+                <InputAdornment position="start">
+                  <SearchIcon sx={{ color: 'gray', transform:{xs: 'scale(0.5)', sm: 'scale(0.9)'} }} />
+                </InputAdornment>
+              }
+              sx={{
+                pl: 7,
+                pr: 1,
+                py: {xs:2.5,sm:3, md: 3.5},
+                borderRadius: "16px 0 0 16px ",
+                borderLeft: "1px solid #D1D5DB",
+                borderTop: "1px solid #D1D5DB",
+                fontSize: { xs: 10, sm: 15, md: 20 },
+                fontFamily: 'Roboto',
+                borderBottom: "1px solid #D1D5DB",
+                backgroundColor: "white",
+                color: "black",
+                width: "90%",
+                height: { xs: "10px", sm: "20px", md: "25px",lg:'25px'},
+                "&::placeholder": {
+                  color: "gray",
+                },
+              }}
+            />
+
+            {/* Search Button */}
+            <Button
+              variant="contained"
+              sx={{
+                py: {xs:2.5,sm:3, md: 3.5},
+                height: { xs: "35px", sm: "35px", md: "34px" },
+                borderRadius: "0px 16px 16px 0px",
+                backgroundColor: "#3D628C",
+                fontSize: { xs: 10, sm: 15, md: 20 },
+                fontFamily: 'Roboto',
+                color: "white",
+                width: "20%",
+                borderTop: "1px solid #D1D5DB",
+                borderBottom: "1px solid #D1D5DB",
+                borderLeft: "1px solid #D1D5DB",
+                "&:hover": {
+                  backgroundColor: "gray",
+                },
+              }}
+            >
+              Search
+            </Button>
+          </Box>
+        </Box>
       </Grid>
     </Grid>
   );

@@ -25,7 +25,11 @@ export default function Post() {
       <Grid item xs={12} md={12} lg={6}>
         <Grid container>
           <Grid item xs={12}>
-            <Typography variant="h4" sx={{ color: "red", fontSize: { sx: 1, sm: 25, md: 28,lg:28 } }} mb={3}>
+            <Typography
+              variant="h4"
+              sx={{ color: "red", fontSize: { sx: 1, sm: 25, md: 28, lg: 28 } }}
+              mb={3}
+            >
               Featured Post
             </Typography>
           </Grid>
@@ -49,7 +53,7 @@ export default function Post() {
                 position: "absolute",
                 bottom: 0,
                 right: 0,
-                borderRadius: "20px",
+                borderRadius: "30px",
                 color: "white",
                 backgroundColor: "#EE484A",
                 paddingX: 3,
@@ -84,10 +88,11 @@ export default function Post() {
             endIcon={<ArrowOutwardIcon />}
             sx={{
               paddingX: 3,
-              paddingY: 1,
+              paddingY: 2,
               backgroundColor: "#3D628C",
-              borderRadius: "20px",
+              borderRadius: "30px",
               marginTop: 3,
+              fontFamily: "Roboto",
             }}
           >
             Read More
@@ -96,7 +101,7 @@ export default function Post() {
       </Grid>
 
       {/* Right Column */}
-      <Grid item xs={12} md={12} lg={6}>
+      <Grid item xs={12} md={12} lg={5}>
         <Typography variant="h4" sx={{ color: "black" }}>
           All Posts
         </Typography>
@@ -104,7 +109,7 @@ export default function Post() {
           container
           direction="column"
           sx={{
-            marginTop: 5,
+            
             gap: 3, // space between posts
           }}
         >
@@ -116,8 +121,10 @@ export default function Post() {
               sx={{
                 display: "block",
                 "&:hover": { backgroundColor: "#F7F7F7" },
-                padding: 2,
-                borderRadius: 1,
+                marginBottom: 3,
+                padding:5,
+                
+                borderRadius: 10,
                 transition: "background-color 0.3s",
               }}
             >
@@ -126,7 +133,10 @@ export default function Post() {
                 {item.date}
               </Typography>
 
-              <Typography variant="h6" sx={{ fontWeight: "bold", mt: 1 }}>
+              <Typography
+                variant="h4"
+                sx={{ fontWeight: "bold", mt: 1, fontFamily: "Segoe UI" }}
+              >
                 {item.title}
               </Typography>
             </Box>

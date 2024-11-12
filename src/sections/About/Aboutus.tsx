@@ -39,9 +39,10 @@ export default function TestimonialCard() {
           variant="h3"
           sx={{
             color: "#3D628C",
-            fontWeight: { xs: "20%", sm: "70%" },
+            fontWeight: { xs: "bold", sm: "bold" },
             width: { xs: "99%" },
-            fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem", lg: "3rem" },
+            fontSize: { xs: "1.5rem", sm: "2rem", md: "2.5rem", lg: "3.5rem" },
+            fontFamily: "Helvetica",
           }}
         >
           Lorem ipsum dolor sit amet consectetur. Non donec erat fermentum donec
@@ -54,6 +55,7 @@ export default function TestimonialCard() {
 
             width: { xs: "99%" },
             fontSize: { xs: ".8rem", sm: "1.3rem", md: "1.5rem", lg: "1.5rem" },
+            fontFamily: "Roboto",
           }}
         >
           Lorem ipsum dolor sit amet consectetur. Sit arcu elit enim lorem at
@@ -198,7 +200,15 @@ export default function TestimonialCard() {
                     />
                   </Box>
 
-                  <Typography variant="h5" color="textPrimary" sx={{marginTop: {xs:4}}}>
+                  <Typography
+                    variant="h5"
+                    color="#00000"
+                    sx={{
+                      marginTop: { xs: 4 },
+                      fontFamily: "Helvetica",
+                      fontWeight: "bold",
+                    }}
+                  >
                     {item.title}
                   </Typography>
                   <Typography
@@ -212,6 +222,7 @@ export default function TestimonialCard() {
                       overflow: "hidden",
                       textOverflow: "ellipsis",
                       fontSize: { xs: 10, sm: 15, md: 20 },
+                      fontFamily: 'Helvetica Light'
                     }}
                   >
                     {item.text}

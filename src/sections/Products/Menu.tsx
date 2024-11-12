@@ -51,23 +51,43 @@ const ProductList: React.FC = () => {
         display: "flex",
         flexDirection: "column",
         minHeight: "100vh",
-        px: 0,
+        px: 4,
         pt: 4,
       }}
     >
       {/* Header and Filters */}
       <Grid item px={4}>
-        <Typography variant="h4" color="primary" gutterBottom>
+        <Typography variant="h6" color="red" gutterBottom sx={{fontSize: { xs: 15, sm: 20, md: 25, lg: 25 },}}>
           PRODUCTS
         </Typography>
-        <Typography variant="h6" gutterBottom>
+        <Typography
+          variant="h3"
+          color="#3D628C"
+          gutterBottom
+          fontWeight={"bold"}
+        >
           Popular Products
         </Typography>
       </Grid>
 
-      <Grid item sx={{ display: "flex", marginTop: 4 }}>
+      <Grid
+        item
+        sx={{
+          display: "flex",
+          marginTop: 4,
+          marginRight: 100,
+          marginLeft: 5,
+          borderRadius: "30px",
+          background: "#F7F7F7",
+        }}
+      >
         {productMenu.map((item) => (
-          <Grid item key={item.id} sx={{ background: "#F7F7F7" }}>
+          <Grid
+            item
+            xs={6}
+            key={item.id}
+            sx={{ background: "#F7F7F7", padding: 4 }}
+          >
             <Button
               onClick={() => handleMenuButton(item.type)}
               startIcon={item.icon}
@@ -108,7 +128,7 @@ const ProductList: React.FC = () => {
           sx={{ flexGrow: 1, flexBasis: 0, paddingX: { xs: 4 } }}
         >
           {currentProducts.map((item) => (
-            <Grid item xs={6} sm={6} md={4} lg={3} key={item.id}>
+            <Grid item xs={6} sm={6} md={4} lg={3} key={item.id}  sx={{background: '#FBFBFB'}}>
               <ProductCard
                 image={item.img}
                 title={item.name}
@@ -122,17 +142,38 @@ const ProductList: React.FC = () => {
       </Box>
 
       <Box
-        sx={{ py: 2, mt: "auto", display: "flex", justifyContent: "center" }}
+        sx={{ py: 10, mt: "auto", display: "flex", justifyContent: "center" }}
       >
-        <Stack spacing={2}>
-          <Pagination
-            count={totalPages}
-            page={currentPage}
-            onChange={handlePageChange}
-            variant="outlined"
-            shape="rounded"
-          />
-        </Stack>
+       <Stack spacing={2}>
+  <Pagination
+    count={totalPages}
+    page={currentPage}
+    onChange={handlePageChange}
+    variant="outlined"
+    shape="rounded"
+    sx={{
+      // Style for all pagination items (numbers)
+      "& .MuiPaginationItem-root": {
+        backgroundColor: "lightgray",
+        borderRadius: "20px",
+        padding: "25px 20px", // Adjust border radius here
+        "&:hover": {
+          backgroundColor: "darkgray",
+        },
+        "&.Mui-selected": {
+          backgroundColor: "#3D628C",
+          color: "white",
+        },
+      },
+      // Style for the arrow buttons (previous/next)
+      "& .MuiPaginationItem-previousNext": {
+        backgroundColor: "transparent",
+        border: "none",
+        boxShadow: "none",
+      },
+    }}
+  />
+</Stack>
       </Box>
     </Box>
   );
