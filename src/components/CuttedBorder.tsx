@@ -1,8 +1,8 @@
 "use client";
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Grid, Typography, useMediaQuery } from "@mui/material";
 import React from "react";
 import Image, { StaticImageData } from "next/image";
-
+import { useTheme } from "@mui/system";
 interface Props {
   id: number;
   title: string;
@@ -14,17 +14,22 @@ interface Props {
 }
 
 const FolderCard = (props: Props) => {
-  const expand = props.id === props.selected;
-
-  console.log(`${props.id} ${expand}`);
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
+  const expand = props.id === props.selected || isSmallScreen;
 
   return (
     <Grid
       container
-      onClick={() => props.handleSelect(props.id)}
+      onClick={() => {
+        // Only trigger the click event if the screen is medium or larger
+        if (!isSmallScreen) {
+          props.handleSelect(props.id);
+        }
+      }}
       sx={{
-        width: { xs: "350px", md: expand ? "740px" : "300px" }, // Expand width horizontally
-        height: { xs: "250px", md: "340px" }, // Keep the height fixed
+        width: { xs: "350px", sm: "600px",md: "350px", lg: expand ? "720px" : "300px" } ,// Expand width horizontally
+        height: { xs: "250px", sm: "350px", md: "340px" }, // Keep the height fixed
         backgroundColor: "white",
         borderRadius: "20px",
         borderLeft: "3px solid rgba(0,0,0,0.1)",
@@ -127,15 +132,14 @@ const FolderCard = (props: Props) => {
               position: "relative",
             }}
           >
-             <Image
-            src={props.icon} // Use the imported icon
-            alt="Icon"
-            width={60} // Set a width for the icon
-            height={24} // Set a height for the icon
-            style={{ marginRight: "8px", marginBottom: 4 }} // Add space between icon and text
-          />
+            <Image
+              src={props.icon} // Use the imported icon
+              alt="Icon"
+              width={60} // Set a width for the icon
+              height={24} // Set a height for the icon
+              style={{ marginRight: "8px", marginBottom: 4 }} // Add space between icon and text
+            />
           </Box>
-         
 
           {expand && (
             <Box
@@ -145,22 +149,22 @@ const FolderCard = (props: Props) => {
                 height: "20%",
                 marginTop: { xs: 4, md: 8 },
 
-                gap: {xs:2,md:10},
+                gap: { xs: 2, md: 10 },
               }}
             >
               <Box sx={{ display: "flex", flexDirection: "column" }}>
                 <Typography
                   sx={{
-                    fontSize: { xs: 20, md: 30 },
+                    fontSize: { xs: 20, sm: 28, md: 30, lg:20,xl:30 },
                     fontFamily: "Helvetica Light",
-                    fontWeight: "bold"
+                    fontWeight: "bold",
                   }}
                 >
                   +70.1%
                 </Typography>
                 <Typography
                   sx={{
-                    fontSize: { xs: 10, md: 12 },
+                    fontSize: { xs: 10, sm: 15, md: 12,lg:12 },
                     fontFamily: "Helvetica Light",
                     color: "#616161",
                   }}
@@ -172,7 +176,7 @@ const FolderCard = (props: Props) => {
               <Box sx={{ display: "flex", flexDirection: "column" }}>
                 <Typography
                   sx={{
-                    fontSize: { xs: 20, md: 30 },
+                    fontSize: { xs: 20, sm: 28, md: 30, lg:20, xl:30},
                     fontFamily: "Helvetica Light",
                     fontWeight: "bold",
                   }}
@@ -181,9 +185,10 @@ const FolderCard = (props: Props) => {
                 </Typography>
                 <Typography
                   sx={{
-                    fontSize: { xs: 10, md: 12 },
+                    fontSize: { xs: 10, sm: 15, md: 12 },
                     fontFamily: "Helvetica Light",
                     color: "#616161",
+                    marginBottom: { sm: 15, md:0 },
                   }}
                 >
                   Happy Customer{" "}
@@ -198,7 +203,7 @@ const FolderCard = (props: Props) => {
             sx={{
               marginTop: expand ? 4 : 17,
               fontWeight: "bold",
-              fontSize: { xs: 15, md: 20 },
+              fontSize: { xs: 15, sm: 25, md: 20 },
             }}
           >
             {props.title}
@@ -207,7 +212,7 @@ const FolderCard = (props: Props) => {
             variant="subtitle2"
             color="textSecondary"
             fontFamily={"Helvetica Light"}
-            sx={{ fontSize: { xs: 10, md: 15 } }}
+            sx={{ fontSize: { xs: 10, sm: 12, md: 15 } }}
           >
             {props.text}
           </Typography>

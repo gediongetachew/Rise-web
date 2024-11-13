@@ -12,9 +12,9 @@ export default function Success() {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-        justifyItems: 'center',
+        justifyItems: "center",
         gap: 5,
-        marginTop: {xs:30}
+        marginTop: { xs: 30 },
       }}
     >
       <Grid item xs={12}>
@@ -22,14 +22,25 @@ export default function Success() {
       </Grid>
 
       <Grid item xs={12}>
-        <Typography variant="h3">Successfully Sent</Typography>
+        <Typography variant="h3" sx={{ fontSize: { xs: 25, sm: 30, md: 40 } }}>
+          Successfully Sent
+        </Typography>
       </Grid>
 
       <Grid item xs={12}>
-        <Typography variant="h5" sx={{ color: "#70778B", alignContent: 'center'}}>
-          The user has been successfully registered but doesnot have <br />  the app.
-          Please send an invitation link to their emailand phone <br />  via SMS for
-          app download and access.
+        <Typography
+          variant="h5"
+          sx={{
+            color: "#70778B",
+            alignContent: "center",
+            fontSize: { xs: 12, sm:20, md:25 },
+            alignItems:"center",
+            paddingX:{xs:8,sm: 10, md:0}
+          }}
+        >
+          The user has been successfully registered but doesnot have <br /> the
+          app. Please send an invitation link to their emailand phone <br /> via
+          SMS for app download and access.
         </Typography>
       </Grid>
       <Button

@@ -106,7 +106,8 @@ export default function Values() {
         alignItems="start"
         justifyContent="center"
         sx={{
-          paddingTop: {xs:10, sm:20}
+          paddingTop: {xs:10, sm:20}, 
+        
         }}
       >
         <Image

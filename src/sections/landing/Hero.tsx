@@ -59,12 +59,12 @@ export default function CurvedCard() {
                 position: "absolute",
                 display: "flex",
                 top: { xs: "82%", sm: "115%", md: "105%", lg: "88%" },
-                left: { xs: 155, sm: 0, md: 265 }, // Ensures the box starts from the left
+                left: { xs: 155, sm: 0, md: 0,lg:265 }, // Ensures the box starts from the left
                 background: "black",
                 width: {
                   xs: "35%",
                   sm: "40%",
-                  md: "60%",
+                  md: "50%",
                   lg: "30%",
                   xl: "30%",
                 },
@@ -78,8 +78,8 @@ export default function CurvedCard() {
               sx={{
                 position: "absolute",
                 color: "#EE484A",
-                top: { xs: "82%", sm: "115%", md: "105%", lg: "87%" },
-                left: { xs: "82%", sm: "60%", md: "50%", lg: "60%", xl: "63%" },
+                top: { xs: "82%", sm: "115%", md: "105%", lg: "87%", xl: "87%" },
+                left: { xs: "82%", sm: "60%", md: "50%", lg: "74%", xl: "63%" },
                 height: "40px",
                 transform: "translateY(-50%)",
               }}

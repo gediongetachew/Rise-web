@@ -42,7 +42,7 @@ export default function About() {
           variant="h3"
           sx={{
             color: "#3D628C",
-            fontSize: { xs: 20, sm: 40, md: 50 },
+            fontSize: { xs: 20, sm: 20, md: 30, lg:35, xl:50 },
             fontFamily: "Helvetica",
             marginTop: 3,
             width: "80%",
@@ -99,7 +99,7 @@ export default function About() {
   sx={{
     display: "flex",
     flexWrap: "wrap",
-    gap: { xs: 2, sm: 2, md: 5 }, // Adds space between cards, adjust as needed
+    gap: { xs: 2, sm: 2,md:6,lg:5 }, // Adds space between cards, adjust as needed
     justifyContent: { xs: "center", sm: "center", md: "center" }, // Center for small screens, space-between for larger
     alignItems: "center", // Align items vertically at the center
     

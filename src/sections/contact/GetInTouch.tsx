@@ -144,132 +144,134 @@ export default function GetInTouch() {
           </Typography>
 
           <Grid
-          item
-          xs={12}
-          md={6}
-          sx={{
-            display: { xs: "flex", sm: "flex", md: "none" },
-            background: "#F7F7F7",
-            flexDirection: "column",
-            alignContent: "flex-center",
-            height: "750px",
-            marginTop: {xs:0,sm:10},
-            paddingLeft: "40px",
-            paddingRight: "40px",
-            borderRadius: "20px",
-          }}
-        >
-          <Typography
+            item
+            xs={12}
+            md={6}
             sx={{
-              fontSize: { xs: 30, md:40 },
-              color: "#EE484A",
-              fontFamily: "Helvetica",
-              marginTop: 2,
+              display: { xs: "flex", sm: "flex", md: "none" },
+              background: "#F7F7F7",
+              flexDirection: "column",
+              alignContent: "flex-center",
+              height: "750px",
+              marginTop: { xs: 0, sm: 10 },
+              paddingLeft: "40px",
+              paddingRight: "40px",
+              borderRadius: "20px",
             }}
           >
-            Get In Touch
-          </Typography>
-          <Typography
-            sx={{
-              fontSize: { xs: 20, md:30},
-              color: "#616161",
-              fontFamily: "Roboto",
-            }}
-          >
-            Lorem ipsum dolor sit amet consectetur. Rhoncus gravida consequat
-            feugiat consectetur.{" "}
-          </Typography>
+            <Typography
+              sx={{
+                fontSize: { xs: 30, md: 40 },
+                color: "#EE484A",
+                fontFamily: "Helvetica",
+                marginTop: 2,
+              }}
+            >
+              Get In Touch
+            </Typography>
+            <Typography
+              sx={{
+                fontSize: { xs: 20, md: 30 },
+                color: "#616161",
+                fontFamily: "Roboto",
+              }}
+            >
+              Lorem ipsum dolor sit amet consectetur. Rhoncus gravida consequat
+              feugiat consectetur.{" "}
+            </Typography>
 
-          <form onSubmit={handleSubmit} style={{ marginTop: 40 }}>
-            <Grid container spacing={3}>
-              {" "}
-              {/* Add spacing here */}
-              <Grid item xs={12}>
-                <TextField
-                  label="Name"
-                  name="name"
-                  fullWidth
-                  value={compose.name}
-                  onChange={handleChange}
-                  required
-                  variant="standard"
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  label="Email"
-                  name="email"
-                  type="email"
-                  fullWidth
-                  value={compose.email}
-                  onChange={handleChange}
-                  required
-                  variant="standard"
-                  error={
-                    !validateEmail(compose.email) && compose.email.length > 0
-                  }
-                  helperText={
-                    !validateEmail(compose.email) && compose.email.length > 0
-                      ? "Invalid email address"
-                      : ""
-                  }
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  label="Subject"
-                  name="subject"
-                  fullWidth
-                  value={compose.subject}
-                  onChange={handleChange}
-                  required
-                  variant="standard"
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <TextField
-                  label="Message"
-                  name="message"
-                  fullWidth
-                  value={compose.message}
-                  onChange={handleChange}
-                  required
-                  variant="standard"
-                  multiline
-                  rows={3}
-                />
-              </Grid>
-              <Grid item xs={12}>
-                <Button
-                  variant="contained"
-                  type="submit"
-                  endIcon={<ArrowOutwardIcon />}
-                  disabled={!isFormValid()}
-                  sx={{
-                    paddingX: 2,
-                    paddingY: 1,
-                    borderRadius: "20px",
-                    background: "#EE484A",
-                    color: "white",
-                    marginTop: 3,
-                  }}
-                >
-                  Send Message
-                </Button>
-              </Grid>
-              {error && (
+            <form onSubmit={handleSubmit} style={{ marginTop: 40 }}>
+              <Grid container spacing={3}>
+                {" "}
+                {/* Add spacing here */}
                 <Grid item xs={12}>
-                  <Typography color="error">{error}</Typography>
+                  <TextField
+                    label="Name"
+                    name="name"
+                    fullWidth
+                    value={compose.name}
+                    onChange={handleChange}
+                    required
+                    variant="standard"
+                  />
                 </Grid>
-              )}
-              {successMessage && (
                 <Grid item xs={12}>
-                  <Typography color="success.main">{successMessage}</Typography>
+                  <TextField
+                    label="Email"
+                    name="email"
+                    type="email"
+                    fullWidth
+                    value={compose.email}
+                    onChange={handleChange}
+                    required
+                    variant="standard"
+                    error={
+                      !validateEmail(compose.email) && compose.email.length > 0
+                    }
+                    helperText={
+                      !validateEmail(compose.email) && compose.email.length > 0
+                        ? "Invalid email address"
+                        : ""
+                    }
+                  />
                 </Grid>
-              )}
-            </Grid>
-          </form>
-        </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    label="Subject"
+                    name="subject"
+                    fullWidth
+                    value={compose.subject}
+                    onChange={handleChange}
+                    required
+                    variant="standard"
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <TextField
+                    label="Message"
+                    name="message"
+                    fullWidth
+                    value={compose.message}
+                    onChange={handleChange}
+                    required
+                    variant="standard"
+                    multiline
+                    rows={3}
+                  />
+                </Grid>
+                <Grid item xs={12}>
+                  <Button
+                    variant="contained"
+                    type="submit"
+                    endIcon={<ArrowOutwardIcon />}
+                    disabled={!isFormValid()}
+                    sx={{
+                      paddingX: 2,
+                      paddingY: 1,
+                      borderRadius: "20px",
+                      background: "#EE484A",
+                      color: "white",
+                      marginTop: 3,
+                    }}
+                  >
+                    Send Message
+                  </Button>
+                </Grid>
+                {error && (
+                  <Grid item xs={12}>
+                    <Typography color="error">{error}</Typography>
+                  </Grid>
+                )}
+                {successMessage && (
+                  <Grid item xs={12}>
+                    <Typography color="success.main">
+                      {successMessage}
+                    </Typography>
+                  </Grid>
+                )}
+              </Grid>
+            </form>
+          </Grid>
 
           {/* Details Section */}
           <Grid container spacing={4}>
@@ -280,7 +282,7 @@ export default function GetInTouch() {
               sx={{
                 display: "flex",
                 flexDirection: "row",
-                gap: {xs:5,md:20},
+                gap: { xs: 5, md: 20 },
                 marginTop: 4,
               }}
             >
@@ -291,21 +293,26 @@ export default function GetInTouch() {
                     fontWeight: "bold",
                     fontFamily: "Helvetica",
                     textWrap: "nowrap",
-                    fontSize: {xs:20,sm:25}
+                    fontSize: { xs: 20, sm: 25 },
                   }}
                 >
                   Call Center
                 </Typography>
                 <Typography
-                   variant="subtitle2"
-                  sx={{ color: "#616161", fontFamily: "Helvetica Light" }}
-                 
+                  sx={{
+                    color: "#616161",
+                    fontFamily: "Helvetica Light",
+                    fontSize: { xs: 13, md: 18 },
+                  }}
                 >
                   +25190001100
                 </Typography>
                 <Typography
-                   variant="subtitle2"
-                  sx={{ color: "#616161", fontFamily: "Helvetica Light" }}
+                  sx={{
+                    color: "#616161",
+                    fontFamily: "Helvetica Light",
+                    fontSize: { xs: 13, md: 18 },
+                  }}
                 >
                   +25190001100
                 </Typography>
@@ -313,37 +320,73 @@ export default function GetInTouch() {
               <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
                 <Typography
                   variant="h5"
-                  sx={{ fontWeight: "bold", fontFamily: "Helvetica",fontSize: {xs:20,sm:25} }}
+                  sx={{
+                    fontWeight: "bold",
+                    fontFamily: "Helvetica",
+                    fontSize: { xs: 20, sm: 25 },
+                  }}
                 >
                   Our Location
                 </Typography>
                 <Typography
-                   variant="subtitle2"
-                  sx={{ color: "#616161", fontFamily: "Helvetica Light" }}
-                
+                  sx={{
+                    color: "#616161",
+                    fontFamily: "Helvetica Light",
+                    fontSize: { xs: 13, md: 18 },
+                  }}
                 >
                   Cologne District Court HRB 101987 Address: Subbelrather
                   Strasse 15a 50823 Cologne, Germany
                 </Typography>
               </Box>
             </Grid>
-            <Grid item xs={12} sx={{ display: "flex", gap: {xs:5,md:22}, marginTop: {xs:5,sm:10} }}>
+            <Grid
+              item
+              xs={12}
+              sx={{
+                display: "flex",
+                gap: { xs: 5, md: 22 },
+                marginTop: { xs: 5, sm: 10 },
+              }}
+            >
               <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
                 <Typography
                   variant="h5"
-                  sx={{ fontWeight: "bold", fontFamily: "Helvetica",fontSize: {xs:20,sm:25} }}
+                  sx={{
+                    fontWeight: "bold",
+                    fontFamily: "Helvetica",
+                    fontSize: { xs: 20, sm: 25 },
+                  }}
                 >
                   Email
                 </Typography>
-                <Typography  variant="subtitle2"
-                  sx={{ color: "#616161", fontFamily: "Helvetica Light" }}>Contact@Rise.com</Typography>
-                <Typography  variant="subtitle2"
-                  sx={{ color: "#616161", fontFamily: "Helvetica Light" }}>Hello@Rise.Com</Typography>
+                <Typography
+                  sx={{
+                    color: "#616161",
+                    fontFamily: "Helvetica Light",
+                    fontSize: { xs: 13, md: 18 },
+                  }}
+                >
+                  Contact@Rise.com
+                </Typography>
+                <Typography
+                  sx={{
+                    color: "#616161",
+                    fontFamily: "Helvetica Light",
+                    fontSize: { xs: 13, md: 18 },
+                  }}
+                >
+                  Hello@Rise.Com
+                </Typography>
               </Box>
               <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
                 <Typography
                   variant="h5"
-                  sx={{ fontWeight: "bold", fontFamily: "Helvetica",fontSize: {xs:20,sm:25}}}
+                  sx={{
+                    fontWeight: "bold",
+                    fontFamily: "Helvetica",
+                    fontSize: { xs: 20, sm: 25 },
+                  }}
                 >
                   Social Media
                 </Typography>

@@ -13,7 +13,7 @@ export default function Banner() {
         position: "relative",
         my: 10,
         width: "100%",
-        height: { xs: "35vh", sm: "35vh", md: "50vh" },
+        height: { xs: "30vh", sm: "35vh", md: "50vh" },
         backgroundImage: `url('/assets/banner.png')`,
         backgroundSize: "cover",
         backgroundPosition: "center",

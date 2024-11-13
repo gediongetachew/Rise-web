@@ -88,12 +88,13 @@ export default function Nav() {
                 component={Link}
                 href={item.address}
                 sx={{
-                  color: "black",
+                  color: pathname ===item.address ? "black" : "#9E9E9E",
                   fontWeight: pathname === item.address ? "bold" : "medium",
-                  fontSize: { md: "0.7rem", lg: "1rem" }, // Responsive font size
+                  fontFamily: "Helvetica",
+                  fontSize: { md: "0.7rem", lg: "1.5rem" }, // Responsive font size
                   "&:hover": {
                     fontWeight: "bold",
-                    color: "black",
+                    
                   },
                 }}
               >
