@@ -31,11 +31,11 @@ export default function TestimonialCard() {
       container
       position={"relative"}
       sx={{
-        marginTop: 10,
+        marginTop:{xs:0, sm:6, md:10},
         marginBottom: 5,
         paddingX: { xs: 3, sm: 2, md: 10 },
         background: "#F7F7F7",
-        height: { xs: "500px", sm: "600px", md: "600px" },
+        height: { xs: "500px", sm: "600px", md: "700px" },
       }}
     >
       <Typography
@@ -72,7 +72,7 @@ export default function TestimonialCard() {
             .map((testimonial, index) => (
               <Grid
                 item
-                xs={10}
+                xs={12}
                 sm={10}
                 md={10}
                 lg={10}
@@ -80,12 +80,12 @@ export default function TestimonialCard() {
                 key={index}
                 sx={{
                   height: {
-                    xs: "330px",
+                    xs: "310px",
                     sm: "395px",
                     md: "360px",
                     lg: "460px",
                   },
-                  width: { xs: "100%", sm: "360px", md: "360px" },
+                  width: '100%',
                   flexShrink: 0,
                   backgroundColor: "white",
                   borderRadius: "20px",
@@ -175,7 +175,7 @@ export default function TestimonialCard() {
                         overflow: "hidden",
                         textOverflow: "ellipsis",
                         fontFamily: "Plus Jakarta Sans",
-                        fontSize: { xs: 12, sm: 18, md: 18, lg: 28, xl: 25 },
+                        fontSize: { xs: 10, sm: 18, md: 18, lg: 28, xl: 25 },
                       }}
                     >
                       {testimonial.text}
@@ -259,10 +259,10 @@ export default function TestimonialCard() {
           onClick={prevTestimonial}
           disabled={page === 1} // Disable if on the first page
           sx={{
-            width: "60px",
-            height: "50px",
+            width: {xs:"40px",md:"60px"},
+            height: {xs:"39px",md:"50px"},
             borderRadius: "20px",
-            border: "solid 2px",
+            border: "solid 1px",
             bgcolor: "white",
             color: page === 1 ? "#D3D3D3" : "#9E9E9E", // Change color if disabled
             cursor: page === 1 ? "not-allowed" : "pointer",
@@ -280,10 +280,10 @@ export default function TestimonialCard() {
         </Button>
 
         <Typography
-          variant="body1"
+          variant="h6"
           sx={{
             mx: 1, // Adds horizontal margin between the text and icon buttons
-            color: "#9E9E9E",
+            color: "#00000",
             fontWeight: "bold",
           }}
         >
@@ -294,10 +294,10 @@ export default function TestimonialCard() {
           onClick={nextTestimonial}
           disabled={page === 5} // Disable if on the last page
           sx={{
-            width: "60px",
-            height: "50px",
+            width: {xs:"40px",md:"60px"},
+            height: {xs:"39px",md:"50px"},
             borderRadius: "20px",
-            border: "solid 2px",
+            border: "solid 1px",
             bgcolor: "white",
             color: page === 5 ? "#D3D3D3" : "#9E9E9E", // Change color if disabled
             cursor: page === 5 ? "not-allowed" : "pointer",

@@ -51,13 +51,18 @@ const ProductList: React.FC = () => {
         display: "flex",
         flexDirection: "column",
         minHeight: "100vh",
-        px: 4,
+
         pt: 4,
       }}
     >
       {/* Header and Filters */}
       <Grid item px={4}>
-        <Typography variant="h6" color="red" gutterBottom sx={{fontSize: { xs: 15, sm: 20, md: 25, lg: 25 },}}>
+        <Typography
+          variant="h6"
+          color="red"
+          gutterBottom
+          sx={{ fontSize: { xs: 15, sm: 20, md: 25, lg: 25 } }}
+        >
           PRODUCTS
         </Typography>
         <Typography
@@ -65,6 +70,7 @@ const ProductList: React.FC = () => {
           color="#3D628C"
           gutterBottom
           fontWeight={"bold"}
+          fontSize={{ xs: 25 }}
         >
           Popular Products
         </Typography>
@@ -72,30 +78,36 @@ const ProductList: React.FC = () => {
 
       <Grid
         item
+        xs={12}
         sx={{
           display: "flex",
           marginTop: 4,
-          marginRight: 100,
-          marginLeft: 5,
-          borderRadius: "30px",
+          marginX: 4,
+          marginRight: { xs: 0, sm: 100 },
+          marginLeft: { xs: 0, sm: 5 },
+          borderRadius: "25px",
           background: "#F7F7F7",
         }}
       >
         {productMenu.map((item) => (
-          <Grid
-            item
-            xs={6}
+          <Box
             key={item.id}
-            sx={{ background: "#F7F7F7", padding: 4 }}
+            borderRadius={20}
+            sx={{
+              background: "#F7F7F7",
+              paddingY: { xs: 2, sm: 3, md: 4, lg: 5 },
+              paddingX: { xs: 1, sm: 2, md: 3 },
+              width: '100%'
+            }}
           >
             <Button
               onClick={() => handleMenuButton(item.type)}
               startIcon={item.icon}
               sx={{
-                px: 3,
+                px: { xs: 2, sm: 4 },
                 py: 1,
                 fontSize: {
-                  xs: ".5rem",
+                  xs: ".6rem",
                   sm: ".9rem",
                   md: "1rem",
                   lg: "1.5rem",
@@ -108,7 +120,7 @@ const ProductList: React.FC = () => {
             >
               {item.name}
             </Button>
-          </Grid>
+          </Box>
         ))}
       </Grid>
 
@@ -119,7 +131,7 @@ const ProductList: React.FC = () => {
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          minHeight: "1000px",
+          minHeight:{xs: 'none', sm: "1000px"},
         }}
       >
         <Grid
@@ -128,7 +140,15 @@ const ProductList: React.FC = () => {
           sx={{ flexGrow: 1, flexBasis: 0, paddingX: { xs: 4 } }}
         >
           {currentProducts.map((item) => (
-            <Grid item xs={6} sm={6} md={4} lg={3} key={item.id}  sx={{background: '#FBFBFB'}}>
+            <Grid
+              item
+              xs={6}
+              sm={6}
+              md={4}
+              lg={3}
+              key={item.id}
+              sx={{ background: "#FBFBFB" }}
+            >
               <ProductCard
                 image={item.img}
                 title={item.name}
@@ -144,36 +164,36 @@ const ProductList: React.FC = () => {
       <Box
         sx={{ py: 10, mt: "auto", display: "flex", justifyContent: "center" }}
       >
-       <Stack spacing={2}>
-  <Pagination
-    count={totalPages}
-    page={currentPage}
-    onChange={handlePageChange}
-    variant="outlined"
-    shape="rounded"
-    sx={{
-      // Style for all pagination items (numbers)
-      "& .MuiPaginationItem-root": {
-        backgroundColor: "lightgray",
-        borderRadius: "20px",
-        padding: "25px 20px", // Adjust border radius here
-        "&:hover": {
-          backgroundColor: "darkgray",
-        },
-        "&.Mui-selected": {
-          backgroundColor: "#3D628C",
-          color: "white",
-        },
-      },
-      // Style for the arrow buttons (previous/next)
-      "& .MuiPaginationItem-previousNext": {
-        backgroundColor: "transparent",
-        border: "none",
-        boxShadow: "none",
-      },
-    }}
-  />
-</Stack>
+        <Stack spacing={2}>
+          <Pagination
+            count={totalPages}
+            page={currentPage}
+            onChange={handlePageChange}
+            variant="outlined"
+            shape="rounded"
+            sx={{
+              // Style for all pagination items (numbers)
+              "& .MuiPaginationItem-root": {
+                backgroundColor: "lightgray",
+                borderRadius: "20px",
+                padding: "25px 20px", // Adjust border radius here
+                "&:hover": {
+                  backgroundColor: "darkgray",
+                },
+                "&.Mui-selected": {
+                  backgroundColor: "#3D628C",
+                  color: "white",
+                },
+              },
+              // Style for the arrow buttons (previous/next)
+              "& .MuiPaginationItem-previousNext": {
+                backgroundColor: "transparent",
+                border: "none",
+                boxShadow: "none",
+              },
+            }}
+          />
+        </Stack>
       </Box>
     </Box>
   );

@@ -61,7 +61,7 @@ export default function Products() {
   };
 
   return (
-    <Grid container sx={{ paddingX: 4 }}>
+    <Grid container sx={{ paddingLeft: {xs:1} }}>
       <Grid container spacing={2} mb={5}>
         <Grid item xs={12}>
           <Typography
@@ -85,7 +85,7 @@ export default function Products() {
           <Typography
             variant="h3"
             color="textSecondary"
-            sx={{ color: "#3D628C", fontSize: { xs: 30, sm: 40, md: 50 } }}
+            sx={{ color: "#3D628C", fontSize: { xs: 20, sm: 40, md: 50 } }}
           >
             Lorem ipsum dolor sit <br /> amet consec tetur Atte
             <br /> mpor eu fermentu Commodo
@@ -93,41 +93,44 @@ export default function Products() {
         </Grid>
       </Grid>
 
-      <Box
-        mb={2}
-        display="flex"
-        justifyContent="flex-end"
-        sx={{
-          width: "100%",
-        }}
-      >
-        <Button
-          onClick={handlePrev}
-          disabled={currentIndex === 0}
-          variant="outlined"
+      
+        <Box
+          mb={2}
+          
+          justifyContent="flex-end"
           sx={{
-            marginRight: 4,
-            borderRadius: "20px",
-            color: "black",
-            border: "1px solid #9E9E9E",
+            width: "100%",
+            display:{xs:'none', md:"flex"}
           }}
         >
-          ←
-        </Button>
-        <Button
-          onClick={handleNext}
-          disabled={currentIndex === images.length - 1}
-          variant="outlined"
-          sx={{
-            marginRight: 10,
-            borderRadius: "20px",
-            color: "black",
-            border: "1px solid #9E9E9E",
-          }}
-        >
-          →
-        </Button>
-      </Box>
+          <Button
+            onClick={handlePrev}
+            disabled={currentIndex === 0}
+            variant="outlined"
+            sx={{
+              marginRight: 4,
+              borderRadius: "20px",
+              color: "black",
+              border: "1px solid #9E9E9E",
+            }}
+          >
+            ←
+          </Button>
+          <Button
+            onClick={handleNext}
+            disabled={currentIndex === images.length - 1}
+            variant="outlined"
+            sx={{
+              marginRight: 10,
+              borderRadius: "20px",
+              color: "black",
+              border: "1px solid #9E9E9E",
+            }}
+          >
+            →
+          </Button>
+        </Box>
+     
 
       {/* Scrollable Image Container */}
       <Box
@@ -136,8 +139,9 @@ export default function Products() {
         overflow="hidden"
         sx={{
           width: "100%",
-          height: "600px", // Increase height to accommodate text
-          overflowX: "auto",
+        height: {xs:'400px', md:"600px"}, // Increase height to accommodate text
+          overflowX: { xs: "auto", sm: "auto", md: "hidden" },
+          
           scrollSnapType: "x mandatory",
           "&::-webkit-scrollbar": {
             display: "none",
@@ -148,7 +152,7 @@ export default function Products() {
           <Box
             key={index}
             sx={{
-              flex: "0 0 calc(100% / 3.5)",
+            flex: {xs:"0 0 calc(100% / 1.2)",md:"0 0 calc(100% / 3.5)"},
               height: "100%",
               scrollSnapAlign: "center",
               transition: "transform .5s ease-in-out",
@@ -186,6 +190,7 @@ export default function Products() {
                   variant="h6"
                   fontWeight="bold"
                   fontFamily={"Roboto"}
+                  sx={{fontSize: {xs:15,md:20}}}
                 >
                   {img.title}
                 </Typography>
@@ -194,6 +199,7 @@ export default function Products() {
                   color="textSecondary"
                   pr={5}
                   fontFamily={"Roboto"}
+                  sx={{fontSize: {xs:10,md:20}}}
                 >
                   {img.description}
                 </Typography>
@@ -204,6 +210,42 @@ export default function Products() {
           </Box>
         ))}
       </Box>
+      <Box
+          mb={2}
+          
+          justifyContent="flex-end"
+          sx={{
+            width: "100%",
+            display:{xs:'flex', md:"none"}
+          }}
+        >
+          <Button
+            onClick={handlePrev}
+            disabled={currentIndex === 0}
+            variant="outlined"
+            sx={{
+              marginRight: 4,
+              borderRadius: "20px",
+              color: "black",
+              border: "1px solid #9E9E9E",
+            }}
+          >
+            ←
+          </Button>
+          <Button
+            onClick={handleNext}
+            disabled={currentIndex === images.length - 1}
+            variant="outlined"
+            sx={{
+              marginRight: 10,
+              borderRadius: "20px",
+              color: "black",
+              border: "1px solid #9E9E9E",
+            }}
+          >
+            →
+          </Button>
+        </Box>
     </Grid>
   );
 }

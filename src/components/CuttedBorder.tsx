@@ -23,8 +23,8 @@ const FolderCard = (props: Props) => {
       container
       onClick={() => props.handleSelect(props.id)}
       sx={{
-        width: expand ? "755px" : "300px", // Expand width horizontally
-        height: "340px", // Keep the height fixed
+        width: { xs: "350px", md: expand ? "730px" : "300px" }, // Expand width horizontally
+        height: { xs: "250px", md: "340px" }, // Keep the height fixed
         backgroundColor: "white",
         borderRadius: "20px",
         borderLeft: "3px solid rgba(0,0,0,0.1)",
@@ -120,14 +120,22 @@ const FolderCard = (props: Props) => {
       >
         <Grid item xs={12}>
           {/* Icon on top of the text */}
-
-          <Image
+          <Box
+            sx={{
+              width: { xs: "50px", sm: "50px", md: "60px" },
+              height: { xs: "30px", sm: "50px", md: "60px" },
+              position: "relative",
+            }}
+          >
+             <Image
             src={props.icon} // Use the imported icon
             alt="Icon"
             width={60} // Set a width for the icon
             height={24} // Set a height for the icon
             style={{ marginRight: "8px", marginBottom: 4 }} // Add space between icon and text
           />
+          </Box>
+         
 
           {expand && (
             <Box
@@ -135,24 +143,24 @@ const FolderCard = (props: Props) => {
                 display: "flex",
                 width: "100%",
                 height: "20%",
-                marginTop: 8,
+                marginTop: { xs: 4, md: 8 },
 
-                gap: 10,
+                gap: {xs:2,md:10},
               }}
             >
               <Box sx={{ display: "flex", flexDirection: "column" }}>
                 <Typography
                   sx={{
-                    fontSize: { xs: 30 },
+                    fontSize: { xs: 20, md: 30 },
                     fontFamily: "Helvetica Light",
-                    fontWeight: "bold",
+                    fontWeight: "bold"
                   }}
                 >
                   +70.1%
                 </Typography>
                 <Typography
                   sx={{
-                    fontSize: { xs: 12 },
+                    fontSize: { xs: 10, md: 12 },
                     fontFamily: "Helvetica Light",
                     color: "#616161",
                   }}
@@ -164,7 +172,7 @@ const FolderCard = (props: Props) => {
               <Box sx={{ display: "flex", flexDirection: "column" }}>
                 <Typography
                   sx={{
-                    fontSize: { xs: 30 },
+                    fontSize: { xs: 20, md: 30 },
                     fontFamily: "Helvetica Light",
                     fontWeight: "bold",
                   }}
@@ -173,7 +181,7 @@ const FolderCard = (props: Props) => {
                 </Typography>
                 <Typography
                   sx={{
-                    fontSize: { xs: 12 },
+                    fontSize: { xs: 10, md: 12 },
                     fontFamily: "Helvetica Light",
                     color: "#616161",
                   }}
@@ -187,7 +195,11 @@ const FolderCard = (props: Props) => {
             variant="h6"
             color="textPrimary"
             fontFamily={"Helvetica Light"}
-            sx={{ marginTop: expand ? 4 : 17, fontWeight: "bold" }}
+            sx={{
+              marginTop: expand ? 4 : 17,
+              fontWeight: "bold",
+              fontSize: { xs: 15, md: 20 },
+            }}
           >
             {props.title}
           </Typography>
@@ -195,6 +207,7 @@ const FolderCard = (props: Props) => {
             variant="subtitle2"
             color="textSecondary"
             fontFamily={"Helvetica Light"}
+            sx={{ fontSize: { xs: 10, md: 15 } }}
           >
             {props.text}
           </Typography>

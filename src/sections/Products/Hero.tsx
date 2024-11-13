@@ -14,7 +14,7 @@ export default function Hero() {
       sx={{
         marginTop: { xs: 4, sm: 4, md: 0, lg: 8 },
         paddingY: { xs: 5, sm: 6, md: 15, lg: 4 },
-        paddingX: { xs: 0, sm: 1, md: 5 },
+        paddingX: { xs: 2, sm: 1, md: 5 },
         position: "relative",
         width: "100%",
         height: { xs: "40vh", md: "70vh", lg: "80vh" }, // Set height for hero image section
@@ -64,7 +64,7 @@ export default function Hero() {
             variant="subtitle1"
             sx={{
               fontSize: {
-                xs: "0.9rem",
+                xs: "0.8rem",
                 sm: "1rem",
                 md: "1.2rem",
                 lg: "1.5rem",

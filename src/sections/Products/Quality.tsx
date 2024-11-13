@@ -19,7 +19,7 @@ export default function Quality() {
       <Grid
         container
         sx={{
-          px: { xs: 5, sm: 7, md: 10 },
+          px: { xs: 2, sm: 7, md: 10 },
           py: 5,
           alignItems: "center",
           justifyContent: "center",

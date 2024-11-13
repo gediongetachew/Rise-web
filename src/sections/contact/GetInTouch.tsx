@@ -327,7 +327,7 @@ export default function GetInTouch() {
                 </Typography>
               </Box>
             </Grid>
-            <Grid item xs={12} sx={{ display: "flex", gap: {xs:5,md:20}, marginTop: {xs:5,sm:10} }}>
+            <Grid item xs={12} sx={{ display: "flex", gap: {xs:5,md:22}, marginTop: {xs:5,sm:10} }}>
               <Box sx={{ display: "flex", flexDirection: "column", gap: 1 }}>
                 <Typography
                   variant="h5"

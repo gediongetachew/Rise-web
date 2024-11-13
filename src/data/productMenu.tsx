@@ -6,7 +6,7 @@ const Menu = [
   {
     id: 1,
     type: "all",
-    name: "All Products",
+    name: "All",
     icon: <InventoryIcon />,
   },
   {

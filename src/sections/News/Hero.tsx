@@ -17,7 +17,7 @@ export default function Hero() {
         paddingX: { xs: 2, sm: 1, md: 5 },
         position: "relative",
         width: "100%",
-        height: { xs: "40vh",sm: '55vh' ,md: "80vh", lg: "80vh" }, // Set height for hero image section
+        height: { xs: "35vh",sm: '55vh' ,md: "80vh", lg: "80vh" }, // Set height for hero image section
         overflow: "hidden", // Prevent any overflow issues with responsive image
       }}
     >
@@ -43,10 +43,10 @@ export default function Hero() {
           direction="column"
           sx={{
             position: "absolute",
-            top: { xs: "53%", sm: "55%", md: "50%" },
-            left: { xs: "1%", sm: "2%", md: "5%" },
+            top: { xs: "55%", sm: "55%", md: "50%" },
+            left: { xs: "3%", sm: "2%", md: "5%" },
             transform: "translateY(-50%)",
-            width: { xs: "100%", sm: "100%", md: "90%" },
+            width: { xs: "80%", sm: "100%", md: "90%" },
             color: "white",
             zIndex: 2,
           }}

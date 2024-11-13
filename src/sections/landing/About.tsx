@@ -8,7 +8,7 @@ import CuttedBorder from "../../components/CuttedBorder";
 import { useState } from "react";
 
 export default function About() {
-  const [selectedCard, setSelectedcard] = useState<number | null>(null);
+  const [selectedCard, setSelectedcard] = useState<number | null>(1);
   const handleSelect = (id: number) => {
     setSelectedcard((prev) => (prev === id ? null : id));
   };
@@ -42,7 +42,7 @@ export default function About() {
           variant="h3"
           sx={{
             color: "#3D628C",
-            fontSize: { xs: 30, sm: 40, md: 50 },
+            fontSize: { xs: 20, sm: 40, md: 50 },
             fontFamily: "Helvetica",
             marginTop: 3,
             width: "80%",
@@ -95,39 +95,45 @@ export default function About() {
         </Box>
       </Grid>
       <Grid
-        container
-        sx={{
-          display: "flex",
-          flexWrap: "wrap",
-          gap: 3, // Adds space between cards
-          justifyContent: "space-between", // Ensures cards are evenly spaced
-          padding: 2,
-        }}
-      >
-        {aboutUsCardContent.map((item) => (
-          <Grid
-            item
-            key={item.id}
-            sx={{
-              display: "flex",
-              flexDirection: "column",
-              alignItems: "center",
-              // Ensures 3 cards per row
-              marginBottom: 3,
-            }}
-          >
-            <CuttedBorder
-              selected={selectedCard}
-              handleSelect={handleSelect}
-              title={item.title}
-              text={item.text}
-              img={item.img}
-              icon={item.icon}
-              id={item.id}
-            />
-          </Grid>
-        ))}
-      </Grid>
+  container
+  sx={{
+    display: "flex",
+    flexWrap: "wrap",
+    gap: { xs: 2, sm: 2, md: 5 }, // Adds space between cards, adjust as needed
+    justifyContent: { xs: "center", sm: "center", md: "center" }, // Center for small screens, space-between for larger
+    alignItems: "center", // Align items vertically at the center
+    
+    marginX: {xs:0, md:10}, // Ensures the grid is centered
+  }}
+>
+  {aboutUsCardContent.map((item) => (
+    <Grid
+      item
+      key={item.id}
+      sx={{
+        display: "flex",
+        flexDirection: "column",
+        alignItems: "center", // Center-align items horizontally
+        justifyItems: "center",
+        width: { xs: "90%", sm: "90%", md: "30%" }, // Adjust width for different screen sizes
+        marginBottom: 3,
+     
+      
+      }}
+    >
+      <CuttedBorder
+        selected={selectedCard}
+        handleSelect={handleSelect}
+        title={item.title}
+        text={item.text}
+        img={item.img}
+        icon={item.icon}
+        id={item.id}
+      />
+    </Grid>
+  ))}
+</Grid>
+
     </Grid>
   );
 }

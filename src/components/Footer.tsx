@@ -32,10 +32,10 @@ export default function Footer() {
           mb: { xs: 4, md: 0 },
         }}
       >
-        <Typography variant="h3" fontWeight="bold" sx={{ color: "#EE484A" }}>
+        <Typography variant="h3" fontWeight="bold" sx={{ color: "#EE484A", fontSize: {xs:30, sm:40,md:40,lg:42} }}>
           RISE GLOBAL GMBA
         </Typography>
-        <Typography variant="h6" sx={{ color: "#FFFFFFBF", mt: 1, fontSize: {xs:10, sm:15, md:25}}}>
+        <Typography variant="h6" sx={{ color: "#FFFFFFBF", mt: 1, fontSize: {xs:10, sm:15, md:20}}}>
           Lorem ipsum dolor sit amet consectetur. Rhoncus gravida consequat
           feugiat consectetur. Adipiscing arcu sit auctor hac ornare tempus.
           Quis praesent.

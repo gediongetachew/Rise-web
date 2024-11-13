@@ -11,7 +11,7 @@ export default function CurvedCard() {
       sx={{
         flexDirection: { xs: "column", md: "row" },
         paddingY: { xs: 5, md: 5 },
-        paddingX: { xs: 2, sm: 4, md: 10 },
+        paddingX: { xs: 2, sm: 4, md: 4 },
         zIndex: 1,
       }}
     >
@@ -27,54 +27,70 @@ export default function CurvedCard() {
             textAlign: { xs: "center", md: "left" },
           }}
         >
-          <Grid item xs={12} sx={{display: 'flex', position: "relative", alignContent: 'flex-center' }}>
+          <Grid
+            item
+            xs={12}
+            sx={{
+              display: "flex",
+              position: "relative",
+              alignItems: "center", // Ensures vertical centering
+              justifyContent: "flex-start", // Aligns the content to the left
+              padding: { xs: 2, sm: 0 },
+            }}
+          >
             <Typography
               variant="h3"
               fontWeight="bold"
               sx={{
-                color: "#3D628C",
-                alignItems:'left',
-                textWrap: 'rap',
-                display: "inline-block", // Ensure the text occupies only the necessary space
-                marginRight: 2, // Add some space between the text and the box
-                fontSize: {xs:30, sm:40, md:50}
+                color: "#00000",
+                textAlign: "left", // Align text to the left
+                display: "inline-block",
+
+                fontSize: { xs: 25, sm: 40, md: 50 },
               }}
             >
               Bringing Innovation to Healthcare Your Trusted Partner in Medical
               Equipment
             </Typography>
 
+            {/* Underline Box */}
             <Box
               sx={{
                 position: "absolute",
                 display: "flex",
-                top: { xs: "105%", sm: "115%", md: "105%", lg: "87%",  }, // Centers the box vertically in relation to the text
-                right: { xs: "28%", sm: "28%", md: "39%", lg: "28%" }, // Aligns the box to the right of the parent container
+                top: { xs: "82%", sm: "115%", md: "105%", lg: "88%" },
+                left: { xs: 155, sm: 0, md: 265 }, // Ensures the box starts from the left
                 background: "black",
-                width: { xs: "60%", sm: "40%", md: "60%", lg: "30%", xl:'40%' }, // Adjust the width of the box as needed
-                height: "2px", // Thickness of the line (box)
-                transform: "translateY(-50%)", // Vertically centers the box with respect to the text
+                width: {
+                  xs: "35%",
+                  sm: "40%",
+                  md: "60%",
+                  lg: "30%",
+                  xl: "30%",
+                },
+                height: "2px",
+                transform: "translateY(-50%)",
               }}
-            ></Box>
+            />
+
+            {/* Language Icon */}
             <LanguageIcon
               sx={{
                 position: "absolute",
-                display: "flex",
                 color: "#EE484A",
-                top: { xs: "105%", sm: "115%", md: "105%", lg: "87%",  }, // Centers the box vertically in relation to the text
-                left: { xs: "65%", sm: "62%", md: "50%", lg: "62%",xl:'60%' }, // Aligns the box to the right of the parent container
-                width: "30%", // Adjust the width of the box as needed
-                height: "30px", // Thickness of the line (box)
-                transform: "translateY(-50%)", // Vertically centers the box with respect to the text
+                top: { xs: "82%", sm: "115%", md: "105%", lg: "87%" },
+                left: { xs: "82%", sm: "60%", md: "50%", lg: "60%", xl: "63%" },
+                height: "40px",
+                transform: "translateY(-50%)",
               }}
             />
           </Grid>
 
-          <Grid item xs={12} marginTop={5}>
+          <Grid item xs={12} sx={{marginTop: {xs:1, md:5}}}>
             <Typography variant="subtitle1" sx={{ color: "#616161" }}>
               Lorem ipsum dolor sit amet consectetur. Mauris semper tristique
-              elit tincidunt. Odio suspendisse hendrerit quis vel fermentum.
-              Sit.
+              elit tincidunt. <br /> Odio suspendisse hendrerit quis vel
+              fermentum. Sit.
             </Typography>
           </Grid>
           <Grid

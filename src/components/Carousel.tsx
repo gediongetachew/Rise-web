@@ -31,6 +31,7 @@ export default function ImageCarousel({ name, direction, bgcolor }: Props) {
               fontSize: { xs: "1.25rem", sm: "1.5rem", md: "1.5rem" },
               backgroundColor: bgcolor ? "#F7F7F7" : "white",
               paddingLeft: 2,
+              paddingRight:2,
               paddingTop: 5
 
             }}

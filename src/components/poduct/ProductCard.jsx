@@ -49,7 +49,7 @@ const ProductCard = ({ image, title, description, link, sx }) => {
               {" "}
               <Typography
                 variant="body1"
-                sx={{ px: { xs: 0.8, sm: 2 }, py: {xs:.4, sm: .8}, fontSize:{xs:10,sm:20} }}
+                sx={{ px: { xs: 1, sm: 2 }, py: {xs:1, sm: .8}, fontSize:{xs:10,sm:20} }}
               >
                 {" "}
                 Order Now
