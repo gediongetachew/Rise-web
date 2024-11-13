@@ -31,7 +31,7 @@ export default function TestimonialCard() {
       container
       position={"relative"}
       sx={{
-        marginTop:{xs:0, sm:6, md:10},
+        marginTop: { xs: 0, sm: 6, md: 10 },
         marginBottom: 5,
         paddingX: { xs: 3, sm: 2, md: 10 },
         background: "#F7F7F7",
@@ -79,13 +79,8 @@ export default function TestimonialCard() {
                 xl={5.8}
                 key={index}
                 sx={{
-                  height: {
-                    xs: "310px",
-                    sm: "395px",
-                    md: "360px",
-                    lg: "460px",
-                  },
-                  width: '100%',
+                  height: "auto",
+                  width: "100%",
                   flexShrink: 0,
                   backgroundColor: "white",
                   borderRadius: "20px",
@@ -94,9 +89,19 @@ export default function TestimonialCard() {
                   position: "relative",
                   overflow: "hidden",
                   transition: "width 0.3s ease",
+                  "::before": {
+                    content: '""',
+                    position: "absolute",
+                    top: 49,
+                    right: -10,
+                    width: 18,
+                    height: 10,
+                    background: " #F7F7F7",
+                    zIndex: 2,
+                    borderTop: "1px solid #F7F7F7",
+                  },
                 }}
               >
-                Cutout on the top right
                 <Grid
                   xs={12}
                   sm={6}
@@ -105,12 +110,21 @@ export default function TestimonialCard() {
                     position: "absolute",
                     top: 0,
                     right: 0,
-                    width: "250px",
-                    height: "42px",
-                    borderBottomLeftRadius: "10px",
+                    width: "24%",
+                    height: "50px",
+                    borderBottomLeftRadius: "20px",
                     borderBottom: "1px solid rgba(0,0,0,0.1)",
                     zIndex: 1,
                     background: "#F7F7F7",
+                    "::before": {
+                      content: '""',
+                      position: "absolute",
+                      top: 0,
+                      left: -16,
+                      width: 18,
+                      height: 10,
+                      background: "#F7F7F7",
+                    },
                   }}
                 />
                 {/* Top box next to the cutout */}
@@ -118,31 +132,34 @@ export default function TestimonialCard() {
                   sx={{
                     position: "absolute",
                     top: 0,
-                    right: "250px",
-                    height: "36px",
-                    width: "calc(100% - 250px)",
+                    left: 0,
+                    height: "32px",
+                    width: "76%",
                     backgroundColor: "white",
                     borderTop: "1px solid rgba(0,0,0,0.1)",
                     borderRight: "1px solid rgba(0,0,0,0.1)",
                     borderTopLeftRadius: "10px",
-                    borderTopRightRadius: "10px",
-                    zIndex: 2,
+                    borderTopRightRadius: "20px",
+                    zIndex: 1,
+                    // background:"#675"
                   }}
                 />
-                <Grid
+                {/* <Grid
                   sx={{
                     position: "absolute",
-                    top: "41px", // Position it right below the cutout
+                    bottom: 0, // Position it right below the cutout
                     right: 0,
-                    width: "130px", // Match the width of the cutout
-                    height: "90%", // Adjust the height as desired
-                    borderTop: "1px solid rgba(0,0,0,0.1)", // Top border
+                    top:'20%',
+                    width: "12%", // Match the width of the cutout
+                    height: "80%", // Adjust the height as desired
+                    // Top border
                     borderRight: "1px solid rgba(0,0,0,0.1)", // Right border
                     backgroundColor: "white",
                     borderTopRightRadius: "10px", // Only top right corner rounded
                     zIndex: 1, // Keep zIndex lower than the image
+                 
                   }}
-                />
+                /> */}
                 {/* Card Content */}
                 <Grid
                   container
@@ -259,8 +276,8 @@ export default function TestimonialCard() {
           onClick={prevTestimonial}
           disabled={page === 1} // Disable if on the first page
           sx={{
-            width: {xs:"40px",md:"60px"},
-            height: {xs:"39px",md:"50px"},
+            width: { xs: "40px", md: "60px" },
+            height: { xs: "39px", md: "50px" },
             borderRadius: "20px",
             border: "solid 1px",
             bgcolor: "white",
@@ -294,8 +311,8 @@ export default function TestimonialCard() {
           onClick={nextTestimonial}
           disabled={page === 5} // Disable if on the last page
           sx={{
-            width: {xs:"40px",md:"60px"},
-            height: {xs:"39px",md:"50px"},
+            width: { xs: "40px", md: "60px" },
+            height: { xs: "39px", md: "50px" },
             borderRadius: "20px",
             border: "solid 1px",
             bgcolor: "white",

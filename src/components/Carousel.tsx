@@ -27,13 +27,12 @@ export default function ImageCarousel({ name, direction, bgcolor }: Props) {
             variant="h5"
             sx={{
               color: "#EE484A",
-              
+        
               fontSize: { xs: "1.25rem", sm: "1.5rem", md: "1.5rem" },
               backgroundColor: bgcolor ? "#F7F7F7" : "white",
-              paddingLeft: 2,
-              paddingRight:2,
-              paddingTop: 5
-
+              paddingLeft: 4,
+              paddingTop:3
+             
             }}
           >
             {name}
@@ -48,8 +47,10 @@ export default function ImageCarousel({ name, direction, bgcolor }: Props) {
           alignItems: "center",
           justifyContent: "center",
           gap: 0,
-          width: "100vw",
-          height: name ? { xs: "140px", sm: "160px", md: "170px", lg: "220px" }: { xs: "120px", sm: "160px", md: "170px", lg: "170px" },
+         
+          height: name
+            ? { xs: "140px", sm: "160px", md: "170px", lg: "220px" }
+            : { xs: "120px", sm: "160px", md: "170px", lg: "170px" },
           backgroundColor: bgcolor ? "#F7F7F7" : "white",
         }}
       >

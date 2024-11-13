@@ -7,7 +7,7 @@ export default function TestimonialCard() {
     <Grid
       container
       sx={{
-        mx: { xs: 2, md: 12 },
+        px: { xs: 2, md: 10 },
         pr: { xs: 2, md: 15 },
         width: "100%",
         mb: { xs: 10, md: 15 },

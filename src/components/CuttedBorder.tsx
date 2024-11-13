@@ -23,7 +23,7 @@ const FolderCard = (props: Props) => {
       container
       onClick={() => props.handleSelect(props.id)}
       sx={{
-        width: { xs: "350px", md: expand ? "730px" : "300px" }, // Expand width horizontally
+        width: { xs: "350px", md: expand ? "740px" : "300px" }, // Expand width horizontally
         height: { xs: "250px", md: "340px" }, // Keep the height fixed
         backgroundColor: "white",
         borderRadius: "20px",
