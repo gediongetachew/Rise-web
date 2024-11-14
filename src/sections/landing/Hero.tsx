@@ -79,7 +79,7 @@ export default function CurvedCard() {
                 position: "absolute",
                 color: "#EE484A",
                 top: { xs: "82%", sm: "115%", md: "105%", lg: "87%", xl: "87%" },
-                left: { xs: "82%", sm: "60%", md: "50%", lg: "74%", xl: "63%" },
+                left: { xs: "82%", sm: "60%", md: "50%", lg: "74%", xl: "60%" },
                 height: "40px",
                 transform: "translateY(-50%)",
               }}

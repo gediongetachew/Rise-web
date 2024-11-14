@@ -121,6 +121,15 @@ export default function TestimonialCard() {
                   borderBottomLeftRadius: "10px",
                   borderLeft: "1px solid rgba(0,0,0,0.1)",
                   zIndex: 1,
+                  "::before": {
+                    content: '""',
+                    position: "absolute",
+                    top: 0,
+                    left: -16,
+                    width: 18,
+                    height: 8,
+                    background: "white",
+                  },
                 }}
               />
 
@@ -155,21 +164,6 @@ export default function TestimonialCard() {
                 }}
               />
 
-              <Grid
-                sx={{
-                  position: "absolute",
-                  top: "30px", // Position it right below the cutout
-                  right: 0,
-                  width: "146px", // Match the width of the cutout
-                  height: "1px", // Adjust the height as desired
-                  borderTop: "1px solid rgba(0,0,0,0.1)", // Top border
-                  borderRight: "1px solid rgba(0,0,0,0.1)", // Right border
-                  backgroundColor: "white",
-                  borderTopRightRadius: "10px", // Only top right corner rounded
-                  zIndex: 1, // Keep zIndex lower than the image
-                }}
-              />
-
               {/* Card Content */}
               <Grid
                 container
@@ -186,8 +180,8 @@ export default function TestimonialCard() {
                   {/* Icon on top of the text */}
                   <Box
                     sx={{
-                      width: { xs: "40px", sm: "50px", md: "60px" },
-                      height: { xs: "30px", sm: "50px", md: "60px" },
+                      width: { xs: "50px", sm: "50px", md: "60px" },
+                      height: { xs: "35px", sm: "50px", md: "60px" },
                       position: "relative",
                     }}
                   >
@@ -222,7 +216,7 @@ export default function TestimonialCard() {
                       overflow: "hidden",
                       textOverflow: "ellipsis",
                       fontSize: { xs: 10, sm: 15, md: 20 },
-                      fontFamily: 'Helvetica Light'
+                      fontFamily: "Helvetica Light",
                     }}
                   >
                     {item.text}

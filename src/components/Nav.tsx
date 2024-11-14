@@ -159,7 +159,7 @@ export default function Nav() {
                 href={item.address}
                 onClick={handleDrawerToggle}
                 sx={{
-                  color: "#3D628C",
+                  color: pathname ===item.address ? "black" : "#9E9E9E",
                   fontWeight: pathname === item.address ? "bold" : "medium",
                   fontSize: { xs: "2rem", sm: "3rem", md: "0.95rem" }, // Responsive font size for drawer items
                   paddingY: { xs: "20px", sm: "25px", md: "8px 16px" }, // Responsive button padding
