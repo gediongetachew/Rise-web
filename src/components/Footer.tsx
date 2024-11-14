@@ -14,7 +14,7 @@ export default function Footer() {
         backgroundColor: "#284667",
         color: "#fff",
         pt: 5,
-        px: { xs: 3, md: 8 },
+        paddingX: { xs: 2, sm: 4, md: 10 },
         pb: 2,
         height: {xs:'900px', sm:'800px', md: '700px', lg:'650px'}
       }}

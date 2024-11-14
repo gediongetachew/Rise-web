@@ -7,11 +7,11 @@ import Image from "next/image";
 
 export default function Article() {
   return (
-    <Box padding={4} marginBottom={20}>
+    <Box paddingY={4} marginBottom={20} sx={{ paddingX: { xs: 2, sm: 4, md: 10 },}}>
       {/* Fixed Heading */}
       <Typography
         variant="h4"
-        sx={{ color: "#EE484A", paddingBottom: 4,  fontSize: { xs: 25, sm: 20, md: 25, lg: 30 },paddingX: {xs:0,sm:10}}}
+        sx={{ color: "#EE484A", paddingBottom: 4,  fontSize: { xs: 25, sm: 20, md: 25, lg: 30 }}}
       >
         Articles & Blog
       </Typography>
@@ -71,7 +71,7 @@ export default function Article() {
                 <Typography
                   variant="h5"
                   gutterBottom
-                  sx={{ fontSize: { xs: "1rem", sm: "2.5rem" }, fontWeight: 'bold', fontFamily: 'Segoe UI' }}
+                  sx={{ fontSize: { xs: "1rem",sm:"1.5rem", sm: "2rem" }, fontWeight: 'bold', fontFamily: 'Segoe UI' }}
                 >
                   {item.title}
                 </Typography>

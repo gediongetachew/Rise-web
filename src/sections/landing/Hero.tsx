@@ -11,7 +11,7 @@ export default function CurvedCard() {
       sx={{
         flexDirection: { xs: "column", md: "row" },
         paddingY: { xs: 5, md: 5 },
-        paddingX: { xs: 2, sm: 4, md: 4 },
+        paddingX: { xs: 2, sm: 4, md: 10 },
         zIndex: 1,
       }}
     >
@@ -79,7 +79,7 @@ export default function CurvedCard() {
                 position: "absolute",
                 color: "#EE484A",
                 top: { xs: "82%", sm: "115%", md: "105%", lg: "87%", xl: "87%" },
-                left: { xs: "82%", sm: "60%", md: "50%", lg: "74%", xl: "60%" },
+                left: { xs: "82%", sm: "60%", md: "50%", lg: "74%", xl: "62%" },
                 height: "40px",
                 transform: "translateY(-50%)",
               }}
@@ -109,6 +109,7 @@ export default function CurvedCard() {
               component="a"
               href="/product"
               sx={{
+                boxShadow: "none",
                 color: "white",
                 background: "#3D628C",
                 paddingX: { xs: 5, md: 6 },
@@ -125,6 +126,7 @@ export default function CurvedCard() {
               href="/contact"
               sx={{
                 color: "black",
+                boxShadow: "none",
                 background: "white",
                 borderRadius: "40px",
                 border: "0.5px solid #9E9E9E",

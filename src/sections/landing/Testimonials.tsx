@@ -31,11 +31,11 @@ export default function TestimonialCard() {
       container
       position={"relative"}
       sx={{
-        marginTop: { xs: 0, sm: 6, md: 10 },
+        marginTop: { xs: 8, sm: 6, md: 10 },
         marginBottom: 5,
-        paddingX: { xs: 3, sm: 2, md: 10 },
+        paddingX: { xs: 2, sm: 4, md: 10 },
         background: "#F7F7F7",
-        height: { xs: "500px", sm: "600px", md: "700px" },
+        height: { xs: "400px", sm: "600px", md: "700px" },
       }}
     >
       <Typography

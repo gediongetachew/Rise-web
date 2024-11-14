@@ -18,7 +18,7 @@ export default function About() {
       container
       sx={{
         paddingY: { xs: 5, md: 5 },
-        paddingX: { xs: 3, sm: 3 },
+        paddingX: { xs: 2, sm: 4, md: 10 },
         marginTop: 5,
       }}
     >
@@ -81,6 +81,7 @@ export default function About() {
             variant="contained"
             endIcon={<ArrowOutward />}
             sx={{
+              boxShadow: "none",
               color: "black",
               background: "white",
               width: 170,
@@ -99,11 +100,12 @@ export default function About() {
   sx={{
     display: "flex",
     flexWrap: "wrap",
+    marginTop: 4,
     gap: { xs: 2, sm: 2,md:6,lg:5 }, // Adds space between cards, adjust as needed
     justifyContent: { xs: "center", sm: "center", md: "center" }, // Center for small screens, space-between for larger
     alignItems: "center", // Align items vertically at the center
     
-    marginX: {xs:0, md:10}, // Ensures the grid is centered
+    marginX: {xs:0, md:0}, // Ensures the grid is centered
   }}
 >
   {aboutUsCardContent.map((item) => (

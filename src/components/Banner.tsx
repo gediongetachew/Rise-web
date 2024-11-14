@@ -18,6 +18,7 @@ export default function Banner() {
         backgroundSize: "cover",
         backgroundPosition: "center",
         zIndex: 1,
+        
       }}
     >
       <Grid
@@ -32,6 +33,7 @@ export default function Banner() {
           bottom: { xs: "5%", sm: "0%", md: "5%" },
           left: { xs: "2%", sm: "0%", md: "0%" },
           zIndex: 10,
+          paddingX: { xs: 2, sm: 4, md: 10 },
         }}
       >
         <Box

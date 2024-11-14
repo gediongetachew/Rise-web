@@ -27,7 +27,7 @@ export default function ImageCarousel({ name, direction, bgcolor }: Props) {
             variant="h5"
             sx={{
               color: "#EE484A",
-        
+              paddingX: { xs: 2, sm: 4, md: 10 },
               fontSize: { xs: "1.25rem", sm: "1.5rem", md: "1.5rem" },
               backgroundColor: bgcolor ? "#F7F7F7" : "white",
               paddingLeft: 4,

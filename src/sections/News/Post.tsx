@@ -17,7 +17,7 @@ export default function Post() {
         alignItems: { xs: "center", md: "flex-start" },
         justifyContent: { xs: "center", md: "space-between" },
         paddingTop: { xs: 5, md: 10 },
-        paddingX: { xs: 2, sm: 5, md: 15 },
+        paddingX: { xs: 2, sm: 4, md: 10 },
         gap: { xs: 4, md: 0 },
       }}
     >

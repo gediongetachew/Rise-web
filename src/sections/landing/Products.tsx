@@ -61,7 +61,7 @@ export default function Products() {
   };
 
   return (
-    <Grid container sx={{ paddingLeft: {xs:1} }}>
+    <Grid container sx={{  paddingX: { xs: 2, sm: 4, md: 10 }, }}>
       <Grid container spacing={2} mb={5}>
         <Grid item xs={12}>
           <Typography

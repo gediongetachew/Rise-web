@@ -1,24 +1,32 @@
 import React from "react";
-import { Grid, Typography } from "@mui/material";
+import { Grid, Typography, Button } from "@mui/material";
 import { IconArrowUpRight } from "@tabler/icons-react";
 import Image from "next/image";
 import Link from "next/link";
+import { ArrowOutward } from "@mui/icons-material";
 
 const ProductCard = ({ image, title, description, link, sx }) => {
   return (
-    <Grid container >
-      <Grid item xs={12} >
+    <Grid container>
+      <Grid item xs={12}>
         <Image
           src={image}
-          width={420}
+          width={400}
           height={30}
           alt={title}
           style={{ ...sx }}
         />
-        <Typography variant="h5" sx={{ fontSize: { xs: 25, sm: 30, md: 40 } }}>
+        <Typography variant="h5" sx={{ fontSize: { xs: 25, sm: 30, md: 35 } }}>
           {title}
         </Typography>
-        <Typography variant="body2" sx={{ color: '#616161', fontSize: { xs: 12, sm:15, md:15, lg:15 },fontFamily: 'Segoe UI' }}>
+        <Typography
+          variant="body2"
+          sx={{
+            color: "#616161",
+            fontSize: { xs: 12, sm: 15, md: 15, lg: 15 },
+            fontFamily: "Segoe UI",
+          }}
+        >
           {description}
         </Typography>
 
@@ -33,33 +41,24 @@ const ProductCard = ({ image, title, description, link, sx }) => {
               mt: 2,
             }}
           >
-            <Link
-              href={link}
-              style={{
-                display: "flex",
+            <Button
+              variant="contained"
+              component="a"
+              href="/contact"
+              endIcon= {<ArrowOutward />}
+              sx={{
                 color: "white",
-               
-                backgroundColor: "#3D628C",
-               
-                paddingLeft: 5,
-                paddingRight: 10,
-                borderRadius: 26,
+                boxShadow: "none",
+                background: "#3D628C",
+                borderRadius: "40px",
+                border: "0.5px solid #9E9E9E",
+                paddingX: { xs: 6, md: 2 },
+                paddingY: { xs: 0, sm: 2, md: 1 },
+                fontSize: { xs: 15, md: 15 },
               }}
             >
-              {" "}
-              <Typography
-                variant="body1"
-                sx={{ px: { xs: 1, sm: 2 }, py: {xs:1, sm: .8}, fontSize:{xs:10,sm:20} }}
-              >
-                {" "}
-                Order Now
-              </Typography>{" "}
-              <IconArrowUpRight
-                size="1.2rem"
-                stroke="1.4"
-                style={{ py: 1 }}
-              />{" "}
-            </Link>
+             Order Now
+            </Button>
           </Grid>
         </Grid>
       </Grid>

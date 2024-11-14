@@ -51,12 +51,12 @@ const ProductList: React.FC = () => {
         display: "flex",
         flexDirection: "column",
         minHeight: "100vh",
-
-        pt: 4,
+        paddingX: { xs: 2, sm: 4, md: 10 },
+        mt: 10,
       }}
     >
       {/* Header and Filters */}
-      <Grid item px={4}>
+      <Grid item>
         <Typography
           variant="h6"
           color="red"
@@ -70,7 +70,7 @@ const ProductList: React.FC = () => {
           color="#3D628C"
           gutterBottom
           fontWeight={"bold"}
-          fontSize={{ xs: 25 }}
+          fontSize={{ xs: 25, md:30, lg:35 }}
         >
           Popular Products
         </Typography>
@@ -82,9 +82,9 @@ const ProductList: React.FC = () => {
         sx={{
           display: "flex",
           marginTop: 4,
-          marginX: 4,
-          marginRight: { xs: 0, sm: 100 },
-          marginLeft: { xs: 0, sm: 5 },
+
+          marginRight: { xs: 0, sm: 120 },
+
           borderRadius: "25px",
           background: "#F7F7F7",
         }}
@@ -95,22 +95,22 @@ const ProductList: React.FC = () => {
             borderRadius={20}
             sx={{
               background: "#F7F7F7",
-              paddingY: { xs: 2, sm: 3, md: 4, lg: 5 },
-              paddingX: { xs: 1, sm: 2, md: 3 },
-              width: '100%'
+              paddingY: { xs: 2, sm: 3, md: 4, lg: 3 },
+              paddingX: { xs: 1, sm: 2, md: 2 },
             }}
           >
             <Button
               onClick={() => handleMenuButton(item.type)}
               startIcon={item.icon}
               sx={{
-                px: { xs: 2, sm: 4 },
+                px: { xs: 2, sm: 6 },
                 py: 1,
+                minWidth: { xs: 20 },
                 fontSize: {
                   xs: ".6rem",
                   sm: ".9rem",
                   md: "1rem",
-                  lg: "1.5rem",
+                  lg: "1rem",
                 },
                 borderRadius: 2,
                 transition: "0.2s",
@@ -127,11 +127,11 @@ const ProductList: React.FC = () => {
       <Box
         sx={{
           flexGrow: 1,
-          mt: 4,
+          mt: 8,
           display: "flex",
           flexDirection: "column",
           justifyContent: "space-between",
-          minHeight:{xs: 'none', sm: "1000px"},
+          minHeight: { xs: "none", sm: "1000px" },
         }}
       >
         <Grid
@@ -154,7 +154,7 @@ const ProductList: React.FC = () => {
                 title={item.name}
                 description={item.description}
                 link={`/${item.name}`}
-                sx={{ height: { xs: "200px", sm: "320px" } }}
+                sx={{ height: { xs: "200px", sm: "300px" } }}
               />
             </Grid>
           ))}

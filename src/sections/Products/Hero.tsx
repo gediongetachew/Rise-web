@@ -1,7 +1,7 @@
 import React from "react";
 import Grid from "@mui/material/Grid";
 import Image from "next/image";
-import HeroImg from "../../../public/assets/productsHero.png";
+import HeroImg from "../../../public/assets/p.png";
 import { Box, Button, IconButton, InputAdornment, InputBase, Typography } from "@mui/material";
 import SearchIcon from '@mui/icons-material/Search';
 
@@ -12,9 +12,9 @@ export default function Hero() {
       alignItems="center"
       justifyContent="center"
       sx={{
-        marginTop: { xs: 4, sm: 4, md: 0, lg: 8 },
+        marginTop: { xs: 4, sm: 4, md: 0, lg: 12 },
         paddingY: { xs: 5, sm: 6, md: 15, lg: 4 },
-        paddingX: { xs: 2, sm: 1, md: 5 },
+        paddingX: { xs: 2, sm: 4, md: 10 },
         position: "relative",
         width: "100%",
         height: { xs: "40vh", md: "70vh", lg: "80vh" }, // Set height for hero image section

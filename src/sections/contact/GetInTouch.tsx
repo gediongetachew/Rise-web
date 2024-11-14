@@ -48,7 +48,7 @@ export default function GetInTouch() {
   };
 
   // Handle form submission
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
     // Validate email
@@ -57,7 +57,6 @@ export default function GetInTouch() {
       return;
     }
 
-    // Check if all required fields are filled
     if (
       !compose.name.trim() ||
       !compose.subject.trim() ||
@@ -67,22 +66,38 @@ export default function GetInTouch() {
       return;
     }
 
-    // Display a success message
-    setSuccessMessage("Your message has been sent successfully!");
-    setCompose(emailObject);
-
-    // Redirect to success page after 2 seconds
-    setTimeout(() => {
-      router.push("/success");
-    }, 2000);
+    try {
+      const response = await fetch("http://192.168.1.104:8000/api/contact", {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(compose),
+      });
+      if (response.ok) {
+        setSuccessMessage("Your message has been sent successfully!");
+        setCompose(emailObject);
+        setError("");
+        setTimeout(() => {
+          router.push("/success");
+        }, 2000);
+      } else {
+        const errorData = await response.json();
+        setError(errorData);
+      }
+    } catch (error) {
+      console.error("Error sending email:", error);
+      setError("Sometthing went Wrong. Please try again.");
+    }
   };
 
   return (
     <Grid
       container
       spacing={2}
-      padding={{ xs: 2, md: 15 }}
+      paddingY={{ xs: 2, md: 15 }}
       marginTop={{ xs: 7, sm: 0 }}
+      sx={{ paddingX: { xs: 2, sm: 4, md: 10 },}}
     >
       {/* Contact Image */}
       <Grid item xs={12}>

@@ -2,7 +2,7 @@ import React from "react";
 import world from "../../../public/assets/world.png";
 import fair from "../../../public/assets/fair.png";
 import social from "../../../public/assets/social.png";
-import sphareWorld from "../../../public/assets/sphare.png";
+import sphareWorld from "../../../public/assets/world.svg";
 import Image from "next/image";
 import { Grid, Typography } from "@mui/material";
 
@@ -13,7 +13,7 @@ export default function Values() {
       sx={{
         backgroundColor: "#F7F7F7",
         py: { xs: 0, sm: 0 },
-        px: { xs: 3, sm: 5 },
+        paddingX: { xs: 2, sm: 4, md: 10 },
        
       }}
     >
@@ -55,6 +55,7 @@ export default function Values() {
               spacing={3}
               flexDirection={{ xs: "column", lg: "column" }} // Change to row for lg and up
               alignItems="flex-start"
+              sx={{ paddingX: { xs: 2, sm: 4, md: 6 },}}
             >
               {[
                 { src: world, text: "Ethical Business" },
@@ -66,7 +67,7 @@ export default function Values() {
                   item
                   xs={12}
                   lg={7}
-                  xl={5} // Adjust width for large screens
+                  xl={6} // Adjust width for large screens
                   container
                   alignItems="center"
                   sx={{
@@ -83,7 +84,7 @@ export default function Values() {
                   />
                   <Typography
                     sx={{
-                      ml: 2,
+                      ml: 1,
                       fontSize: { xs: "0.9rem", sm: "1rem", md: "1.5rem", xl: '1.8rem' },
                     }}
                   >
@@ -113,7 +114,7 @@ export default function Values() {
         <Image
           src={sphareWorld}
           alt="world-sphare"
-          style={{ transform: "scale(1.3)", maxWidth: "100%", height: "auto" }}
+          style={{ transform: "scale(1.2)", maxWidth: "100%", height: "auto" }}
         />
       </Grid>
     </Grid>
