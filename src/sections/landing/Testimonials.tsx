@@ -71,90 +71,86 @@ export default function TestimonialCard() {
             .slice(currentIndex, currentIndex + 2)
             .map((testimonial, index) => (
               <Grid
-                item
+              item
+              xs={12}
+              sm={12}
+              md={12}
+              lg={5.8}
+              xl={5.8}
+              key={index}
+              sx={{
+                height: "auto",
+                width: { xs: "100%", sm: "360px", md: "360px" },
+                flexShrink: 0,
+                backgroundColor: "white",
+                borderRadius: "20px",
+                borderLeft: "1px solid rgba(0,0,0,0.1)",
+                borderBottom: "1px solid rgba(0,0,0,0.1)",
+                position: "relative",
+                overflow: "hidden",
+                transition: "width 0.3s ease",
+              }}
+            >
+              {/* Cutout on the top right */}
+              <Grid
                 xs={12}
-                sm={12}
-                md={12}
-                lg={5.8}
-                xl={5.8}
-                key={index}
+                sm={6}
+                md={6}
                 sx={{
-                  height: "auto",
-                  width: { xs: "100%", sm: "360px", md: "360px" },
-                  flexShrink: 0,
-                  backgroundColor: "white",
-                  borderRadius: "20px",
+                  position: "absolute",
+                  top: 0,
+                  right: 0,
+                  width: "150px",
+                  height: "32px",
+                  borderBottomLeftRadius: "10px",
                   borderLeft: "1px solid rgba(0,0,0,0.1)",
-                  borderBottom: "1px solid rgba(0,0,0,0.1)",
-                  position: "relative",
-                  overflow: "hidden",
-                  transition: "width 0.3s ease",
-                }}
-              >
-                {/* Cutout on the top right */}
-                <Grid
-                  xs={12}
-                  sm={6}
-                  md={6}
-                  sx={{
+                  zIndex: 1,
+                  background: "#F7F7F7",
+                  "::before": {
+                    content: '""',
                     position: "absolute",
                     top: 0,
-                    right: 0,
-                    width: "24%",
-                    height: "50px",
-
-                    borderBottomLeftRadius: "20px",
-                    borderBottom: "1px solid rgba(0,0,0,0.1)",
-                    zIndex: 3,
+                    left: -16,
+                    width: 18,
+                    height: 8,
                     background: "#F7F7F7",
-                    "::before": {
-                      content: '""',
-                      position: "absolute",
-                      top: 0,
-                      left: -16,
-                      width: 18,
-                      height: 8,
-                      background: "#F7F7F7",
-                      zIndex: 2
-                    },
-                  }}
-                />
-                {/* Additional box under the cutout */}
-                <Grid
-                  sx={{
-                    position: "absolute",
-                    top: "49px", // Position it right below the cutout
-                    right: 0,
-                    width: "62px", // Adjust the width to ensure border visibility
-                    height: "86%", // Adjust the height as needed
-                    borderTop: "1px solid rgba(0,0,0,0.1)", // Top border
-                    borderRight: "1px solid rgba(0,0,0,0.2)", // Make the right border more visible
-                    backgroundColor: "white",
-                    borderTopRightRadius: "10px", // Only top right corner rounded
-                    zIndex: 3, // Ensure it is above other elements
-                    boxSizing: "border-box", // Ensure padding and borders are included in the element's total width and height
-                  }}
-                />
+                  },
+                }}
+              />
 
-                {/* Top box next to the cutout */}
-                <Grid
-                  sx={{
-                    position: "absolute",
-                    top: 0,
-                    left: 0,
-                    height: "32px",
-                    width: "76%",
-                    backgroundColor: "white",
-                    borderTop: "1px solid rgba(0,0,0,0.1)",
-                    borderRight: "1px solid rgba(0,0,0,0.1)",
-                    borderTopLeftRadius: "10px",
-                    borderTopRightRadius: "20px",
-                    zIndex: 3
-                  }}
-                />
+              <Grid
+                sx={{
+                  position: "absolute",
+                  top: "30px", // Position it right below the cutout
+                  right: 0,
+                  width: "146px", // Match the width of the cutout
+                  height: "90%", // Adjust the height as desired
+                  borderTop: "1px solid rgba(0,0,0,0.1)", // Top border
+                  borderRight: "1px solid rgba(0,0,0,0.1)", // Right border
+                  backgroundColor: "white",
+                  borderTopRightRadius: "10px", // Only top right corner rounded
+                  zIndex: 1, // Keep zIndex lower than the image
+                }}
+              />
 
-                {/* Card Content */}
-                <Grid
+              {/* Top box next to the cutout */}
+              <Grid
+                sx={{
+                  position: "absolute",
+                  top: 0,
+                  right: "150px",
+                  height: "32px",
+                  width: "calc(100% - 150px)",
+                  backgroundColor: "white",
+                  borderTop: "1px solid rgba(0,0,0,0.1)",
+                  borderTopLeftRadius: "10px",
+                  borderTopRightRadius: "10px",
+                  zIndex: 2,
+                }}
+              />
+
+              {/* Card Content */}
+              <Grid
                   container
                   item
                   xs={12}
@@ -248,7 +244,7 @@ export default function TestimonialCard() {
                     </Box>
                   </Grid>
                 </Grid>
-              </Grid>
+            </Grid>
             ))}
         </Grid>
       </Grid>
@@ -327,3 +323,13 @@ export default function TestimonialCard() {
     </Grid>
   );
 }
+
+
+
+
+
+
+
+
+
+
