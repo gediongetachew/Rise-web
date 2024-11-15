@@ -14,7 +14,7 @@ export default function Values() {
         backgroundColor: "#F7F7F7",
         py: { xs: 0, sm: 0 },
         paddingX: { xs: 2, sm: 4, md: 10 },
-       
+   
       }}
     >
       {/* Text Section */}
@@ -55,7 +55,7 @@ export default function Values() {
               spacing={3}
               flexDirection={{ xs: "column", lg: "column" }} // Change to row for lg and up
               alignItems="flex-start"
-              sx={{ paddingX: { xs: 2, sm: 4, md: 6 },}}
+              sx={{ paddingX: { xs: 2, sm: 4, md: 6 } }}
             >
               {[
                 { src: world, text: "Ethical Business" },
@@ -73,7 +73,7 @@ export default function Values() {
                   sx={{
                     py: 4,
                     borderBottom: { xs: "1px solid #D8D8D8" },
-                     // Add right border except last item
+                    // Add right border except last item
                   }}
                 >
                   <Image
@@ -85,7 +85,12 @@ export default function Values() {
                   <Typography
                     sx={{
                       ml: 1,
-                      fontSize: { xs: "0.9rem", sm: "1rem", md: "1.5rem", xl: '1.8rem' },
+                      fontSize: {
+                        xs: "0.9rem",
+                        sm: "1rem",
+                        md: "1.5rem",
+                        xl: "1.8rem",
+                      },
                     }}
                   >
                     {item.text}
@@ -99,24 +104,23 @@ export default function Values() {
 
       {/* Image Section */}
       <Grid
-        item
-        xs={12}
-        md={4}
-        lg={4}
-        container
-        alignItems="start"
-        justifyContent="center"
-        sx={{
-          paddingTop: {xs:10, sm:20}, 
-        
-        }}
-      >
-        <Image
-          src={sphareWorld}
-          alt="world-sphare"
-          style={{ transform: "scale(1.2)", maxWidth: "100%", height: "auto" }}
-        />
-      </Grid>
+  item
+  xs={12}
+  md={6}
+  container
+  alignItems="center" // Center vertically
+  justifyContent="center" // Center horizontally
+  sx={{
+    paddingTop: { xs: 5, sm: 0 },
+    display: "flex", // Ensure flexbox is applied
+  }}
+>
+  <Image
+    src={sphareWorld}
+    alt="world-sphare"
+    style={{ transform: "scale(1)", maxWidth: '100%', height: "auto" }}
+  />
+</Grid>
     </Grid>
   );
 }

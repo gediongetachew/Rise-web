@@ -40,7 +40,7 @@ export default function Quality() {
           }}
         >
           <Box>
-            <Image src={tropyIcon} alt="tropy-img" width={70} height={70} />
+            <Image src={tropyIcon} alt="tropy-img" width={69} height={70} />
           </Box>
           <Box
             sx={{
@@ -49,7 +49,7 @@ export default function Quality() {
               textAlign: "left", // Align text to the left
             }}
           >
-            <Typography variant="h6" fontWeight="bold" fontFamily={'Helvetica'} sx={{fontSize: {xs:15,sm: 20,md:25}}}>
+            <Typography variant="h6" fontWeight="bold" fontFamily={'Helvetica'} sx={{fontSize: {xs:15,sm: 20,md:20}}}>
               High Quality
             </Typography>
             <Typography variant="body2" fontFamily={'Roboto'}>Top Products & Materials</Typography>
@@ -70,7 +70,7 @@ export default function Quality() {
           }}
         >
           <Box>
-            <Image src={verifyIcon} alt="verify-img" width={70} height={70} />
+            <Image src={verifyIcon} alt="verify-img" width={69} height={70} />
           </Box>
           <Box
             sx={{
@@ -79,7 +79,7 @@ export default function Quality() {
               textAlign: "left", // Align text to the left
             }}
           >
-            <Typography variant="h6" fontWeight="bold" fontFamily={'Helvetica'} sx={{fontSize: {xs:15,sm: 20,md:25}}}>
+            <Typography variant="h6" fontWeight="bold" fontFamily={'Helvetica'} sx={{fontSize: {xs:15,sm: 20,md:20}}}>
               Verified
             </Typography>
             <Typography variant="body2" fontFamily={'Roboto'}>Top Products & Materials</Typography>
@@ -103,7 +103,7 @@ export default function Quality() {
             <Image
               src={warrantyIcon}
               alt="warranty-img"
-              width={70} height={70}
+              width={69} height={70}
             />
           </Box>
           <Box
@@ -113,7 +113,7 @@ export default function Quality() {
               textAlign: "left", // Align text to the left
             }}
           >
-            <Typography variant="h6" fontWeight="bold" fontFamily={'Helvetica'} sx={{fontSize: {xs:15,sm: 20,md:25}}}>
+            <Typography variant="h6" fontWeight="bold" fontFamily={'Helvetica'} sx={{fontSize: {xs:15,sm: 20,md:20}}}>
               Warranty
             </Typography>
             <Typography variant="body2" fontFamily={'Roboto'}>Top Products & Materials</Typography>
@@ -134,7 +134,7 @@ export default function Quality() {
           }}
         >
           <Box>
-            <Image src={supportIcon} alt="support-img" width={70} height={70} />
+            <Image src={supportIcon} alt="support-img" width={69} height={70} />
           </Box>
           <Box
             sx={{
@@ -143,7 +143,7 @@ export default function Quality() {
               textAlign: "left", // Align text to the left
             }}
           >
-            <Typography variant="h6" fontWeight="bold" fontFamily={'Helvetica'} sx={{fontSize: {xs:15,sm: 20,md:25}}}>
+            <Typography variant="h6" fontWeight="bold" fontFamily={'Helvetica'} sx={{fontSize: {xs:15,sm: 20,md:20}}}>
               Support
             </Typography>
             <Typography variant="body2" fontFamily={'Roboto'}>Top Products & Materials</Typography>

@@ -12,29 +12,27 @@ export default function Hero() {
       alignItems="center"
       justifyContent="center"
       sx={{
-        marginTop: {xs:4, sm:4, md:0, lg:10},
-        paddingY: { xs: 5, sm: 6, md: 15, lg:4 },
+        marginTop: { xs: 8, sm: 4, md: 0, lg: 10 },
+        paddingY: { xs: 5, sm: 6, md: 15, lg: 4 },
         paddingX: { xs: 2, sm: 4, md: 10 },
         position: "relative",
         width: "100%",
-        height: { xs: "35vh",sm: '55vh' ,md: "80vh", lg: "80vh" }, // Set height for hero image section
+        height: { xs: "38vh", sm: "55vh", md: "80vh", lg: "75vh" }, // Set height for hero image section
         overflow: "hidden", // Prevent any overflow issues with responsive image
       }}
     >
       <Grid
         item
         xs={12}
-        sx={{ position: "relative", width: "100%", height: "100%", zIndex:2 }}
-      > 
+        sx={{ position: "relative", width: "100%", height: "100%", zIndex: 2 }}
+      >
         {/* Hero Image with responsive width */}
         <Image
           src={HeroImg}
           alt="hero-image"
           layout="fill"
-          
           // Ensures full-width cover for all screen sizes
           priority
-          
         />
 
         {/* Overlay Text */}
@@ -43,10 +41,10 @@ export default function Hero() {
           direction="column"
           sx={{
             position: "absolute",
-            top: { xs: "55%", sm: "55%", md: "50%" },
+            top: { xs: "55%", sm: "58%", md: "50%" },
             left: { xs: "3%", sm: "2%", md: "5%" },
             transform: "translateY(-50%)",
-            width: { xs: "80%", sm: "100%", md: "90%" },
+            width: { xs: "80%", sm: "95%", md: "90%" },
             color: "white",
             zIndex: 2,
           }}
@@ -54,7 +52,7 @@ export default function Hero() {
           <Typography
             variant="h3"
             sx={{
-              fontSize: { xs: ".6rem", sm: "1.5rem", md: "2rem", lg: "3rem"},
+              fontSize: { xs: ".6rem", sm: "1.4rem", md: "2rem", lg: "2.5rem", xl:"3rem" },
               fontWeight: "bold",
             }}
           >
@@ -65,8 +63,8 @@ export default function Hero() {
           <Typography
             variant="subtitle1"
             sx={{
-              fontSize: { xs: "0.4rem", sm: "1rem", md: "1.2rem", lg:"1.5rem" },
-              marginTop: { xs: 1, sm: 1, lg: 3 },
+              fontSize: { xs: "0.4rem", sm: ".8rem", md: "1rem", lg: "1.2rem",xl: "1.5rem" },
+              marginTop: { xs: 1, sm: 1, md: 3, lg: 3 },
               lineHeight: 1.6,
             }}
           >

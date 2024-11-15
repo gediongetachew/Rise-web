@@ -71,7 +71,7 @@ export default function Article() {
                 <Typography
                   variant="h5"
                   gutterBottom
-                  sx={{ fontSize: { xs: "1rem",sm:"1.5rem", sm: "2rem" }, fontWeight: 'bold', fontFamily: 'Segoe UI' }}
+                  sx={{ fontSize: { xs: "1rem",sm:"1.5rem", md: "2rem" }, fontWeight: 'bold', fontFamily: 'Segoe UI' }}
                 >
                   {item.title}
                 </Typography>

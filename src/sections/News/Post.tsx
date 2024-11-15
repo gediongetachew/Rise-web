@@ -103,8 +103,8 @@ export default function Post() {
             variant="contained"
             endIcon={<ArrowOutwardIcon />}
             sx={{
-              paddingX: { xs: 3, sm: 6 },
-              paddingY: { xs: 2, sm: 3 },
+              paddingX: { xs: 3, sm: 4, md:6 },
+              paddingY: { xs: 2, sm: 2, md:3 },
               backgroundColor: "#3D628C",
               borderRadius: "35px",
               marginTop: 7,

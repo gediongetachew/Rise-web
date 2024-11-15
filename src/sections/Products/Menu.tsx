@@ -70,7 +70,7 @@ const ProductList: React.FC = () => {
           color="#3D628C"
           gutterBottom
           fontWeight={"bold"}
-          fontSize={{ xs: 25, md:30, lg:35 }}
+          fontSize={{ xs: 25, md: 30, lg: 35 }}
         >
           Popular Products
         </Typography>
@@ -79,14 +79,17 @@ const ProductList: React.FC = () => {
       <Grid
         item
         xs={12}
+        md={6}
         sx={{
           display: "flex",
+          alignItems: "center", // Ensure content is vertically centered
+          justifyContent: "center", // Ensure content is horizontally centered
           marginTop: 4,
-
-          marginRight: { xs: 0, sm: 120 },
-
-          borderRadius: "25px",
           background: "#F7F7F7",
+          marginRight: { xs: 0, sm: 120 },
+          borderRadius: "25px",
+          width: { xs: "100%", sm: "100%", lg: "65%", xl: "50%" }, // Ensure it takes full width
+          padding: 2, // Add some padding if needed
         }}
       >
         {productMenu.map((item) => (
@@ -96,7 +99,7 @@ const ProductList: React.FC = () => {
             sx={{
               background: "#F7F7F7",
               paddingY: { xs: 2, sm: 3, md: 4, lg: 3 },
-              paddingX: { xs: 1, sm: 2, md: 2 },
+              paddingX: { xs: 0.8, sm: 2, md: 2 },
             }}
           >
             <Button
@@ -107,8 +110,8 @@ const ProductList: React.FC = () => {
                 py: 1,
                 minWidth: { xs: 20 },
                 fontSize: {
-                  xs: ".6rem",
-                  sm: ".9rem",
+                  xs: ".5rem",
+                  sm: ".7rem",
                   md: "1rem",
                   lg: "1rem",
                 },
@@ -153,7 +156,6 @@ const ProductList: React.FC = () => {
                 image={item.img}
                 title={item.name}
                 description={item.description}
-                link={`/${item.name}`}
                 sx={{ height: { xs: "200px", sm: "300px" } }}
               />
             </Grid>

@@ -35,7 +35,7 @@ export default function CurvedCard() {
               position: "relative",
               alignItems: "center", // Ensures vertical centering
               justifyContent: "flex-start", // Aligns the content to the left
-              padding: { xs: 2, sm: 0 },
+              marginTop: { xs: 2, sm: 4, md:3 },
             }}
           >
             <Typography
@@ -45,8 +45,9 @@ export default function CurvedCard() {
                 color: "#00000",
                 textAlign: "left", // Align text to the left
                 display: "inline-block",
+                textWrap: "wrap",
 
-                fontSize: { xs: 25, sm: 40, md: 50 },
+                fontSize: { xs: 28, sm: 35, md: 40, lg: 50, xl: 50 },
               }}
             >
               Bringing Innovation to Healthcare Your Trusted Partner in Medical
@@ -54,18 +55,25 @@ export default function CurvedCard() {
             </Typography>
 
             {/* Underline Box */}
+
             <Box
               sx={{
                 position: "absolute",
                 display: "flex",
-                top: { xs: "82%", sm: "115%", md: "105%", lg: "88%" },
-                left: { xs: 155, sm: 0, md: 0,lg:265 }, // Ensures the box starts from the left
+                top: {
+                  xs: "90%",
+                  sm: "115%",
+                  md: "110%",
+                  lg: "108%",
+                  xl: "88%",
+                },
+                left: { xs: 160, sm: 0, md: 0, lg: 0, xl: 265 }, // Ensures the box starts from the left
                 background: "black",
                 width: {
                   xs: "35%",
                   sm: "40%",
                   md: "50%",
-                  lg: "30%",
+                  lg: "50%",
                   xl: "30%",
                 },
                 height: "2px",
@@ -78,16 +86,35 @@ export default function CurvedCard() {
               sx={{
                 position: "absolute",
                 color: "#EE484A",
-                top: { xs: "82%", sm: "115%", md: "105%", lg: "87%", xl: "87%" },
-                left: { xs: "82%", sm: "60%", md: "50%", lg: "74%", xl: "62%" },
+                top: {
+                  xs: "88%",
+                  sm: "115%",
+                  md: "110%",
+                  lg: "108%",
+                  xl: "87%",
+                },
+                left: {
+                  xs: "84%",
+                  sm: "41%",
+                  md: "50%",
+                  lg: "52%",
+                  xl: "62%",
+                },
                 height: "40px",
                 transform: "translateY(-50%)",
               }}
             />
           </Grid>
 
-          <Grid item xs={12} sx={{marginTop: {xs:1, md:5}}}>
-            <Typography variant="subtitle1" sx={{ color: "#616161" }}>
+          <Grid
+            item
+            xs={12}
+            sx={{ marginTop: { xs: 2, sm: 5, md: 8,lg:6 }, justifyItems: "left" }}
+          >
+            <Typography
+              variant="subtitle1"
+              sx={{ color: "#616161", textAlign: "left" }}
+            >
               Lorem ipsum dolor sit amet consectetur. Mauris semper tristique
               elit tincidunt. <br /> Odio suspendisse hendrerit quis vel
               fermentum. Sit.
@@ -112,10 +139,10 @@ export default function CurvedCard() {
                 boxShadow: "none",
                 color: "white",
                 background: "#3D628C",
-                paddingX: { xs: 5, md: 6 },
-                paddingY: { xs: 0, sm: 2 },
+                paddingX: { xs: 5, md: 4, lg: 6, xl: 6 },
+                paddingY: { xs: 2, sm: 1, md: 2, lg: 2, xl: 2 },
                 borderRadius: "40px",
-                fontSize: { xs: 15, md: 20 },
+                fontSize: { xs: 12, md: 18, lg:20},
               }}
             >
               Discover
@@ -130,9 +157,9 @@ export default function CurvedCard() {
                 background: "white",
                 borderRadius: "40px",
                 border: "0.5px solid #9E9E9E",
-                paddingX: { xs: 6, md: 3 },
+                paddingX: { xs: 3, sm: 3, md: 3, lg: 3, xl: 3 },
                 paddingY: { xs: 0, sm: 2, md: 1 },
-                fontSize: { xs: 15, md: 20 },
+                fontSize: { xs: 12, md: 18,lg:20 },
               }}
             >
               Get In Touch
@@ -154,7 +181,7 @@ export default function CurvedCard() {
                 sx={{
                   position: "relative",
                   width: { xs: "100%", md: "100%" },
-                  maxWidth: { xs: 400, md: 730 },
+                  maxWidth: { md: 730 },
                   height: "auto",
                 }}
               >

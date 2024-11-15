@@ -257,7 +257,7 @@ export default function TestimonialCard() {
           alignItems: "center",
           position: "absolute",
           top: { xs: "15%", sm: "10%", md: "10%" },
-          left: { xs: "80%", sm: "85%" },
+          left: { xs: "75%", sm: "85%" },
           transform: "translate(-50%, -50%)", // Centers the container horizontally
         }}
       >

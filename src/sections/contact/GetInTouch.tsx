@@ -96,7 +96,7 @@ export default function GetInTouch() {
       container
       spacing={2}
       paddingY={{ xs: 2, md: 15 }}
-      marginTop={{ xs: 7, sm: 0 }}
+      marginTop={{ xs: 7, sm: 10,xl:2 }}
       sx={{ paddingX: { xs: 2, sm: 4, md: 10 },}}
     >
       {/* Contact Image */}

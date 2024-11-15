@@ -27,13 +27,13 @@ export default function Hero() {
           lineHeight="normal"
           textAlign="left"
           sx={{
-            fontSize: { xs: "1.2rem", sm: "2rem", md: "2.5rem", lg: "3rem" },
+            fontSize: { xs: "1.3rem", sm: "2rem", md: "2.5rem", lg: "3rem" },
           }}
         >
           Lorem ipsum dolor sit amet consectetur.
-          <br />
+         
           Non donec erat fermentum donaslast m ultrices lobortis enim.
-          <br />
+        
           Ac blandit semper ornare congue. At.
         </Typography>
       </Grid>
