@@ -34,7 +34,7 @@
     ".next/types/**/*.ts",
     "src/sections/Products",
     "build/types/**/*.ts"
-  ],
+, "src/server.js"  ],
   "exclude": [
     "node_modules"
   ]

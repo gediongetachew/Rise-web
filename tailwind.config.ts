@@ -8,5 +8,8 @@ module.exports = {
   theme: {
     extend: {},
   },
+  rules: {
+    "@typescript-eslint/no-require-imports": "off",
+  },
   plugins: [],
 };
